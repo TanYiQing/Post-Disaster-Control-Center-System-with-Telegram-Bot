@@ -2,9 +2,10 @@
 [Read the instruction](https://github.com/STIW3054-A211/e-sulam/blob/main/GroupProject.md)
 
 ## Group Info:
-1. Matric Number & Name & Photo & Phone Number
-1. Mention who is the leader.
-1. Other related info (if any)
+|                 Name                  | Matric No |  Phone Number   |                   Image                   |
+| :-----------------------------------: | :-------: | :-------------: | :---------------------------------------: |
+| Ilham Muslim Maulana Rachmat (member) |  268954   | +62895612852200 | ![ilham's photo](./images/team/ilham.jpg) |
+
 
 ## Introduction
 ## Problem Statement
