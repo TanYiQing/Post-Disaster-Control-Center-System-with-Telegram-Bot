@@ -8,7 +8,7 @@
 | Tan Jia Earn (member)                 |  269509   | +60174422928    | ![earn's photo](./images/team/earn.jpg)   |
 | Wong Fang Man (member)                |  271221   | +60164497347    | ![wong's photo](./images/team/wong.jpg)   |
 | Tan Yi Qing (leader)                  |  270607   | +60103373137    | ![tan's photo](./images/team/tan.png)     |
-| Ng Shen Meng (member)                 |  271059   | +60193510295    | ![meng's photo](./images/team/meng.png)   |
+| Ng Shen Meng (member)                 |  271059   | +60193510295    | ![meng's photo](./images/team/meng.jpg)   |
 
 ## Introduction
 ## Problem Statement
