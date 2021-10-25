@@ -6,6 +6,7 @@
 | :-----------------------------------: | :-------: | :-------------: | :---------------------------------------: |
 | Ilham Muslim Maulana Rachmat (member) |  268954   | +62895612852200 | ![ilham's photo](./images/team/ilham.jpg) |
 | Tan Jia Earn (member)                 |  269509   | +60174422928    | ![earn's photo](./images/team/earn.jpg)   |
+| Wong Fang Man (member)                |  271221   | +60164497347    | ![wong's photo](./images/team/wong.jpg)   |
 
 
 ## Introduction
