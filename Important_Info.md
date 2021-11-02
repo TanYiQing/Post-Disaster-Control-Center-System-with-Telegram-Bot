@@ -96,3 +96,4 @@ Please manage all the related information here including the evidences/reference
 ## References
 * *List of Cities, Towns or Districts in Kedah, Malaysia with Google Maps and Streets Views*. (n.d.). Retrieved from Geographic: https://geographic.org/streetview/malaysia/kedah/index.html
 * *Parliament Seat or Candidate in Kedah*. (n.d.). Retrieved from The Star: https://election.thestar.com.my/kedah.html
+* *Keputusan Terkini Dewan Undangdan Negeri Kedah*. (n.d.). Retrieved from Suruhanjaya Pilihan Raya Malaysia: https://dashboard.spr.gov.my/pru14/#!/dun/2
