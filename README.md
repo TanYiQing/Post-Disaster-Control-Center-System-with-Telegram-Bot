@@ -19,6 +19,7 @@
 <p align="justify">Pusat Kawalan Operasi Bencana (PKOB) is a centralized system that can help the penghulu of a district quickly engage in post-disaster relief operations. This system not only can assist the victims quickly but also avoid the phenomenon of wasting resources. The centralized victims’ data and assistance records can help penghulu to respond faster and trace back the records. Besides that, victims can also apply for assistance through the online method, this saves effort and time compared to the traditional black and white method.</p>
 
 ## Problem Statement
+
 <p align="justify">Under the current situation, post-disaster rescue operations have encountered various difficulties. One of the problems is that the victims cannot get assistance in time. Using the current black and white method, assistance cannot be delivered to the victim in a very fast time because the management needs time to process the data and assign the type of assistance to the victim.</p>
 
 <p align="justify">Secondly, a family gets a lot of the same help, which is also one of the common problems that lead to uneven distribution of resources. This is because data and records are not centrally or regularly arranged, so the cost of post-disaster rescue operations may be as high as twice, which also leads to a waste of resources.</p>
@@ -42,6 +43,26 @@
 ## Project Significance (Impact to Community)
 
 ## Project Methodology
+
+<p align="justify">Rapid Application Development (RAD) is a development methodology that emphasizes rapid prototyping and feedback over lengthy development and testing cycles.</p>
+
+![rapid application development](./images/project/rad.png)
+
+1. Define the requirements
+
+   The rapid application development cycle begins with stakeholders defining a loose set of project requirements. Requirements include goals, expectations, timelines, and budget. The client provides a vision and explains the problem in the existing method for PKOB. This stage seeks for a broad requirement for the system.
+
+2. Prototype
+
+   After having a broad requirement and the project of PKOB has been scoped, our team will begin developing prototypes with certain main features as fast as possible which later will be shown to the client. This is to ensure the client’s needs are being met.
+
+3. Construction
+
+   Rapid construction is where application coding, system testing, and unit integration occurs, converting prototype and beta systems into a working model. Team works with the client to collect feedback on interface and functionality and improve all aspects of the PKOB system. At this stage we refine the prototype and make it ready to deliver. All kinds of required modifications and enhancements are made in phase. 4. Cutover
+
+4. Cutover
+
+   The final phase is where development teams move components to a live production environment, where any necessary full-scale testing or training can take place. In this case, the system of PKOB will be accessible for the public to be used.
 
 ## Cost Estimation
 
