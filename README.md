@@ -68,7 +68,28 @@
 
 ## Cost Estimation
 
+| <div style="width:60px"></div>                             | Units/Hrs//Year       | Cost/Unit/Hr/Year               | Subtotals | Totals  | % of Total |
+| :--------------------------------------------------------- | :-------------------: | :------------------------------:| :-------: | :-----: | :--------: |
+| **1. Project Management**                                  |                       |                                 |           | RM10030 | 41%        |
+| Project manager<br/>Project team members                   | 180<br/>720           | RM15<br/>RM10|RM2700<br/>RM7200 |           |         |            |
+| Contractors (10% of software development and testing)      |                       |                                 | RM200     |         |            |
+| **2. Hardware**                                            |                       |                                 |           | RM90    | 1%         |
+| 2.1 Handheld devices                                       | -                     | -                               | -         |         |            |
+| 2.2 Servers (Cpanel)                                       | 1                     | RM90                            | RM90      |         |            |
+| **3. Software**                                            |                       |                                 |           | RM1050  | 4%         |
+| 3.1 Licensed software                                      | 1                     | RM50                            | RM50      |         |            |
+| 3.2 Software development                                   |                       |                                 | RM1000    |         |            |
+| **4. Testing (10% of total hardware and software costs)**  |                       |                                 | RM1000    | RM1000  | 4%         |
+| **5. Training and Support**                                |                       |                                 |           | RM7700  | 32%        |
+| Trainee cost                                               | 100                   | RM5                             | RM500     |         |            |
+| Travel cost                                                | -                     | -                               | RM500     |         |            |
+| Project team members                                       | 720                   | RM10                            | RM7200    |         |            |
+| **6. Reserves (20% of total estimate)**                    |                       |                                 |           | RM3988  | 17%        |
+| Total project cost estimate                                |                       |                                 |           | RM23928 | 100%       |
+
 ## Gantt Chart
+
+![gantt chart](./images/project/ganttchart.png)
 
 ## File Structure for Telegram Bot
 
