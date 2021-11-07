@@ -89,7 +89,7 @@
 
 ## Gantt Chart
 
-![gantt chart](./images/project/ganttchart.png)
+![gantt chart](./images/project/ganttchart.PNG)
 
 ## File Structure for Telegram Bot
 
