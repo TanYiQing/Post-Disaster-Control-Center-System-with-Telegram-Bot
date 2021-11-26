@@ -15,8 +15,8 @@ class Address(models.Model):
 
 class Profile(models.Model):
     ic = models.IntegerField(max_length=12, verbose_name='IC', primary_key=True)
-    user_id = models.OneToOneField(User, on_delete=models.CASCADE)
-    address_id = models.OneToOneField(Address, on_delete=models.CASCADE, verbose_name='Address')
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    address = models.OneToOneField(Address, on_delete=models.CASCADE, verbose_name='Address')
     is_kir = models.BooleanField(default=True, verbose_name='Ketua Isi Rumah')
     salary = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='Salary')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created at')
