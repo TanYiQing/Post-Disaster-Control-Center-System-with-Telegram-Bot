@@ -96,6 +96,7 @@
 ## File Structure for Web Application
 
 ## Database Design
+![database design](./images/project/database_design.png)
 
 ## Project Limitation
 
