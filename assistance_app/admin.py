@@ -1,7 +1,7 @@
 from django.contrib import admin
-from assistance_app.models import Assistance, Assistance_type
+from assistance_app.models import Assistance, AssistanceType
 
 admin.site.register(Assistance)
-admin.site.register(Assistance_type)
+admin.site.register(AssistanceType)
 
 
