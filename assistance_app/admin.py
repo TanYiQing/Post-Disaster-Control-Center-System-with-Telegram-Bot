@@ -1,3 +1,7 @@
 from django.contrib import admin
+from assistance_app.models import Assistance, Assistance_type
 
-# Register your models here.
+admin.site.register(Assistance)
+admin.site.register(Assistance_type)
+
+
