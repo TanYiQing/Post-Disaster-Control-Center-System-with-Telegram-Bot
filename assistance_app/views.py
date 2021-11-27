@@ -7,12 +7,12 @@ from django.contrib import messages
 def request_assistance(request):
     if request.method == 'POST':
         assistance_form = AssistanceForm(request.POST)
-        if  assistance_form.is_valid():
+        if assistance_form.is_valid():
             data = assistance_form.cleaned_data
             victim_number = data['victim_number']
             assistance_type = AssistanceType.objects.filter(name=data['assistance_type'])[0]
             remark = data['remark']
-            assistance = Assistance(victim_number=victim_number,remark=remark)
+            assistance = Assistance(victim_number=victim_number, remark=remark)
             assistance.assistance_type = assistance_type
             assistance.user = request.user
             assistance.save()
