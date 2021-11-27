@@ -1,10 +1,20 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Victim Application
+    {{ victim.ic_no }}
 {% endblock %}
 
 {% block content %}
+
+    <style>
+        .btn:hover {
+            box-shadow: 0 0 20px 10px hsla(0, 0%, 50%, 0.5);
+            color: #fff;
+            background: #000;
+            border: 0;
+        }
+
+    </style>
     <div class="row mt-5">
         <div class="col-1"></div>
         <div class="col-10" style="background: white; border: 2px solid; border-radius: 5px;">
@@ -29,24 +39,18 @@
                 </div>
                 <div class="mb-3">
                     <label for="phone" class="form-label">Ketua Isi Rumah?</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault1" value="True"
-                               checked>
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Yes
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault2" value="False">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            No
-                        </label>
-                    </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Yes
+                    </label>
                 </div>
-                <div class="mb-3">
-                    <label for="salary" class="form-label">Salary</label>
-                    <input type="number" class="form-control" placeholder="Salary" id="salary"
-                           name="salary" required>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        No
+                    </label>
+                </div>
                 </div>
                 <div class="mb-3">
                     <label for="address1" class="form-label">Address 1</label>
@@ -83,7 +87,6 @@
                     <input type="number" class="form-control" placeholder="Poskod" id="poskod"
                            name="poskod" required>
                 </div>
-
                 <div class="row mb-3">
                     <div class="col"></div>
                     <div class="col text-center">
@@ -104,10 +107,5 @@
         </div>
         <div class="col-1"></div>
     </div>
-    {% if status %}
-        <script>
-            alert("{{status}}");
-        </script>
-    {% endif %}
 
 {% endblock %}
