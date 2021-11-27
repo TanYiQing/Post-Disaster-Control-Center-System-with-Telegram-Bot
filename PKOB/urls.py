@@ -20,5 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('pkob/', include('victim_app.urls')),
     path('assistance/', include('assistance_app.urls')),
-
 ]

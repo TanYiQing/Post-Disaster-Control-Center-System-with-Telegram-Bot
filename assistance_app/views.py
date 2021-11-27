@@ -22,3 +22,8 @@ def request_assistance(request):
     if request.method == 'GET':
         assistance_form = AssistanceForm()
         return render(request, 'assistance_app/request.html', {'assistance_form': assistance_form})
+      
+      
+def add(request):
+    return render(request, 'assistance_app/add.html')
+
