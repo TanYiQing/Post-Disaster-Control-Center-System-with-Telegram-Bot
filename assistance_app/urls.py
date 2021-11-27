@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path("create/", views.request_assistance, name='request-assistance'),
-  path('add/', views.add, name="add"),
+    path('add/', views.add, name="add"),
 ]

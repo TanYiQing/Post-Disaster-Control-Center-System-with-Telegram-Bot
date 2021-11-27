@@ -3,7 +3,7 @@ from .forms import AssistanceForm
 from .models import Assistance, AssistanceType
 from django.contrib import messages
 
-# Create your views here.
+
 def request_assistance(request):
     if request.method == 'POST':
         assistance_form = AssistanceForm(request.POST)
