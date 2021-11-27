@@ -4,16 +4,15 @@ from .models import Assistance, AssistanceType
 from django.contrib import messages
 
 
-# Create your views here.
 def request_assistance(request):
     if request.method == 'POST':
         assistance_form = AssistanceForm(request.POST)
-        if  assistance_form.is_valid():
+        if assistance_form.is_valid():
             data = assistance_form.cleaned_data
             victim_number = data['victim_number']
             assistance_type = AssistanceType.objects.filter(name=data['assistance_type'])[0]
             remark = data['remark']
-            assistance = Assistance(victim_number=victim_number,remark=remark)
+            assistance = Assistance(victim_number=victim_number, remark=remark)
             assistance.assistance_type = assistance_type
             assistance.user = request.user
             assistance.save()
@@ -24,8 +23,8 @@ def request_assistance(request):
         assistance_form = AssistanceForm()
         return render(request, 'assistance_app/request.html', {'assistance_form': assistance_form})
 
-
-def list_assistance_type(request):
+      
+      def list_assistance_type(request):
 
     assistance_type = AssistanceType.objects.all()
 
@@ -50,3 +49,8 @@ def edit_assistance_type(request, id):
     #     return render(request, 'App_Resident/editdata.html', {'resident': resident, 'status': status})
 
     return render(request, 'assistance_app/edit_user.html', {'assistance': assistance})
+      
+      
+def add(request):
+    return render(request, 'assistance_app/add.html')
+

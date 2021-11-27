@@ -11,6 +11,7 @@ class AssistanceType(models.Model):
     def __str__(self):
         return self.name
 
+
 class Assistance(models.Model):
     name = models.CharField(max_length=255, verbose_name='Name', null=True, blank=True)
     remark = models.TextField( verbose_name='Remark', null=True, blank=True)

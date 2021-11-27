@@ -23,5 +23,4 @@ urlpatterns = [
     path('', views.index),
     path('pkob/', include('victim_app.urls')),
     path('assistance/', include('assistance_app.urls')),
-
 ]
