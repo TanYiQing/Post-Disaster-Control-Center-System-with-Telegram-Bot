@@ -22,6 +22,33 @@ def request_assistance(request):
     if request.method == 'GET':
         assistance_form = AssistanceForm()
         return render(request, 'assistance_app/request.html', {'assistance_form': assistance_form})
+
+      
+      def list_assistance_type(request):
+
+    assistance_type = AssistanceType.objects.all()
+
+    return render(request, 'assistance_app/list.html', {'assistanceType': assistance_type})
+
+
+def edit_assistance_type(request, id):
+
+    assistance = AssistanceType.objects.get(pk=id)
+
+    # if request.method == "POST":
+    #     name = request.POST["name"]
+    #     ic = request.POST["ic"]
+    #     phone = request.POST["phone"]
+    #
+    #     resident.icNo = ic
+    #     resident.name = name
+    #     resident.phone = phone
+    #     resident.save()
+    #
+    #     status = "Changes Saved Successfully"
+    #     return render(request, 'App_Resident/editdata.html', {'resident': resident, 'status': status})
+
+    return render(request, 'assistance_app/edit_user.html', {'assistance': assistance})
       
       
 def add(request):
