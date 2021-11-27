@@ -1,39 +1,29 @@
-from django.shortcuts import render
-import datetime
-
-
-import assistance_app.models
-from django.shortcuts import render
-from assistance_app.models import *
+from django.shortcuts import render, redirect
+from .forms import AssistanceForm
+from .models import Assistance, AssistanceType
 from django.contrib import messages
 
-
+# Create your views here.
+def request_assistance(request):
+    if request.method == 'POST':
+        assistance_form = AssistanceForm(request.POST)
+        if  assistance_form.is_valid():
+            data = assistance_form.cleaned_data
+            victim_number = data['victim_number']
+            assistance_type = AssistanceType.objects.filter(name=data['assistance_type'])[0]
+            remark = data['remark']
+            assistance = Assistance(victim_number=victim_number,remark=remark)
+            assistance.assistance_type = assistance_type
+            assistance.user = request.user
+            assistance.save()
+            messages.success(request, "request has been sent successfully")
+            
+        return redirect('/assistance/create')
+    if request.method == 'GET':
+        assistance_form = AssistanceForm()
+        return render(request, 'assistance_app/request.html', {'assistance_form': assistance_form})
+      
+      
 def add(request):
     return render(request, 'assistance_app/add.html')
-    # if request.method == "POST":
-    #     ic_no = request.POST["ic_no"]
-    #     name = request.POST["name"]
-    #     hp_no = request.POST["hp_no"]
-    #
-    #     ic_year = int(ic_no[0] + ic_no[1])
-    #     ic_month = int(ic_no[2] + ic_no[3])
-    #     ic_day = int(ic_no[4] + ic_no[5])
-    #
-    #     valid_date = True
-    #     try:
-    #         datetime.datetime(int(ic_year), int(ic_month), int(ic_day))
-    #     except ValueError:
-    #         valid_date = False
-    #
-    #     if not Victim.objects.filter(ic_no=ic_no).exists():
-    #         if valid_date:
-    #             victim = App_Victim.models.Victim(ic_no=ic_no, name=name, hp_no=hp_no)
-    #             victim.save()
-    #             messages.success(request, "{} registered as victim".format(name))
-    #         else:
-    #             messages.error(request, "Invalid IC number, please try again")
-    #     else:
-    #         messages.error(request, "IC Number registered before")
-
-
 

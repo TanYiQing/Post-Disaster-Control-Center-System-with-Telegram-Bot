@@ -1,7 +1,7 @@
 from django.urls import path
-from assistance_app import views
-
+from . import views
 
 urlpatterns = [
-    path('add/', views.add, name="add"),
+    path("create/", views.request_assistance, name='request-assistance'),
+  path('add/', views.add, name="add"),
 ]
