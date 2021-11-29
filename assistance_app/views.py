@@ -52,5 +52,14 @@ def edit_assistance_type(request, id):
       
       
 def add(request):
+    if request.method == 'POST':
+        name = request.POST["name"]
+        ic_no = request.POST["ic_no"]
+        victim_num = request.POST["victim_num"]
+        assistance_type = request.POST["assistance_type"]
+        assistance_date = request.POST["assistance_date"]
+        created_at = request.POST["created_at"]
+        updated_at = request.POST["updated_at"]
+        remark = request.POST["remark"]
     return render(request, 'assistance_app/add.html')
 

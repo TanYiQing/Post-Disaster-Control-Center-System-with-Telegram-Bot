@@ -20,7 +20,7 @@
 <form method="POST" action="">
         {% csrf_token %}
         <div class="form-control {% if field.user_name.errors %}errors{% endif %}" >
-        {% for field in assistance_form %}
+            {% for field in assistance_form %}
             <div class="mb-3">
                 {{ field.label_tag}}
                 {{ field }}

@@ -3,9 +3,6 @@
 Request Assistance
 {% endblock %}
 {% block content %}
-    <div class="row">
-        <div class="col-1" ></div>
-        <div class="col-10" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
             <form action="" method="post">
             {% csrf_token %}
                 <h1>Request Assistance</h1>
@@ -22,11 +19,11 @@ Request Assistance
                     <div class="col">
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Name</label>
-                            <input type="text" class="form-control" maxlength="12" name="name" placeholder="e.g 123456789101 ( Without '-' )" required>
+                            <input type="text" class="form-control" maxlength="12" name="name" placeholder="e.g Joseph Dyson ( Without '-' )" required>
                         </div>
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Victim Number</label>
-                            <input type="text" class="form-control" maxlength="12" name="victim_num" required>
+                            <input type="number" class="form-control" min="1" name="victim_num" required>
                         </div>
                     </div>
                     <div class="col">
@@ -51,7 +48,7 @@ Request Assistance
                     <div class="col">
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Assistance Date</label>
-                            <input type="text" class="form-control" maxlength="12" name="assistance_date" placeholder="e.g 123456789101 ( Without '-' )" required>
+                            <input type="date" class="form-control" name="assistance_date" required>
                         </div>
                     </div>
                 </div>
@@ -62,13 +59,13 @@ Request Assistance
                     <div class="col">
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Created At</label>
-                            <input type="text" class="form-control" maxlength="12" name="created_at"  readonly>
+                            <input type="date" class="form-control" maxlength="12" name="created_at"  readonly>
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Updated At</label>
-                            <input type="text" class="form-control" maxlength="12" name="updated_at"  readonly>
+                            <input type="date" class="form-control" maxlength="12" name="updated_at"  readonly>
                         </div>
                     </div>
                 </div>
@@ -85,7 +82,5 @@ Request Assistance
                 </div>
             </form>
         <div style="height: 50px"></div>
-        </div>
-    </div>
 
 {% endblock %}
