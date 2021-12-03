@@ -20,7 +20,7 @@ from PKOB import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
-    path('pkob/', include('victim_app.urls')),
+    path('', views.index, name="home_page"),
+    path('victim/', include('victim_app.urls')),
     path('assistance/', include('assistance_app.urls')),
 ]

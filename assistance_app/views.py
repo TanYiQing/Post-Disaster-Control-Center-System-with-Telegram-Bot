@@ -24,7 +24,7 @@ def request_assistance(request):
         return render(request, 'assistance_app/request.html', {'assistance_form': assistance_form})
 
       
-      def list_assistance_type(request):
+def list_assistance_type(request):
 
     assistance_type = AssistanceType.objects.all()
 

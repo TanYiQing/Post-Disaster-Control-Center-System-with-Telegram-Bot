@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from victim_app.models import Address, Profile
+from victim_app.models import Profile
 
 
-def victim(request):
+def add_profile(request):
     if request.method == "POST":
         icNum = request.POST["icNum"]
         name = request.POST["name"]
@@ -18,29 +18,25 @@ def victim(request):
         poskod = request.POST["poskod"]
 
         if not Profile.objects.filter(ic=icNum).exists():
-            victimProfile = Profile(ic=icNum, name=name, phone=phone, is_kir=is_kir, salary=salary)
-            victimProfile.save()
-            victimAddress = Address(address1=address1, address2=address2, city=city, mukim=mukim, parlimen=parlimen,
+            victimProfile = Profile(ic=icNum, name=name, phone=phone, is_kir=is_kir, salary=salary, address1=address1, address2=address2, city=city, mukim=mukim, parlimen=parlimen,
                                     state=state, poskod=poskod)
-            victimAddress.save()
+            victimProfile.save()
             respond = "{} has been successfully add to the list.".format(name)
-            return render(request, 'victim_app/victim.html', {"status": respond})
+            return render(request, 'victim_app/add_profile.html', {"status": respond})
         else:
             respond = "Fail. This ic number is already exist. Please insert again."
-            return render(request, 'victim_app/victim.html', {"status": respond})
-    return render(request, 'victim_app/victim.html')
+            return render(request, 'victim_app/add_profile.html', {"status": respond})
+    return render(request, 'victim_app/add_profile.html')
 
 
-def victim_report(request):
+def list_user(request):
     victim_list = Profile.objects.all().order_by("-ic")
-    victim_address = Address.objects.all()
-    return render(request, 'victim_app/victim_report.html',
-                  context={'victim_list': victim_list, 'victim_address': victim_address})
+    return render(request, 'victim_app/list_user.html',
+                  context={'victim_list': victim_list})
 
 
-def victim_detail(request, ic):
+def edit_profile(request, ic):
     victim_profile = Profile.objects.get(pk=ic)
-    victim_address = Address.objects.get(pk=id)
 
     if request.method == "POST":
         icNum = request.POST["icNum"]
@@ -61,18 +57,16 @@ def victim_detail(request, ic):
         victim_profile.phone = phone
         victim_profile.is_kir = is_kir
         victim_profile.salary = salary
-        victim_address.address1 = address1
-        victim_address.address2 = address2
-        victim_address.city = city
-        victim_address.mukim = mukim
-        victim_address.parlimen = parlimen
-        victim_address.state = state
-        victim_address.poskod = poskod
+        victim_profile.address1 = address1
+        victim_profile.address2 = address2
+        victim_profile.city = city
+        victim_profile.mukim = mukim
+        victim_profile.parlimen = parlimen
+        victim_profile.state = state
+        victim_profile.poskod = poskod
 
         victim_profile.save()
-        victim_address.save()
         victim_list = Profile.objects.all().order_by("-ic")
-        victim_address = Address.objects.all()
-        return render(request, 'victim_app/victim_report.html', context={'victim_list': victim_list, 'victim_address': victim_address})
+        return render(request, 'victim_app/list_user.html', context={'victim_list': victim_list})
 
-    return render(request, 'victim_app/victim_detail.html', context={'victim': victim})
+    return render(request, 'victim_app/edit_profile.html', context={'victim_profile': victim_profile})
