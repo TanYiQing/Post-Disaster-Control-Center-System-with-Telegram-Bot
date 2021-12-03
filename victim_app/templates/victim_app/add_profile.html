@@ -5,6 +5,66 @@
 {% endblock %}
 
 {% block content %}
+    <script language="JavaScript">
+        function formValidation() {
+
+            /*Get Data*/
+            const icNum = document.trackstatus.icNum;
+            const name = document.trackstatus.name;
+            const phone = document.trackstatus.phone;
+            const poskod = document.trackstatus.poskod;
+
+            /*Validate*/
+            const all_letters = /^[A-Za-z "]+$/;
+            const phone_start = /^[0]/;
+            const phone_len = phone.value.length;
+            const ic_len = icNum.value.length;
+            const poskod_len = poskod.value.length;
+
+            /*Name Contain Only Alphabet*/
+            if (!name.value.match(all_letters)) {
+                alert("Name must contain only alphabet characters.");
+                name.focus();
+                return false;
+            }
+            /*IC Number Contain Only Numeric*/
+            else if (isNaN(icNum.value)) {
+                alert("IC number must contain only numeric characters.")
+                icNum.focus();
+                return false;
+            }
+            /*IC Number Length*/
+            else if (ic_len < 12 || ic_len > 12) {
+                alert("IC number length should equal 12.");
+                icNum.focus();
+                return false;
+            }
+            /*Phone Number Contain Only Numeric*/
+            else if (isNaN(phone.value)) {
+                alert("Phone number must contain only numeric characters.")
+                phone.focus();
+                return false;
+            }
+            /*Phone Number Start With Zero*/
+            if (!phone.value.match(phone_start)) {
+                alert("Phone number should start with zero. Please insert again");
+                phone.focus();
+                return false;
+            }
+            /*Phone Number Length Must Greater Than 9 and Lower Than 13*/
+            else if (phone_len < 10 || phone_len > 13) {
+                alert("Phone number length must be between 10 to 13.");
+                phone.focus();
+                return false;
+            }
+            /*Poskod Length*/
+            else if (ic_len < 5 || ic_len > 5) {
+                alert("Poskod length should equal 5.");
+                poskod.focus();
+                return false;
+            }
+        }
+    </script>
     <div class="row mt-5">
         <div class="col-1"></div>
         <div class="col-10" style="background: white; border: 2px solid; border-radius: 5px;">
