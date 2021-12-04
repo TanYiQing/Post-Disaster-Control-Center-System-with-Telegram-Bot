@@ -26,9 +26,9 @@ def request_assistance(request):
       
 def list_assistance_type(request):
 
-    assistance_type = AssistanceType.objects.all()
+    assistance = Assistance.objects.all()
 
-    return render(request, 'assistance_app/list.html', {'assistanceType': assistance_type})
+    return render(request, 'assistance_app/list.html', {'assistance': assistance})
 
 
 def edit_assistance_type(request, id):
