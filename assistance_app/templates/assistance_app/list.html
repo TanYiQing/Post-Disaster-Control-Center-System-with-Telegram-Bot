@@ -6,7 +6,7 @@
 
 {% endblock  %}
 {% block content_title %}
-<h1 class="mt-5"> List Assistance Type </h1>
+<h1 class="mt-5"> Assistance Applied Record </h1>
 {% endblock  %}
 
 {% block content %}
@@ -16,30 +16,28 @@
             <table class="table table-bordered table-striped table-hover ">
               <thead class="bg-dark text-light">
                 <tr>
-                    <th scope="col">Id</th>
+                    <th scope="col">User Id</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Create At</th>
-                    <th scope="col">Update At</th>
+                    <th scope="col">IcNo</th>
+                    <th scope="col">Assistance Type</th>
+                    <th scope="col">Victim Number</th>
+                    <th scope="col">Progress Percentage</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
-{#                {% for ass in assistanceType %}#}
-{#                    <tr>#}
-{#                        <td>{{res.icNo}}</td>#}
-{#                        <td>{{res.name}}</td>#}
-{#                        <td>{{res.phone}}</td>#}
-{#                        <td>{{res.age}}</td>#}
-{#                        <td><a href="{% url "edit-data" res.icNo %}"><button class="btn" type="button" style="background-color: darkgrey"><i class="bi bi-pencil"></i></button></a></td>#}
-{#                    </tr>#}
-                {% for ass in assistanceType %}
+                {% for ass in assistance %}
                     <tr>
-                        <td>{{ ass.id }}</td>
+                        <td>{{ ass.user_id }}</td>
                         <td>{{ ass.name }}</td>
-                        <td>{{ ass.description }}</td>
-                        <td>{{ ass.created_at }}</td>
-                        <td>{{ ass.updated_at }}</td>
+                        <td>{{ ass.id }}</td>
+                        <td>{{ ass.assistance_type }}</td>
+                        <td>{{ ass.victim_number }}</td>
+                        <td>{{ ass.progress_percentage }}</td>
+                        <td>{{ ass.assistance_given_date }}</td>
+                        <td>{{ ass.is_approved }}</td>
                         <td><a href="{% url "edit_assistance_type" ass.id %}"><button class="btn" type="button" style="background-color: darkgrey"><i class="bi bi-pencil"></i></button></a></td>
                     </tr>
                 {% endfor%}
