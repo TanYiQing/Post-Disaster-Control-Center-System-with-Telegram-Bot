@@ -75,123 +75,165 @@
         }
 
     </style>
-    <div class="row mt-5">
-        <div class="col-1"></div>
-        <div class="col-10" style="background: white; border: 2px solid; border-radius: 5px;">
-            <div class="row mt-5 text-center"><h3>Victim Application</h3></div>
+    <div class="row mt-2">
+        <div class="col-12" style="background: #F8F9FA;">
+            <div class="row text-center my-3"><h1>Victim Application</h1></div>
             <form action="" method="post" enctype="multipart/form-data" name="trackstatus"
                   onSubmit="return formValidation();">
                 {% csrf_token %}
-                <div class="my-3">
-                    <label for="icNum" class="form-label">Ic Number</label>
-                    <input type="number" class="form-control"
-                           value="{{ victim_profile.ic }}" id="icNum" name="icNum"
-                           required>
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="name" class="form-label">Name</label></div>
+                    <div class="col-10 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.name }}" id="name" name="name"
+                               required>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" value="{{ victim_profile.name }}" id="name" name="name"
-                           required>
-                </div>
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Phone</label>
-                    <input type="number" class="form-control" value="{{ victim_profile.phone }}" id="phone"
-                           name="phone" required>
-                </div>
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Ketua Isi Rumah?</label>
+
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="icNum" class="form-label">IC Number</label></div>
+                    <div class="col-4 my-2">
+                        <input type="number" class="form-control"
+                               value="{{ victim_profile.ic }}" id="icNum" name="icNum"
+                               required>
+                    </div>
+                    <div class="col-2 my-3">
+                        <label for="is_kir" class="form-label">Household?</label>
+                    </div>
 
                     {% ifequal victim_profile.is_kir 1 %}
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault1"
-                                   value="True"
-                                   checked>
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Yes
-                            </label>
+                        <div class="col-1 my-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault1"
+                                       value="True"
+                                       checked>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Yes
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault2"
-                                   value="False">
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                No
-                            </label>
+                        <div class="col-1 my-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault2"
+                                       value="False">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    No
+                                </label>
+                            </div>
                         </div>
                     {% endifequal %}
                     {% ifequal victim_profile.is_kir 0 %}
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault1"
-                                   value="True">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Yes
-                            </label>
+                        <div class="col-1 my-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault1"
+                                       value="True">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Yes
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault2"
-                                   value="False" checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                No
-                            </label>
+                        <div class="col-1 my-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault2"
+                                       value="False" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    No
+                                </label>
+                            </div>
                         </div>
                     {% endifequal %}
-                    <div class="mb-3">
-                        <label for="salary" class="form-label">Salary</label>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="phone" class="form-label">Phone</label></div>
+                    <div class="col-4 my-2">
+                        <input type="number" class="form-control" value="{{ victim_profile.phone }}" id="phone"
+                               name="phone" required>
+                    </div>
+                    <div class="col-2 my-3">
+                        <label for="salary" class="form-label">Salary</label></div>
+                    <div class="col-4 my-2">
                         <input type="number" class="form-control" value="{{ victim_profile.salary }}" id="salary"
                                name="salary" required>
                     </div>
+                </div>
 
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="address1" class="form-label">Address 1</label></div>
+                    <div class="col-10 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.address1 }}" id="address1"
+                               name="address1" required>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="address1" class="form-label">Address 1</label>
-                    <input type="text" class="form-control" value="{{ victim_profile.address1 }}" id="address1"
-                           name="address1" required>
+
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="address2" class="form-label">Address 2</label></div>
+                    <div class="col-10 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.address2 }}" id="address2"
+                               name="address2" required>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="address2" class="form-label">Address 2</label>
-                    <input type="text" class="form-control" value="{{ victim_profile.address2 }}" id="address2"
-                           name="address2" required>
+
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="poskod" class="form-label">Poskod</label></div>
+                    <div class="col-4 my-2">
+                        <input type="number" class="form-control" value="{{ victim_profile.poskod }}" id="poskod"
+                               name="poskod" required>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="city" class="form-label">City</label>
-                    <input type="text" class="form-control" value="{{ victim_profile.city }}" id="city"
-                           name="city" required>
+
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="city" class="form-label">City</label></div>
+                    <div class="col-4 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.city }}" id="city"
+                               name="city" required>
+                    </div>
+                    <div class="col-2 my-3">
+                        <label for="parlimen" class="form-label">Parlimen</label></div>
+                    <div class="col-4 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.parlimen }}" id="parlimen"
+                               name="parlimen" required>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="mukim" class="form-label">Mukim</label>
-                    <input type="text" class="form-control" value="{{ victim_profile.mukim }}" id="mukim"
-                           name="mukim" required>
+
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="state" class="form-label">State</label></div>
+                    <div class="col-4 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.state }}" id="state"
+                               name="state" required>
+                    </div>
+                    <div class="col-2 my-3">
+                        <label for="mukim" class="form-label">Mukim</label></div>
+                    <div class="col-4 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.mukim }}" id="mukim"
+                               name="mukim" required>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="parlimen" class="form-label">Parlimen</label>
-                    <input type="text" class="form-control" value="{{ victim_profile.parlimen }}" id="parlimen"
-                           name="parlimen" required>
-                </div>
-                <div class="mb-3">
-                    <label for="state" class="form-label">State</label>
-                    <input type="text" class="form-control" value="{{ victim_profile.state }}" id="state"
-                           name="state" required>
-                </div>
-                <div class="mb-3">
-                    <label for="poskod" class="form-label">Poskod</label>
-                    <input type="number" class="form-control" value="{{ victim_profile.poskod }}" id="poskod"
-                           name="poskod" required>
-                </div>
-                <div class="row mb-3">
+
+
+                <div class="row my-3">
                     <div class="col"></div>
-                    <div class="col text-center">
-                        <button type="submit" class="btn btn-outline-dark"
-                        >Submit
+                    <div class="col-2 text-center">
+                        <button type="submit" class="btn btn-dark" style="width: 90px;">Submit
                         </button>
                     </div>
-                    <div class="col text-center">
-                        <button type="reset" class="btn btn-outline-dark" style="width: 75px;">Reset
+                    <div class="col-2 text-center">
+                        <button type="reset" class="btn btn-dark" style="width: 90px;">Reset
                         </button>
                     </div>
                     <div class="col"></div>
                 </div>
             </form>
             <div class="col text-center mb-3">
-                 <a href="{% url "home_page" %}">Back to Main Page</a>
+                <a href="{% url "home_page" %}">Back to Main Page</a>
             </div>
         </div>
         <div class="col-1"></div>
