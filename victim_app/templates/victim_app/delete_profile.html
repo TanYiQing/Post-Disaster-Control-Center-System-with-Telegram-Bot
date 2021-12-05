@@ -6,15 +6,18 @@
 
 {% block content %}
     <div class="container-fluid text-center">
-        <div class="col-md=6 mx-auto p-4">
+        <div class="col-md-6 mx-auto p-4">
             <div class="card shadow shadow-lg">
-                <div class="card-body">
-                    <h4>Are you sure want to delete?</h4>
-                    <h4>{{ victim.ic }}</h4>
-                    <h4>{{ victim.name }}</h4>
-                    <a href="{% url 'delete_profile' %}?ic={{ victim.ic }}&&action=confirm" class="btn btn-danger">Confirm
-                        Delete</a>
-                    <a href="{% url 'list_user' %}" class="btn btn-warning">Cancel</a>
+                <div class="my-3 card-body">
+                    <h3>Are you sure want to delete?</h3>
+                    <div class="mt-4">
+                        <p class="fs-5 fst-italic">{{ victim.ic }}</p>
+                        <p class="fs-5 fst-italic">{{ victim.name }}</p>
+                    </div>
+                    <div class="mt-4">
+                        <a href="{% url 'delete_profile' %}?ic={{ victim.ic }}&&action=confirm" class="btn btn-danger" style="width: 90px;">OK</a>
+                        <a href="{% url 'list_user' %}" class="btn btn-warning" style="width: 90px;">Cancel</a>
+                    </div>
                 </div>
             </div>
         </div>
