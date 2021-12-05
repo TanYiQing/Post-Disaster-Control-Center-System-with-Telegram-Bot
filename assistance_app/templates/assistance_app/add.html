@@ -2,10 +2,13 @@
 {% block title %}
 Request Assistance
 {% endblock %}
+{% block content_title %}
+<h1 class="mt-5"> Request Assistance </h1>
+{% endblock  %}
 {% block content %}
             <form action="" method="post">
             {% csrf_token %}
-                <h1>Request Assistance</h1>
+
                 <div class="row">
                     <div class="col">
                         <div class="mb-3">
@@ -35,10 +38,10 @@ Request Assistance
                             <label for="formGroupExampleInput" class="form-label">Assistance Type</label>
                             <select class="form-select form-select-md mb-3" aria-label=".form-select-md example" name="assistance_type">
                                 <option selected>Assistance Type</option>
-                                <option value="1">Food Supplement</option>
-                                <option value="1">House Rebuild</option>
-                                <option value="2">House Repairment</option>
-                                <option value="3">Zakat</option>
+                                <option value="Food Supplement">Food Supplement</option>
+                                <option value="House Rebuild">House Rebuild</option>
+                                <option value="House Repairment">House Repair</option>
+                                <option value="Zakat">Zakat</option>
                             </select>
                         </div>
                     </div>
@@ -55,7 +58,7 @@ Request Assistance
                 <div class="row">
                     <div class="mb-3">
                         <label for="formGroupExampleInput" class="form-label">Remark</label>
-                        <textarea type="text" class="form-control" >
+                        <textarea type="text" class="form-control" name="remark">
                         </textarea>
                     </div>
                 </div>

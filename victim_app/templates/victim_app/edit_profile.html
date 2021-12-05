@@ -58,7 +58,7 @@
                 return false;
             }
             /*Poskod Length*/
-            else if (ic_len < 5 || ic_len > 5) {
+            else if (poskod_len < 5 || poskod_len > 5) {
                 alert("Poskod length should equal 5.");
                 poskod.focus();
                 return false;
@@ -96,7 +96,7 @@
                     <div class="col-4 my-2">
                         <input type="number" class="form-control"
                                value="{{ victim_profile.ic }}" id="icNum" name="icNum"
-                               required>
+                               readonly>
                     </div>
                     <div class="col-2 my-3">
                         <label for="is_kir" class="form-label">Household?</label>
@@ -238,5 +238,10 @@
         </div>
         <div class="col-1"></div>
     </div>
+    {% if status %}
+        <script>
+            alert("{{status}}");
+        </script>
+    {% endif %}
 
 {% endblock %}
