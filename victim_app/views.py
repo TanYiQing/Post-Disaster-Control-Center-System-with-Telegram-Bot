@@ -1,6 +1,6 @@
 import datetime
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from victim_app.models import Profile
 
 
@@ -31,7 +31,8 @@ def add_profile(request):
 
         if not Profile.objects.filter(ic=icNum).exists():
             if valid_date:
-                victimProfile = Profile(ic=icNum, name=name, phone=phone, is_kir=is_kir, salary=salary, address1=address1, address2=address2, city=city, mukim=mukim, parlimen=parlimen,
+                victimProfile = Profile(ic=icNum, name=name, phone=phone, is_kir=is_kir, salary=salary,
+                                        address1=address1, address2=address2, city=city, mukim=mukim, parlimen=parlimen,
                                         state=state, poskod=poskod)
                 victimProfile.save()
                 respond = "{} has been successfully add to the list.".format(name)
@@ -100,3 +101,16 @@ def edit_profile(request, ic):
             return render(request, 'victim_app/edit_profile.html', {"status": respond})
 
     return render(request, 'victim_app/edit_profile.html', context={'victim_profile': victim_profile})
+
+
+def delete_profile(request):
+    context = {}
+    if "ic" in request.GET:
+        ic = request.GET["ic"]
+        icd = get_object_or_404(Profile, ic=ic)
+        context["victim"] = icd
+
+        if "action" in request.GET:
+            icd.delete()
+            context["status"] = str(icd.name) + " Removed Successfully"
+    return render(request, 'victim_app/delete_profile.html', context)
