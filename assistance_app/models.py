@@ -20,7 +20,7 @@ class Assistance(models.Model):
     victim_number = models.IntegerField(verbose_name='Victim Number')
     is_approved = models.BooleanField(verbose_name='Is Approved', default=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    assistance_type = models.ForeignKey(AssistanceType, on_delete=models.CASCADE)
+    assistance_type = models.ForeignKey(AssistanceType, on_delete=models.CASCADE, default=1)
     assistance_given_date = models.DateField(verbose_name='Assistance Given Date', null=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created at')
     updated_at = models.DateTimeField(auto_now_add=True, verbose_name='Updated at')
