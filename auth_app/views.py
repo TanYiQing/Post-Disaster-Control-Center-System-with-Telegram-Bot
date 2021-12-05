@@ -50,7 +50,6 @@ def login(request):
         password = request.POST['password']
         user = authenticate(request,ic=ic,password=password)
         if user is not None:
-            messages.success(request,f'welcome back {user.first_name}')   
             login_process(request, user)
             return redirect('/')
             ...
