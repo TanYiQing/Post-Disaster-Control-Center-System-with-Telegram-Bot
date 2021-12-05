@@ -35,12 +35,8 @@
                 >Victim List</a
                 >
             </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url "logout" %}"
-                  >logout</a
-                >
-            </li>
             {% else %}
+            
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url "register" %}"
                   >register</a
@@ -53,6 +49,18 @@
             </li>
             {% endif %}
            
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            {% if user.is_authenticated%}
+            <li class='nav-item my-auto mx-4'> 
+                <p class='text-white nav-link p-0 m-0'> Hi, {{ user.first_name }} </p>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url "logout" %}"
+                  >logout</a
+                >
+            </li>
+            {% endif %}
           </ul>
         </div>
     </div>
