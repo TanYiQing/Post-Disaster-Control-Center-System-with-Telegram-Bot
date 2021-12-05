@@ -1,13 +1,146 @@
-{% extends 'base.html' %}
+{% extends 'base1.html' %}
 
-{% block title %}Request Assistance{% endblock  %}
-
+{% block title %}Home Page{% endblock  %}
 {% block custom_css %}
+    <style>
+        .shine{
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%,-50%);
 
-{% endblock  %}
-{% block content_title %}
-<h1 CLASS="mt-5"> PUSAT KAWALAN OPERASI BENCANA</h1>
+            color: #ffffff;
+            background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+            background-position: 0;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 20s ;
+            animation-fill-mode: forwards;
+            -webkit-text-size-adjust: none;
+            font-weight: 500;
+            font-size: 40px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        @keyframes shine{
+            0%{
+               background-position: 0px
+            }
+            60% {
+                background-position: 780px
+            }
+            100% {
+                background-position: 950px;
+                animation: ease-in-out;
+                -webkit-text-fill-color: white;
+
+            }
+        }
+        @-moz-keyframes shine{
+            0%{
+               background-position: 0px
+            }
+            60% {
+                background-position: 780px
+            }
+            100% {
+                background-position: 950px;
+                animation: ease-in-out;
+                -webkit-text-fill-color: white;
+
+            }
+        }
+        @-webkit-keyframes shine{
+            0%{
+               background-position: 0px
+            }
+            60% {
+                background-position: 780px
+            }
+            100% {
+                background-position: 950px;
+                animation: ease-in-out;
+                -webkit-text-fill-color: white;
+
+            }
+        }
+        @-o-keyframes shine{
+            0%{
+               background-position: 0px
+            }
+            60% {
+                background-position: 780px
+            }
+            100% {
+                background-position: 950px;
+                animation: ease-in-out;
+                -webkit-text-fill-color: white;
+
+            }
+        }
+        @-ms-keyframes shine{
+            0%{
+               background-position: 0px
+            }
+            60% {
+                background-position: 780px
+            }
+            100% {
+                background-position: 950px;
+                animation: ease-in-out;
+                -webkit-text-fill-color: white;
+
+            }
+        }
+
+        .shine:after{
+            content: "";
+            animation: spin 25s 1 forwards;
+        }
+
+        @keyframes spin{
+            0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
+            100% { content:"PKOB";}
+        }
+        @-moz-keyframes spin{
+            0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
+            100% { content:"PKOB";}
+        }
+        @-webkit-keyframes spin{
+            0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
+            100% { content:"PKOB";}
+        }
+        @-o-keyframes spin{
+            0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
+            100% { content:"PKOB";}
+        }
+        @-ms-keyframes spin{
+            0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
+            100% { content:"PKOB";}
+        }
+
+        @media screen and (min-width: 601px) {
+            .shine {
+                font-size: 40px;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .shine {
+                font-size: 20px;
+            }
+        }
+        @media screen and (max-width: 320px) {
+            .shine {
+                font-size: 15px;
+            }
+        }
+
+    </style>
 {% endblock  %}
 {% block content %}
-
+    <div style="background-color: black; height: 65vh;">
+        <img style="width:100%; height: 100%; opacity: 0.2; object-fit: cover; position: relative" src="https://assets.nst.com.my/images/articles/22SmartST_NSTfield_image_socialmedia.var_1574395516.jpg" class="img-fluid" alt="homeimage">
+        <h1 style="color: white" class="shine"></h1>
+    </div>
 {% endblock  %}
