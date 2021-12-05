@@ -4,8 +4,9 @@ import assistance_app.models
 from .forms import AssistanceForm
 from .models import Assistance, AssistanceType
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
-
+@login_required(login_url='/login')
 def request_assistance(request):
     if request.method == 'POST':
         assistance_form = AssistanceForm(request.POST)
