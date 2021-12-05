@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Victim Report
+{% endblock %}
+
+{% block content %}
+    <div class="row mt-2">
+        <div class="col">
+            <div class="row my-3 text-center"><h1>List of Victims</h1></div>
+            <table class="table table-bordered table-striped table-hover  ">
+                <thead class="bg-dark text-light">
+                <tr style="text-align: center;">
+                    <th scope="col">IC Number</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for victim in victim_list %}
+                    <tr style="cursor: pointer; text-align: center; ">
+                        <td>{{ victim.ic }}</td>
+                        <td>{{ victim.name }}</td>
+                        <td>{{ victim.phone }}</td>
+                        <td>
+                            <div class="p-2">
+                                <div class="m-2">
+                                    <a href="{% url "edit_profile" victim.ic %}"><i class="bi bi-search"></i></a>
+                                    {# <a href="{% url "delete_profile" victim.ic %}"><i class="bi bi-trash"></i></a>#}
+                                    <a href="{% url "delete_profile"%}?ic={{ victim.ic }}"><i class="bi bi-trash"></i></a>
+
+                                </div>
+
+                            </div>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="col text-center my-3">
+                <a href="{% url "home_page" %}">Back to Main Page</a>
+            </div>
+        </div>
+    </div>
+    {% if status %}
+        <script>
+            alert("{{status}}");
+        </script>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ victim_profile.ic }}
+{% endblock %}
+
+{% block content %}
+    <script language="JavaScript">
+        function formValidation() {
+
+            /*Get Data*/
+            const icNum = document.trackstatus.icNum;
+            const name = document.trackstatus.name;
+            const phone = document.trackstatus.phone;
+            const poskod = document.trackstatus.poskod;
+
+            /*Validate*/
+            const all_letters = /^[A-Za-z "]+$/;
+            const phone_start = /^[0]/;
+            const phone_len = phone.value.length;
+            const ic_len = icNum.value.length;
+            const poskod_len = poskod.value.length;
+
+            /*Name Contain Only Alphabet*/
+            if (!name.value.match(all_letters)) {
+                alert("Name must contain only alphabet characters.");
+                name.focus();
+                return false;
+            }
+            /*IC Number Contain Only Numeric*/
+            else if (isNaN(icNum.value)) {
+                alert("IC number must contain only numeric characters.")
+                icNum.focus();
+                return false;
+            }
+            /*IC Number Length*/
+            else if (ic_len < 12 || ic_len > 12) {
+                alert("IC number length should equal 12.");
+                icNum.focus();
+                return false;
+            }
+            /*Phone Number Contain Only Numeric*/
+            else if (isNaN(phone.value)) {
+                alert("Phone number must contain only numeric characters.")
+                phone.focus();
+                return false;
+            }
+            /*Phone Number Start With Zero*/
+            if (!phone.value.match(phone_start)) {
+                alert("Phone number should start with zero. Please insert again");
+                phone.focus();
+                return false;
+            }
+            /*Phone Number Length Must Greater Than 9 and Lower Than 13*/
+            else if (phone_len < 10 || phone_len > 13) {
+                alert("Phone number length must be between 10 to 13.");
+                phone.focus();
+                return false;
+            }
+            /*Poskod Length*/
+            else if (poskod_len < 5 || poskod_len > 5) {
+                alert("Poskod length should equal 5.");
+                poskod.focus();
+                return false;
+            }
+        }
+    </script>
+
+    <style>
+        .btn:hover {
+            box-shadow: 0 0 20px 10px hsla(0, 0%, 50%, 0.5);
+            color: #fff;
+            background: #000;
+            border: 0;
+        }
+
+    </style>
+    <div class="row mt-2">
+        <div class="col-12" style="background: #F8F9FA;">
+            <div class="row text-center my-3"><h1>Victim Application</h1></div>
+            <form action="" method="post" enctype="multipart/form-data" name="trackstatus"
+                  onSubmit="return formValidation();">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="name" class="form-label">Name</label></div>
+                    <div class="col-10 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.name }}" id="name" name="name"
+                               required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="icNum" class="form-label">IC Number</label></div>
+                    <div class="col-4 my-2">
+                        <input type="number" class="form-control"
+                               value="{{ victim_profile.ic }}" id="icNum" name="icNum"
+                               readonly>
+                    </div>
+                    <div class="col-2 my-3">
+                        <label for="is_kir" class="form-label">Household?</label>
+                    </div>
+
+                    {% ifequal victim_profile.is_kir 1 %}
+                        <div class="col-1 my-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault1"
+                                       value="True"
+                                       checked>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Yes
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-1 my-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault2"
+                                       value="False">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    {% endifequal %}
+                    {% ifequal victim_profile.is_kir 0 %}
+                        <div class="col-1 my-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault1"
+                                       value="True">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Yes
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-1 my-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault2"
+                                       value="False" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    {% endifequal %}
+
+                </div>
+
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="phone" class="form-label">Phone</label></div>
+                    <div class="col-4 my-2">
+                        <input type="number" class="form-control" value="{{ victim_profile.phone }}" id="phone"
+                               name="phone" required>
+                    </div>
+                    <div class="col-2 my-3">
+                        <label for="salary" class="form-label">Salary (RM)</label></div>
+                    <div class="col-4 my-2">
+                        <input type="number" class="form-control" value="{{ victim_profile.salary }}" id="salary"
+                               name="salary" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="address1" class="form-label">Address 1</label></div>
+                    <div class="col-10 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.address1 }}" id="address1"
+                               name="address1" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="address2" class="form-label">Address 2</label></div>
+                    <div class="col-10 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.address2 }}" id="address2"
+                               name="address2" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="poskod" class="form-label">Postcode</label></div>
+                    <div class="col-4 my-2">
+                        <input type="number" class="form-control" value="{{ victim_profile.poskod }}" id="poskod"
+                               name="poskod" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="city" class="form-label">City</label></div>
+                    <div class="col-4 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.city }}" id="city"
+                               name="city" required>
+                    </div>
+                    <div class="col-2 my-3">
+                        <label for="parlimen" class="form-label">Parlimen</label></div>
+                    <div class="col-4 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.parlimen }}" id="parlimen"
+                               name="parlimen" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2 my-3">
+                        <label for="state" class="form-label">State</label></div>
+                    <div class="col-4 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.state }}" id="state"
+                               name="state" required>
+                    </div>
+                    <div class="col-2 my-3">
+                        <label for="mukim" class="form-label">Mukim</label></div>
+                    <div class="col-4 my-2">
+                        <input type="text" class="form-control" value="{{ victim_profile.mukim }}" id="mukim"
+                               name="mukim" required>
+                    </div>
+                </div>
+
+
+                <div class="row my-3">
+                    <div class="col"></div>
+                    <div class="col-2 text-center">
+                        <button type="submit" class="btn btn-dark" style="width: 90px;">Submit
+                        </button>
+                    </div>
+                    <div class="col-2 text-center">
+                        <button type="reset" class="btn btn-dark" style="width: 90px;">Reset
+                        </button>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </form>
+            <div class="col text-center mb-3">
+                <a href="{% url "home_page" %}">Back to Main Page</a>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    {% if status %}
+        <script>
+            alert("{{status}}");
+        </script>
+    {% endif %}
+
+{% endblock %}
