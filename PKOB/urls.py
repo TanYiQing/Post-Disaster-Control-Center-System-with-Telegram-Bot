@@ -17,10 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 
 from PKOB import views
+from auth_app import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="home_page"),
     path('victim/', include('victim_app.urls')),
     path('assistance/', include('assistance_app.urls')),
+    path('register/', v.register, name='register'),
+    path('login/', v.login, name='login'),
+    path('', include('django.contrib.auth.urls')),
+
 ]

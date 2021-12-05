@@ -1,9 +1,10 @@
 import datetime
+from django.contrib.auth.decorators import login_required
 
 from django.shortcuts import render, redirect, get_object_or_404
 from victim_app.models import Profile
 
-
+@login_required(login_url='/login')
 def add_profile(request):
     if request.method == "POST":
         icNum = request.POST["icNum"]
@@ -45,13 +46,13 @@ def add_profile(request):
             return render(request, 'victim_app/add_profile.html', {"status": respond})
     return render(request, 'victim_app/add_profile.html')
 
-
+@login_required(login_url='/login')
 def list_user(request):
     victim_list = Profile.objects.all().order_by("-ic")
     return render(request, 'victim_app/list_user.html',
                   context={'victim_list': victim_list})
 
-
+@login_required(login_url='/login')
 def edit_profile(request, ic):
     victim_profile = Profile.objects.get(pk=ic)
     if request.method == "POST":

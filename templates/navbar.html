@@ -13,29 +13,56 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+          <ul class="navbar-nav">
+            {% if user.is_authenticated%}
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url "add" %}"
+                >Request Assistance</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url "list_assistance_type" %}"
+                >Application Record</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url "add_profile" %}"
+                >Victim Registration</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url "list_user" %}"
+                >Victim List</a
+                >
+            </li>
+            {% else %}
+            
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url "register" %}"
+                  >register</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url "login" %}"
+                  >login</a
+                >
+            </li>
+            {% endif %}
+           
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            {% if user.is_authenticated%}
+            <li class='nav-item my-auto mx-4'> 
+                <p class='text-white nav-link p-0 m-0'> Hi, {{ user.first_name }} </p>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url "logout" %}"
+                  >logout</a
+                >
+            </li>
+            {% endif %}
+          </ul>
 
-{#                <li class="nav-item">#}
-{#                    <a class="nav-link active" aria-current="page" href="{% url "add" %}"#}
-{#                    >Request Assistance</a#}
-{#                    >#}
-{#                </li>#}
-{#                <li class="nav-item">#}
-{#                    <a class="nav-link active" aria-current="page" href="{% url "list_assistance_type" %}"#}
-{#                    >Application Record</a#}
-{#                    >#}
-{#                </li>#}
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url "add_profile" %}"
-                    >Victim Registration</a
-                    >
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url "list_user" %}"
-                    >Victim List</a
-                    >
-                </li>
-            </ul>
         </div>
     </div>
 

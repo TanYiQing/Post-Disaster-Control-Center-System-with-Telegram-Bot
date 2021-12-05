@@ -4,8 +4,9 @@ import assistance_app.models
 from .forms import AssistanceForm
 from .models import Assistance, AssistanceType
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
-
+@login_required(login_url='/login')
 def request_assistance(request):
     if request.method == 'POST':
         assistance_form = AssistanceForm(request.POST)
@@ -25,17 +26,17 @@ def request_assistance(request):
         assistance_form = AssistanceForm()
         return render(request, 'assistance_app/request.html', {'assistance_form': assistance_form})
 
-
+@login_required(login_url='/login')
 def list_assistance_type(request):
     assistance = Assistance.objects.all()
     return render(request, 'assistance_app/list.html', {'assistance': assistance})
 
-
+@login_required(login_url='/login')
 def edit_assistance_type(request, id):
     assistance = AssistanceType.objects.get(pk=id)
     return render(request, 'assistance_app/edit_user.html', {'assistance': assistance})
 
-
+@login_required(login_url='/login')
 def add(request):
     if request.method == 'POST':
         name = request.POST["name"]

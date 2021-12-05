@@ -111,3 +111,4 @@
 ## List of Python packages (including the version) used for this system
 
 ## References (Not less than 30)
+https://docs.djangoproject.com/en/3.2/topics/auth/default/
