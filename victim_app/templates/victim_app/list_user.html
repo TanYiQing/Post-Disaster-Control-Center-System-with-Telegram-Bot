@@ -24,9 +24,15 @@
                         <td>{{ victim.name }}</td>
                         <td>{{ victim.phone }}</td>
                         <td>
-                            <div class="p-2"><a href="{% url "edit_profile" victim.ic %}"><i
-                                    class="bi bi-search"></i></a></div>
-                        </td>
+                            <div class="p-2">
+                                <div class="m-2">
+                                    <a href="{% url "edit_profile" victim.ic %}"><i class="bi bi-search"></i></a>
+                                    {# <a href="{% url "delete_profile" victim.ic %}"><i class="bi bi-trash"></i></a>#}
+                                    <a href="{% url "delete_profile"%}?ic={{ victim.ic }}"><i class="bi bi-trash"></i></a>
+
+                                </div>
+
+                            </div>
                     </tr>
                 {% endfor %}
                 </tbody>
