@@ -15,14 +15,14 @@
         <div class="col">
             <table class="table table-bordered table-striped table-hover ">
               <thead class="bg-dark text-light">
+              <thead class="bg-dark text-light">
                 <tr>
-                    <th scope="col">User Id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Ic Number</th>
                     <th scope="col">Assistance Type</th>
                     <th scope="col">Victim Number</th>
                     <th scope="col">Progress Percentage</th>
-                    <th scope="col">Date</th>
+                    <th scope="col">Assistance Given Date</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -30,7 +30,6 @@
               <tbody>
                 {% for assistance in assistances %}
                     <tr>
-                        <td>{{ assistance.user_id }}</td>
                         <td>{{ assistance.user.first_name }} {{ assistance.user.last_name }}</td>
                         <td>{{ assistance.user.ic }}</td>
                         <td>{{ assistance.assistance_type }}</td>

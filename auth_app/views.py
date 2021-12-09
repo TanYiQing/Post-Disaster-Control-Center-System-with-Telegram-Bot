@@ -1,3 +1,5 @@
+import datetime
+
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login as login_process
@@ -22,17 +24,31 @@ def register(req):
         last_name = req.POST['last_name']
         password = req.POST['password']
         confirm_password = req.POST['confirm_password']
+
+        ic_year = int(ic[0] + ic[1])
+        ic_month = int(ic[2] + ic[3])
+        ic_day = int(ic[4] + ic[5])
+
+        valid_date = True
+        try:
+            datetime.datetime(int(ic_year), int(ic_month), int(ic_day))
+        except ValueError:
+            valid_date = False
+
+        if not valid_date:
+            messages.error(req, 'Please try again with a valid IC Number')
+            return redirect('register')
         if not ic.isnumeric():
-            messages.error(req, 'ic has to be a number')
+            messages.error(req, 'IC Number has to be a number')
             return redirect('register')
         if len(ic) < 12:
-            messages.error(req, 'ic digits are less than 12')
+            messages.error(req, 'IC Number are less than 12 digits')
             return redirect('register')
         if len(ic) > 12:
-            messages.error(req, 'ic digits are greater than 12')
+            messages.error(req, 'IC Number are greater than 12 digits')
             return redirect('register')
         if password != confirm_password:
-            messages.error(req, 'passwords did not match')
+            messages.error(req, 'Passwords did not match')
             return redirect('register')
 
         try:

@@ -35,8 +35,6 @@ def add_profile(request):
         victimProfile.save()
         return redirect('edit_profile')
 
-        
-
     return render(request, 'victim_app/add_profile.html')
 
 
@@ -49,7 +47,6 @@ def list_user(request):
 
 @login_required(login_url='/login')
 def edit_profile(request):
-    user = request.user
     user = request.user
     try:
         has_profile = user.profile is not None
