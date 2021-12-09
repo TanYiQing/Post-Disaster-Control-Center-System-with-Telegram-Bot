@@ -8,15 +8,6 @@ Request Assistance
 {% block content %}
             <form action="" method="post">
             {% csrf_token %}
-{#                <div class="row">#}
-{#                    <div class="col">#}
-{#                        <div class="mb-3">#}
-{#                            <label for="formGroupExampleInput" class="form-label">User ID :</label>#}
-{#                            <input type="text" class="form-control" maxlength="12" name="user_id" placeholder="1213521" readonly>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="col"></div>#}
-{#                </div>#}
                 <div class="row">
                     <div class="col">
                         <div class="mb-3">
@@ -37,11 +28,6 @@ Request Assistance
                             <label for="formGroupExampleInput" class="form-label">Assistance Type</label>
                             <select class="form-select form-select-md mb-3" aria-label=".form-select-md example" name="assistance_type">
                                 {% for assistance in assistance_type %}
-                                {% comment %} <option selected>Assistance Type</option>
-                                <option value="1">Food Supplement</option>
-                                <option value="2">House Rebuild</option>
-                                <option value="3">House Repair</option>
-                                <option value="4">Zakat</option> {% endcomment %}
                                 <option value="{{ assistance.id }}">{{ assistance }}</option>
                                 {% endfor %}
                             </select>
@@ -65,8 +51,7 @@ Request Assistance
                 <div class="row">
                     <div class="mb-3">
                         <label for="formGroupExampleInput" class="form-label">Remark</label>
-                        <textarea type="text" class="form-control" name="remark">
-                        </textarea>
+                        <textarea type="text" class="form-control" name="remark"></textarea>
                     </div>
                 </div>
                 <div style="text-align: right">

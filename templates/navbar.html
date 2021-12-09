@@ -15,26 +15,29 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             {% if user.is_authenticated%}
-         <li class="nav-item">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url "add" %}">request assitance</a
-                >
-            </li> 
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url "list_assistance_type" %}">my request assitance</a
-                >
-            </li> 
-            {% else %}
-            
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url "register" %}"
-                  >register</a
+                <a class="nav-link active" aria-current="page" href="{% url "request_assistance" %}">
+                    <div style="border-style:solid; border-width: 1px; padding: 0px 4px;border-radius: 4px">
+                    <span class="bi bi-layers-half"> Request Assistance</span>
+                    </div>
+                </a
                 >
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url "login" %}"
-                  >login</a
+                <a class="nav-link active" aria-current="page" href="{% url "list_assistance_type" %}"><span class="bi bi-card-list"> My Request Assistance</span></a
                 >
+            </li>
+            {% else %}
+
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url "register" %}">
+                    Register
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url "login" %}">
+                    Login
+                </a>
             </li>
             {% endif %}
            
@@ -42,18 +45,21 @@
           <ul class="navbar-nav ms-auto">
             {% if user.is_authenticated%}
             
-            <li class='nav-item my-auto mx-4'> 
+            <li class='nav-item my-auto mx-4'>
                 <p class='text-white nav-link p-0 m-0'> Hi, {{ user.first_name }} </p>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url "add_profile" %}"
-                > My Profile</a
-                >
+                <a class="nav-link active" aria-current="page" href="{% url "add_profile" %}">
+                    <span class="bi bi-person-fill"> My Profile</span>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url "logout" %}"
-                  >logout</a
-                >
+
+                <a class="nav-link active" aria-current="page" href="{% url "logout" %}">
+                    <div style="background-color: red; padding: 0px 4px;border-radius: 4px">
+                    <span class="bi bi-door-open"> Logout</span>
+                    </div>
+                </a>
             </li>
             {% endif %}
           </ul>
