@@ -17,7 +17,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">User ID :</label>
-                            <input type="text" class="form-control" maxlength="12" name="user_id" placeholder="1213521" readonly>
+                            <input type="text" class="form-control" maxlength="12" name="user_id" placeholder="1213521" value={{ user.id  }} readonly>
                         </div>
                     </div>
                     <div class="col"></div>
@@ -26,26 +26,25 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Name</label>
-                            <input type="text" class="form-control" maxlength="12" name="name" placeholder="e.g Joseph Dyson ( Without '-' )" required>
+                            <input type="text" class="form-control" maxlength="12" name="name" placeholder="e.g Joseph Dyson ( Without '-' )" value='{{ user.first_name  }}{{ user.last_name  }}' required>
                         </div>
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Victim Number</label>
-                            <input type="number" class="form-control" min="1" name="victim_num" required>
+                            <input type="number" class="form-control" min="1" name="victim_num" value='{{ my_assistance.victim_number  }}' required>
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">IC Number</label>
-                            <input type="text" class="form-control" maxlength="12" name="ic_no" placeholder="e.g 123456789101 ( Without '-' )" required>
+                            <input type="text" class="form-control" maxlength="12" name="ic_no" placeholder="e.g 123456789101 ( Without '-' )" value='{{ user.ic  }}' required>
                         </div>
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Assistance Type</label>
                             <select class="form-select form-select-md mb-3" aria-label=".form-select-md example" name="assistance_type">
-                                <option selected>Assistance Type</option>
-                                <option value="1">Food Supplement</option>
-                                <option value="1">House Rebuild</option>
-                                <option value="2">House Repairment</option>
-                                <option value="3">Zakat</option>
+                                {% for assistance_type in assistance_types %}
+                            
+                                <option value="{{ assistance_type.id }}" {% if my_assistance.id == assistance_type.id  %}selected{% endif %} >{{ assistance_type }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
@@ -61,8 +60,9 @@
                 </div>
                 <div class="row">
                     <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label">Remark</label>
+                        <label for="formGroupExampleInput" class="form-label" >Remark</label>
                         <textarea type="text" class="form-control" >
+                            {{ my_assistance.remark  }}
                         </textarea>
                     </div>
                 </div>

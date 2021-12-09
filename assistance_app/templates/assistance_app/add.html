@@ -21,7 +21,7 @@ Request Assistance
                     <div class="col">
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Name</label>
-                            <input type="text" class="form-control" maxlength="12" name="name" placeholder="e.g Joseph Dyson ( Without '-' )" required>
+                            <input type="text" class="form-control" maxlength="12" name="name" placeholder="e.g Joseph Dyson ( Without '-' )" value='{{user.first_name}} {{user.last_name}}' required>
                         </div>
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Victim Number</label>
@@ -31,16 +31,19 @@ Request Assistance
                     <div class="col">
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">IC Number</label>
-                            <input type="text" class="form-control" maxlength="12" name="ic_no" placeholder="e.g 123456789101 ( Without '-' )" required>
+                            <input type="text" class="form-control" maxlength="12" name="ic_no" placeholder="e.g 123456789101 ( Without '-' )" value='{{user.ic}}' required>
                         </div>
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Assistance Type</label>
                             <select class="form-select form-select-md mb-3" aria-label=".form-select-md example" name="assistance_type">
-                                <option selected>Assistance Type</option>
+                                {% for assistance in assistance_type %}
+                                {% comment %} <option selected>Assistance Type</option>
                                 <option value="1">Food Supplement</option>
                                 <option value="2">House Rebuild</option>
                                 <option value="3">House Repair</option>
-                                <option value="4">Zakat</option>
+                                <option value="4">Zakat</option> {% endcomment %}
+                                <option value="{{ assistance.id }}">{{ assistance }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
