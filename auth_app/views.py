@@ -10,37 +10,40 @@ from auth_app.models import CustomUser
 
 from django.http import HttpResponse
 
+
 def register(req):
     if req.user.is_authenticated:
         return redirect('/')
-    if  req.method == 'POST':
+    if req.method == 'POST':
         print(req.POST['ic'])
-        
+
         ic = req.POST['ic']
         first_name = req.POST['first_name']
         last_name = req.POST['last_name']
         password = req.POST['password']
         confirm_password = req.POST['confirm_password']
         if not ic.isnumeric():
-            messages.error(req,'ic has to be a number')   
+            messages.error(req, 'ic has to be a number')
             return redirect('register')
         if len(ic) < 12:
-            messages.error(req,'ic digits are less than 12')   
+            messages.error(req, 'ic digits are less than 12')
             return redirect('register')
         if len(ic) > 12:
-            messages.error(req,'ic digits are greater than 12')   
+            messages.error(req, 'ic digits are greater than 12')
             return redirect('register')
         if password != confirm_password:
-            messages.error(req,'passwords did not match')   
+            messages.error(req, 'passwords did not match')
             return redirect('register')
-        
+
         try:
-            user = CustomUser.objects.create_user(ic=ic, password=password, first_name=first_name,last_name=last_name)
+            user = CustomUser.objects.create_user(
+                ic=ic, password=password, first_name=first_name, last_name=last_name)
         except Exception as e:
-            return  HttpResponse(e)
+            return HttpResponse(e)
         return redirect('login')
 
     return render(req, 'auth_app/register.html')
+
 
 def login(request):
     if request.user.is_authenticated:
@@ -48,13 +51,22 @@ def login(request):
     if request.method == 'POST':
         ic = request.POST['ic']
         password = request.POST['password']
-        user = authenticate(request,ic=ic,password=password)
+        user = authenticate(request, ic=ic, password=password)
         if user is not None:
             login_process(request, user)
-            return redirect('/')
+
+            try:
+                has_profile = user.profile is not None
+                if has_profile:
+                    return redirect('/')
+
+            except:
+                print('user has no profile')
+                return redirect('add_profile')
+
             ...
         else:
             # Return an 'invalid login' error message.
-            messages.error(request,f'failed to login')   
+            messages.error(request, f'failed to login')
             return redirect('login')
     return render(request, 'auth_app/customlogin.html')

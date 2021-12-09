@@ -34,7 +34,7 @@
                 <a class="nav-link active" aria-current="page" href="{% url "list_user" %}"
                 >Victim List</a
                 >
-            </li>
+            </li> {% endcomment %}
             {% else %}
             
             <li class="nav-item">
@@ -52,8 +52,14 @@
           </ul>
           <ul class="navbar-nav ms-auto">
             {% if user.is_authenticated%}
+            
             <li class='nav-item my-auto mx-4'> 
                 <p class='text-white nav-link p-0 m-0'> Hi, {{ user.first_name }} </p>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url "add_profile" %}"
+                > My Profile</a
+                >
             </li>
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url "logout" %}"
