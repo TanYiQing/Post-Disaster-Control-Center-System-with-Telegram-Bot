@@ -1,4 +1,5 @@
 {% extends 'base1.html' %}
+{% load static %}
 
 {% block title %}Home Page{% endblock  %}
 {% block custom_css %}
@@ -8,7 +9,6 @@
             top: 35%;
             left: 50%;
             transform: translate(-50%,-50%);
-
             color: #ffffff;
             background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
             background-position: 0;
@@ -18,9 +18,22 @@
             animation-fill-mode: forwards;
             -webkit-text-size-adjust: none;
             font-weight: 500;
-            font-size: 40px;
+            font-size: 50px;
             text-decoration: none;
             white-space: nowrap;
+        }
+
+        .outer-container{
+            height: 100vh;
+            width: 100vw
+        }
+
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 22%;
+            width: 35vw;
+            text-align: justify;
         }
 
         @keyframes shine{
@@ -100,34 +113,34 @@
         }
 
         @keyframes spin{
-            0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
-            100% { content:"PKOB";}
+            0% { content:"PUSAT KAWALAN OPERASI BENCANA";}
+            100% { content:"PUSAT KAWALAN OPERASI BENCANA (PKOB)";}
         }
         @-moz-keyframes spin{
             0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
-            100% { content:"PKOB";}
+            100% { content:"PUSAT KAWALAN OPERASI BENCANA (PKOB)";}
         }
         @-webkit-keyframes spin{
             0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
-            100% { content:"PKOB";}
+            100% { content:"PUSAT KAWALAN OPERASI BENCANA (PKOB)";}
         }
         @-o-keyframes spin{
             0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
-            100% { content:"PKOB";}
+            100% { content:"PUSAT KAWALAN OPERASI BENCANA (PKOB)";}
         }
         @-ms-keyframes spin{
             0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
-            100% { content:"PKOB";}
+            100% { content:"PUSAT KAWALAN OPERASI BENCANA (PKOB)";}
         }
 
-        @media screen and (min-width: 601px) {
+        @media screen and (min-width: 769px) {
             .shine {
-                font-size: 40px;
+                font-size: 50px;
             }
         }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 768px) {
             .shine {
-                font-size: 20px;
+                font-size: 25px;
             }
         }
         @media screen and (max-width: 320px) {
@@ -140,11 +153,17 @@
 {% endblock  %}
 {% block content_title %}
 <h1 CLASS="mt-5"> PUSAT KAWALAN OPERASI BENCANA</h1>
-
 {% endblock  %}
 {% block content %}
-    <div style="background-color: black; height: 65vh;">
-        <img style="width:100%; height: 100%; opacity: 0.2; object-fit: cover; position: relative" src="https://assets.nst.com.my/images/articles/22SmartST_NSTfield_image_socialmedia.var_1574395516.jpg" class="img-fluid" alt="homeimage">
+    <div class="outer-container">
+        <video style ="width:100%; height: 100%; object-fit: cover; position: relative" src="{% static 'webimage/kedahview.mp4' %}" autoplay muted loop></video>
+        <div class="outer-container" style="background: rgba(0,0,0, 0.3);position: absolute;top: 0% "></div>
         <h1 style="color: white" class="shine"></h1>
+        <div class="container">
+            <h2 style="color: white">We provide house repairs, new house contruction, monthly, assistance and food supplies for victims in Kedah.</h2>
+        </div>
+    </div>
+    <div style="height: 100px">
+
     </div>
 {% endblock  %}

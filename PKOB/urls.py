@@ -18,6 +18,7 @@ from django.urls import path, include
 
 from PKOB import views
 from auth_app import views as v
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +28,6 @@ urlpatterns = [
     path('register/', v.register, name='register'),
     path('login/', v.login, name='login'),
     path('', include('django.contrib.auth.urls')),
-
 ]
+
+urlpatterns += staticfiles_urlpatterns()
