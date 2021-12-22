@@ -22,20 +22,49 @@
             text-decoration: none;
             white-space: nowrap;
         }
-
         .outer-container{
             height: 100vh;
             width: 100vw
         }
-
         .container{
             position: absolute;
             top: 50%;
             left: 22%;
             width: 35vw;
-            text-align: justify;
+            text-align: left;
         }
-
+        .container-title{
+            height: 40vh;
+            width: 95vw;
+            margin:  20px auto;
+            display: flex;
+            justify-content: center;
+        }
+        .container-title-logo{
+            height:20vh;
+            justify-content: center;
+            text-align: center;
+            display: block;
+            margin: 0 20px;
+        }
+        .h2{
+            color: white;
+            font-weight: lighter;
+        }
+        .h3{
+            margin: 0 20px;
+            font-size: 30px;
+            font-weight: lighter;
+        }
+        .h5{
+            font-size: 20px;
+            font-weight: lighter;
+            margin: auto;
+        }
+        .image{
+                height: 100%;
+                margin: 0px 40px;
+        }
         @keyframes shine{
             0%{
                background-position: 0px
@@ -47,66 +76,8 @@
                 background-position: 950px;
                 animation: ease-in-out;
                 -webkit-text-fill-color: white;
-
             }
         }
-        @-moz-keyframes shine{
-            0%{
-               background-position: 0px
-            }
-            60% {
-                background-position: 780px
-            }
-            100% {
-                background-position: 950px;
-                animation: ease-in-out;
-                -webkit-text-fill-color: white;
-
-            }
-        }
-        @-webkit-keyframes shine{
-            0%{
-               background-position: 0px
-            }
-            60% {
-                background-position: 780px
-            }
-            100% {
-                background-position: 950px;
-                animation: ease-in-out;
-                -webkit-text-fill-color: white;
-
-            }
-        }
-        @-o-keyframes shine{
-            0%{
-               background-position: 0px
-            }
-            60% {
-                background-position: 780px
-            }
-            100% {
-                background-position: 950px;
-                animation: ease-in-out;
-                -webkit-text-fill-color: white;
-
-            }
-        }
-        @-ms-keyframes shine{
-            0%{
-               background-position: 0px
-            }
-            60% {
-                background-position: 780px
-            }
-            100% {
-                background-position: 950px;
-                animation: ease-in-out;
-                -webkit-text-fill-color: white;
-
-            }
-        }
-
         .shine:after{
             content: "";
             animation: spin 25s 1 forwards;
@@ -114,22 +85,6 @@
 
         @keyframes spin{
             0% { content:"PUSAT KAWALAN OPERASI BENCANA";}
-            100% { content:"PUSAT KAWALAN OPERASI BENCANA (PKOB)";}
-        }
-        @-moz-keyframes spin{
-            0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
-            100% { content:"PUSAT KAWALAN OPERASI BENCANA (PKOB)";}
-        }
-        @-webkit-keyframes spin{
-            0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
-            100% { content:"PUSAT KAWALAN OPERASI BENCANA (PKOB)";}
-        }
-        @-o-keyframes spin{
-            0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
-            100% { content:"PUSAT KAWALAN OPERASI BENCANA (PKOB)";}
-        }
-        @-ms-keyframes spin{
-            0% { content:"PUSAT KAWALAN OPERASI BENCANA"; }
             100% { content:"PUSAT KAWALAN OPERASI BENCANA (PKOB)";}
         }
 
@@ -140,15 +95,71 @@
         }
         @media screen and (max-width: 768px) {
             .shine {
+                top: 20%;
+                font-size: 30px;
+            }
+            .h2{
                 font-size: 20px;
             }
-        }
-        @media screen and (max-width: 320px) {
-            .shine {
+            .container{
+                top: 25%;
+                left: 25%;
+                width: 50vw;
+            }
+            .outer-container{
+                height: 50vh;
+            }
+            .container-title{
+                height:25vh;
+            }
+            .h3{
+                font-size: 20px;
+            }
+            .h5{
                 font-size: 15px;
             }
+            .image{
+                    height: 80px;
+                    margin: 0px 40px;
+            }
         }
-
+        @media screen and (max-width: 376px) {
+            .shine {
+                top: 20%;
+                font-size: 15px;
+            }
+            .h2{
+                font-size: 10px;
+            }
+            .container{
+                top: 25%;
+                left: 25%;
+                width: 50vw;
+            }
+            .outer-container{
+                height: 50vh;
+            }
+            .container-title{
+                height:90vh;
+                float: left;
+                display: block;
+            }
+            .container-title-logo{
+                float: left;
+                margin: 10px 0px;
+            }
+            .h3{
+                font-size: 20px;
+                margin: auto;
+            }
+            .h5{
+                font-size: 15px;
+            }
+            .image{
+                height: 100px;
+                margin: auto;
+            }
+        }
     </style>
 {% endblock  %}
 {% block content_title %}
@@ -160,10 +171,39 @@
         <div class="outer-container" style="background: rgba(0,0,0, 0.3);position: absolute;top: 0% "></div>
         <h1 style="color: white" class="shine"></h1>
         <div class="container">
-            <h2 style="color: white">We provide house repairs, new house contruction, monthly, assistance and food supplies for victims in Kedah.</h2>
+            <h2 class="h2">We provide Food Supplement, House Repair, New House Construction and Monthly Assistance for victims in Kedah.</h2>
+            <br>
+            <a class="btn btn-primary" href="{% url "request_assistance" %}" role="button" style="border-radius: 50px; font-size: large;padding: 5px 15px">Apply Now</a>
         </div>
     </div>
-    <div style="height: 100px">
-
+    <div class="container-title">
+        <div class="container-title-logo">
+            <h3 class="h3">Food Supplement</h3>
+            <img src="{% static 'webimage/food.png' %}" class="image">
+            <h5 class="h5">Food Supplement is Food Supplement is Food Supplement is Food Supplement is </h5>
+        </div>
+        <div class="container-title-logo">
+            <h3 class="h3">House Repair</h3>
+            <img src="{% static 'webimage/repair.png' %}" class="image">
+            <h5 class="h5">Food Supplement is a Food Supplement is Something that</h5>
+        </div>
+        <div class="container-title-logo">
+            <h3 class="h3">New House Construction</h3>
+            <img src="{% static 'webimage/construction.png' %}" class="image">
+            <h5 class="h5">Food Supplement is a Food Supplement is Food Supplement is Food Supplement is </h5>
+        </div>
+        <div class="container-title-logo">
+            <h3 class="h3">Monthly Assistance</h3>
+            <img src="{% static 'webimage/donation.png' %}" class="image">
+            <h5 class="h5">Food Supplement is a Food Supplement is Food Supplement is Food Supplement is</h5>
+        </div>
+    </div>
+    <hr>
+    <div class="container-title" style="margin-left: 10px; height: 20px">
+        <h3 class="h3" style="font-weight: bold">About Us</h3>
+    </div>
+    <div style="margin: 20px 20px">
+        <h3 class="h5" style="text-align: justify">At the end of each year in Malaysia, monsoons cause frequent occurrences of natural disasters and cause floods. In addition, property loss of residents is inevitable. In response, penghulu in the district formed a post-disaster rescue team to solve the difficulties of the residents. However, with the current methods in black and white, rescue operations cannot be effective and carried out quickly.</h3>
+        <h3 class="h5" style="text-align: justify">In this era of advanced technology, a system can be developed to help Penghulu and the residents to solve all their difficulties. Pusat Kawalan Operasi Bencana (PKOB) is a centralized system that can help the penghulu of a district quickly engage in post-disaster relief operations. This system not only can assist the victims quickly but also avoid the phenomenon of wasting resources. The centralized victims’ data and assistance records can help penghulu to respond faster and trace back the records. Besides that, victims can also apply for assistance through the online method, this saves effort and time compared to the traditional black and white method.</h3>
     </div>
 {% endblock  %}
