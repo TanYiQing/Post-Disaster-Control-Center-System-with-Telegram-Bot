@@ -167,7 +167,7 @@
 {% endblock  %}
 {% block content %}
     <div class="outer-container">
-        <img style ="width:100%; height: 100%; object-fit: cover; position: relative" src="{% static 'webimage/kedahview.png' %}" autoplay muted loop></img>
+        <img style ="width:100%; height: 100%; object-fit: cover; position: relative" src="{% static 'webimage/kedahview.png' %}"></img>
         <div class="outer-container" style="background: rgba(0,0,0, 0.3);position: absolute;top: 0% "></div>
         <h1 style="color: white" class="shine"></h1>
         <div class="container">
@@ -203,7 +203,11 @@
         <h3 class="h3" style="font-weight: bold">About Us</h3>
     </div>
     <div style="margin: 20px 20px">
-        <h3 class="h5" style="text-align: justify">At the end of each year in Malaysia, monsoons cause frequent occurrences of natural disasters and cause floods. In addition, property loss of residents is inevitable. In response, penghulu in the district formed a post-disaster rescue team to solve the difficulties of the residents. However, with the current methods in black and white, rescue operations cannot be effective and carried out quickly.</h3>
+        <div style="float: left">
+            <h3 class="h5" style="text-align: justify">At the end of each year in Malaysia, monsoons cause frequent occurrences of natural disasters and cause floods. In addition, property loss of residents is inevitable. In response, penghulu in the district formed a post-disaster rescue team to solve the difficulties of the residents. However, with the current methods in black and white, rescue operations cannot be effective and carried out quickly.</h3>
+{#            <img style ="height: 45px; object-fit: cover; position: relative" src="{% static 'webimage/logo.png' %}"></img>#}
+        </div>
+
         <h3 class="h5" style="text-align: justify">In this era of advanced technology, a system can be developed to help Penghulu and the residents to solve all their difficulties. Pusat Kawalan Operasi Bencana (PKOB) is a centralized system that can help the penghulu of a district quickly engage in post-disaster relief operations. This system not only can assist the victims quickly but also avoid the phenomenon of wasting resources. The centralized victims’ data and assistance records can help penghulu to respond faster and trace back the records. Besides that, victims can also apply for assistance through the online method, this saves effort and time compared to the traditional black and white method.</h3>
     </div>
 {% endblock  %}
