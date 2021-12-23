@@ -132,8 +132,8 @@
                 <img class="img-fluid" style="filter: brightness(40%)" src="{% static 'webimage/kedahview.png' %}">
                 <h2 class="title text-center"></h2>
                 <div class="container subtitle">
-                    <p class="text-light text-left mb-2">We provide Food Supplement, House Repair, New House Construction and Monthly Assistance for victims in Kedah.</p>
-                    <button class="btn btn-primary apply_button"><a href="{% url "request_assistance" %}" style="text-decoration-line: none; color: white">Apply Now</a></button>
+                    <p class="text-light text-left mb-2" style="font-weight: lighter">We provide Food Supplement, House Repair, New House Construction and Monthly Assistance for victims in Kedah.</p>
+                    <button class="btn btn-primary apply_button" style="border-radius: 50px"><a href="{% url "request_assistance" %}" style="text-decoration-line: none; color: white">Apply Now</a></button>
                 </div>
         </div>
     </section>
@@ -142,49 +142,105 @@
         <div class="container">
             <div class="row mt-4">
                 <div class="col-lg-3 col-md-6 col-xs-12">
-                    <h4 class="text-center">Food Supplement</h4>
+                    <h3 class="text-center" style="font-weight: lighter">Food Supplement</h3>
                     <img src="{% static 'webimage/food.png' %}" class="img-fluid mx-auto d-block" style="width: 60%">
-                    <p class="text-center">Food Supplement is Food Supplement is Food Supplement is Food Supplement is </p>
+                    <p class="text-justify">Food Supplement provide food for victims to solve hunger problem.</p>
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12">
-                    <h4 class="text-center">House Repair</h4>
+                    <h3 class="text-center" style="font-weight: lighter">House Repair</h3>
                     <img src="{% static 'webimage/repair.png' %}" class="img-fluid mx-auto d-block" style="width: 60%">
-                    <p class="text-center">Food Supplement is Food Supplement is Food Supplement is Food Supplement is </p>
+                    <p class="text-justify">House Repair will provide post-disaster team to help victims to repair their house. </p>
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12">
-                    <h4 class="text-center">New House Construction</h4>
+                    <h3 class="text-center" style="font-weight: lighter">New House Construction</h3>
                     <img src="{% static 'webimage/construction.png' %}" class="img-fluid mx-auto d-block" style="width: 60%">
-                    <p class="text-center">Food Supplement is Food Supplement is Food Supplement is Food Supplement is </p>
+                    <p class="text-justify">New house construction is to provide construction services to those who have lost their homes so that they can regain their homes..</p>
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12">
-                    <h4 class="text-center">Monthly Assistance</h4>
+                    <h3 class="text-center" style="font-weight: lighter">Monthly Assistance</h3>
                     <img src="{% static 'webimage/donation.png' %}" class="img-fluid mx-auto d-block" style="width: 60%">
-                    <p class="text-center">Food Supplement is Food Supplement is Food Supplement is Food Supplement is </p>
+                    <p class="text-justify">Monthly assistance is when people apply for financial assistance so that they can get basic needs every month.</p>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <div class="main-footer position ">
-        <div class="footer-middle mt-0 bg-dark text-light">
+        <div class="footer-middle mt-0 bg-light">
             <div class="container">
                 <div class="row footer">
-                    <h4 class="title1 fontsize2 footer-title-text mt-2">About Us</h4>
+                    <h2 class="title1 fontsize1 footer-title-text mt-2">About Us</h2>
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-9 footer">
                         <div class="row">
                             <p style="text-align: justify">At the end of each year in Malaysia, monsoons cause frequent occurrences of natural disasters and cause floods. In addition, property loss of residents is inevitable. In response, penghulu in the district formed a post-disaster rescue team to solve the difficulties of the residents. However, with the current methods in black and white, rescue operations cannot be effective and carried out quickly.</p>
                         </div>
+                        <br>
+                        <div class="row">
+                            <div class="container">
+                                <div class="row justify-content-md-left">
+                                    <div class="col col-lg-auto">
+                                        <h4 style="font-weight: lighter">EASY</h4>
+                                    </div>
+                                    <div class="col col-lg-auto">
+                                        <h2 style="font-weight: lighter">FAST</h2>
+                                    </div>
+                                    <div class="col col-lg-auto">
+                                        <h1 style="font-weight: lighter">EFFICIENT</h1>
+                                    </div>
+                                    <div class="col col-lg-1">
+                                        <img src="{% static 'webimage/ninja.png' %}" class="img-fluid float-right">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                         <div class="row">
                             <p style="text-align: justify">In this era of advanced technology, a system can be developed to help Penghulu and the residents to solve all their difficulties. Pusat Kawalan Operasi Bencana (PKOB) is a centralized system that can help the penghulu of a district quickly engage in post-disaster relief operations. This system not only can assist the victims quickly but also avoid the phenomenon of wasting resources. The centralized victims’ data and assistance records can help penghulu to respond faster and trace back the records. Besides that, victims can also apply for assistance through the online method, this saves effort and time compared to the traditional black and white method.</p>
                         </div>
                     </div>
                     <div class="col-md-3 footer">
-                        <img src="{% static 'webimage/logo.png' %}" class="img-fluid mx-auto my-2 d-block">
+                        <img src="{% static 'webimage/logo.png' %}" class="img-fluid mx-auto my-5 d-block">
                     </div>
                 </div>
+                <hr>
+                <div class="row footer">
+                    <h2 class="title1 fontsize1 footer-title-text mt-2">Contact Us</h2>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-3 footer">
+                        <img src="{% static 'webimage/contactus.png' %}" class="img-fluid mx-auto my-5 d-block">
+                    </div>
+                    <div class="col-md-9 footer">
+                        <div class="row">
+                            <h2 class="text-center fw-light">Get In Touch With Us</h2>
+                        </div>
+                        <br>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                                <div class="card">
+                                    <img src="{% static 'webimage/facebook-logo.png' %}" class="img-fluid mx-auto my-2 d-block w-50" >
+                                    <div class="card-body">
+                                        <h5 class="text-center">FACEBOOK</h5>
+                                        <p class="text-center">Ninja Aid</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="card">
+                                    <img src="{% static 'webimage/gmail-logo.png' %}" class="img-fluid mx-auto my-2 d-block w-50" >
+                                    <div class="card-body">
+                                        <h5 class="text-center">EMAIL</h5>
+                                        <p class="text-center">ninjaaid@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <br>
                 <div class="footer-bottom mt-2">
                     <p class="text-xs-center footer-title-text mb-0">
                         &copy; <script>document.write(new Date().getFullYear())</script> Ninja Aid - PKOB System from Malaysia
