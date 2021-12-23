@@ -1,4 +1,5 @@
-{% extends 'base.html' %}
+{% extends 'base1.html' %}
+{% load static %}
 
 {% block title %}Register{% endblock  %}
 
@@ -16,41 +17,80 @@
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 {% endfor %}
-<form method="POST" class="form-group">
-    {% csrf_token %}
-    <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">IC</label>
-        <div class="col-sm-10">
-          <input type="number"  class="form-control" name='ic'>
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">first name</label>
-        <div class="col-sm-10">
-          <input type="text"  class="form-control" name='first_name'>
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="staticEmail" class="col-sm-2 col-form-label">last name</label>
-        <div class="col-sm-10">
-          <input type="text"  class="form-control" name='last_name'>
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword" name='password'>
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="inputPassword" class="col-sm-2 col-form-label"> Confirm Password</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword" name='confirm_password'>
-        </div>
-    </div>   
-    <p>Already have an account already? <a href='{% url 'login' %}'>login here </a> </p>
-    <button type="submit" class="btn btn-primary">Register</button>
 
-</form>
+    <div class="container">
+        <div class="row my-4 gx-5 gy-2">
+            <div class="col-md-6">
+                <h3 class="mb-4">Login</h3>
+                <form method="POST" class="form-group">
+                    {% csrf_token %}
+                    <div class="mb-4 row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">IC</label>
+                        <div class="col-sm-9">
+                          <input type="number"  class="form-control" name='ic'>
+                        </div>
+                    </div>
+                    <div class="mb-4 row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">first name</label>
+                        <div class="col-sm-9">
+                          <input type="text"  class="form-control" name='first_name'>
+                        </div>
+                    </div>
+                    <div class="mb-4 row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">last name</label>
+                        <div class="col-sm-9">
+                          <input type="text"  class="form-control" name='last_name'>
+                        </div>
+                    </div>
+                    <div class="mb-4 row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+                        <div class="col-sm-9">
+                          <input type="password" class="form-control" id="inputPassword" name='password'>
+                        </div>
+                    </div>
+                    <div class="mb-4 row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label"> Confirm Password</label>
+                        <div class="col-sm-9">
+                          <input type="password" class="form-control" id="inputPassword" name='confirm_password'>
+                        </div>
+                    </div>
+                    <p >Already have an account already? <a href='{% url 'login' %}'>login here </a> </p>
+                    <button type="submit" class="btn btn-primary mb-3">Register</button>
 
+                </form>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid" style="filter: brightness(90%)" src="{% static 'webimage/register.jpg' %}">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="main-footer position ">
+        <div class="footer-middle mt-0 bg-dark text-light">
+            <div class="container">
+                <div class="row footer">
+                    <h4 class="title1 fontsize2 footer-title-text mt-2">About Us</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-9 footer">
+                        <div class="row">
+                            <p style="text-align: justify">At the end of each year in Malaysia, monsoons cause frequent occurrences of natural disasters and cause floods. In addition, property loss of residents is inevitable. In response, penghulu in the district formed a post-disaster rescue team to solve the difficulties of the residents. However, with the current methods in black and white, rescue operations cannot be effective and carried out quickly.</p>
+                        </div>
+                        <div class="row">
+                            <p style="text-align: justify">In this era of advanced technology, a system can be developed to help Penghulu and the residents to solve all their difficulties. Pusat Kawalan Operasi Bencana (PKOB) is a centralized system that can help the penghulu of a district quickly engage in post-disaster relief operations. This system not only can assist the victims quickly but also avoid the phenomenon of wasting resources. The centralized victims’ data and assistance records can help penghulu to respond faster and trace back the records. Besides that, victims can also apply for assistance through the online method, this saves effort and time compared to the traditional black and white method.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 footer">
+                        <img src="{% static 'webimage/logo.png' %}" class="img-fluid mx-auto my-2 d-block">
+                    </div>
+                </div>
+                <div class="footer-bottom mt-2">
+                    <p class="text-xs-center footer-title-text mb-0">
+                        &copy; <script>document.write(new Date().getFullYear())</script> Ninja Aid - PKOB System from Malaysia
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock  %}
