@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'victim_app',
-    'auth_app'
+    'auth_app',
+    'management_app'
 ]
 
 MIDDLEWARE = [
