@@ -34,6 +34,14 @@
             border-radius: 15px;
         }
 
+        .msocial{
+            font-size: 1.5rem;
+        }
+
+        .msocial_link{
+            font-size: 1rem;
+        }
+
         @keyframes title{
             0%{
                background-position: 0px
@@ -80,6 +88,8 @@
                 width: 52%;
                 left:25%;}
             .apply_button{width: 23%;font-size:12px;}
+            .msocial{font-size: 1rem}
+            .msocial_link{font-size: .5rem}
         }
 
         @media all and (min-width: 601px) and (max-width: 768px) {
@@ -89,6 +99,8 @@
                 width: 56%;
                 left:22%;}
             .apply_button{width: 24%;font-size:10px;}
+            .msocial{font-size: 1rem}
+            .msocial_link{font-size: .5rem}
         }
 
         @media all and (min-width: 500px) and (max-width: 600px) {
@@ -100,6 +112,8 @@
                 width: 57%;
                 left: 20%;}
             .apply_button{width: 25%;font-size:8px;}
+            .msocial{font-size: .1rem}
+            .msocial_link{font-size: .5rem}
         }
 
         @media all and (min-width: 321px) and (max-width: 499px) {
@@ -109,6 +123,8 @@
                 width: 50%;
                 left: 25%;}
             .apply_button{width: 35%;font-size:6px;}
+            .msocial{font-size: .7rem}
+            .msocial_link{font-size: .35rem}
         }
 
         @media all and (max-width: 320px) {
@@ -118,6 +134,8 @@
                 width: 50%;
                 left: 25%;}
             .apply_button{width: 38%;font-size:6px;}
+            .msocial{font-size: .7rem}
+            .msocial_link{font-size: .35rem}
         }
     </style>
 {% endblock  %}
@@ -197,7 +215,7 @@
                         </div>
                         <br>
                         <div class="row">
-                            <p style="text-align: justify">In this era of advanced technology, a system can be developed to help Penghulu and the residents to solve all their difficulties. Pusat Kawalan Operasi Bencana (PKOB) is a centralized system that can help the penghulu of a district quickly engage in post-disaster relief operations. This system not only can assist the victims quickly but also avoid the phenomenon of wasting resources. The centralized victims’ data and assistance records can help penghulu to respond faster and trace back the records. Besides that, victims can also apply for assistance through the online method, this saves effort and time compared to the traditional black and white method.</p>
+                            <p style="text-align: justify">In this era of advanced technology, a system can be developed to help Penghulu and the residents to solve all their difficulties. Ninja Aid is a centralized system that can help the penghulu of a district quickly engage in post-disaster relief operations. This system not only can assist the victims quickly but also avoid the phenomenon of wasting resources. The centralized victims’ data and assistance records can help penghulu to respond faster and trace back the records. Besides that, victims can also apply for assistance through the online method, this saves effort and time compared to the traditional black and white method.</p>
                         </div>
                     </div>
                     <div class="col-md-3 footer">
@@ -222,8 +240,10 @@
                                 <div class="card">
                                     <img src="{% static 'webimage/facebook-logo.png' %}" class="img-fluid mx-auto my-2 d-block w-50" >
                                     <div class="card-body">
-                                        <h5 class="text-center">FACEBOOK</h5>
-                                        <p class="text-center">Ninja Aid</p>
+                                        <h5 class="msocial text-center">FACEBOOK</h5>
+                                        <a href="https://www.facebook.com/ninjaaidpkob/">
+                                            <p class="msocial_link text-center">Ninja Aid-PKOB</p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -231,8 +251,8 @@
                                 <div class="card">
                                     <img src="{% static 'webimage/gmail-logo.png' %}" class="img-fluid mx-auto my-2 d-block w-50" >
                                     <div class="card-body">
-                                        <h5 class="text-center">EMAIL</h5>
-                                        <p class="text-center">ninjaaid@gmail.com</p>
+                                        <h5 class="msocial text-center">EMAIL</h5>
+                                        <p class="msocial_link text-center">ninjaaidpkob@gmail.com</p>
                                     </div>
                                 </div>
                             </div>
