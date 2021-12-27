@@ -1,8 +1,9 @@
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db.models.fields import CharField
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from django.db import models
+
 
 class CustomUserManager(BaseUserManager):
     """Define a model manager for User model with no username field."""
@@ -32,14 +33,18 @@ class CustomUserManager(BaseUserManager):
             raise ValueError('Superuser must have is_superuser=True.')
 
         return self._create_user(ic, password, **extra_fields)
+
+
 # Create your models here.
 class CustomUser(AbstractUser):
     username = None
-    ic = CharField(max_length=12, unique=True, verbose_name='IC Number', blank=False, help_text='Enter 12 digits ic number')
+    ic = CharField(max_length=12, unique=True, verbose_name='IC Number', blank=False,
+                   help_text='Enter 12 digits ic number')
 
     USERNAME_FIELD = 'ic'
     REQUIRED_FIELDS = []
 
     objects = CustomUserManager()
+
     def __str__(self):
         return self.first_name + self.last_name
