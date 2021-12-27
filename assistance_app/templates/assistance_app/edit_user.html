@@ -1,76 +1,72 @@
-{% extends 'base.html' %}
+{% extends 'base1.html' %}
 
-{% block title %}Edit User{% endblock  %}
+{% block title %}Assistance List{% endblock  %}
 
 {% block custom_css %}
 
 {% endblock  %}
-{% block content_title %}
-<h1> Edit User </h1>
-{% endblock  %}
 
 {% block content %}
-            <form action="" method="post">
-            {% csrf_token %}
-                <h1>Request Assistance</h1>
-                <div class="row">
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="formGroupExampleInput" class="form-label">User ID :</label>
-                            <input type="text" class="form-control" maxlength="12" name="user_id" placeholder="1213521" value={{ user.id  }} readonly>
-                        </div>
-                    </div>
-                    <div class="col"></div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="formGroupExampleInput" class="form-label">Name</label>
-                            <input type="text" class="form-control" maxlength="12" name="name" placeholder="e.g Joseph Dyson ( Without '-' )" value='{{ user.first_name  }}{{ user.last_name  }}' required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="formGroupExampleInput" class="form-label">Victim Number</label>
-                            <input type="number" class="form-control" min="1" name="victim_num" value='{{ my_assistance.victim_number  }}' required>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="formGroupExampleInput" class="form-label">IC Number</label>
-                            <input type="text" class="form-control" maxlength="12" name="ic_no" placeholder="e.g 123456789101 ( Without '-' )" value='{{ user.ic  }}' required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="formGroupExampleInput" class="form-label">Assistance Type</label>
-                            <select class="form-select form-select-md mb-3" aria-label=".form-select-md example" name="assistance_type">
-                                {% for assistance_type in assistance_types %}
-                            
-                                <option value="{{ assistance_type.id }}" {% if my_assistance.id == assistance_type.id  %}selected{% endif %} >{{ assistance_type }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
 
-                    </div>
-                    <div class="col">
-                        <p>Assistance description will be write at here as a p</p>
-                    </div>
+    <div class="container">
+        <h1 class="mt-5 text-center"> Assistance Applied Record </h1>
+        <div class="row mt-5">
+            <div class="col-12">
+                <table id="example" class="table table-bordered table-striped table-hover ">
+                  <thead class="bg-dark text-light">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Ic Number</th>
+                        <th scope="col">Assistance Type</th>
+                        <th scope="col">Victim Number</th>
+                        <th scope="col">Progress Percentage</th>
+                        <th scope="col">Assistance Given Date</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for assistance in assistances %}
+                        <tr>
+                            <td>{{ assistance.user.first_name }} {{ assistance.user.last_name }}</td>
+                            <td>{{ assistance.user.ic }}</td>
+                            <td>{{ assistance.assistance_type }}</td>
+                            <td>{{ assistance.victim_number }}</td>
+                            <td>{{ assistance.progress_percentage }}%</td>
+                            <td>{% if  not assistance.assistance_given_date  %}
+                                    not given
+                                {% else %}
+                                    {{ assistance.assistance_given_date }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if assistance.is_approved  %}
+                                Approved
+                                {% else %}
+                                not yet approved
+                                {% endif %}
+                            </td>
+                            <td><a href="{% url "edit_assistance_type" assistance.id %}"><button class="btn" type="button" style="background-color: darkgrey"><i class="bi bi-pencil"></i></button></a></td>
+                        </tr>
+                    {% endfor%}
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
-                </div>
-                <div class="row">
-                    <div class="mb-3">
-                        <label for="formGroupExampleInput" class="form-label" >Remark</label>
-                        <textarea type="text" class="form-control" >
-                            {{ my_assistance.remark  }}
-                        </textarea>
-                    </div>
-                </div>
-                <div style="text-align: right">
-                    <button type="reset" class="btn btn-primary btn-lg" style="background-color: red;border-color: transparent">Cancel</button>
-                    <button type="submit" class="btn btn-secondary btn-lg" style="background-color: #2a2c2e;border-color: transparent">Submit</button>
-                </div>
-            </form>
-        <div style="height: 50px"></div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" class="init">
+    $(document).ready( function (){
 
-{% endblock %}
+        var events = $('#events');
+        var table = $('#example').DataTable( {
+            select: true,
+            "pagingType": "full_numbers",
+        })
+    });
+    </script>
+
+{% endblock  %}

@@ -22,5 +22,12 @@
       <jdbc-url>jdbc:postgresql://ec2-3-230-219-251.compute-1.amazonaws.com:5432/db8pni0eo87s4m</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="db.sqlite3" uuid="cb67f05e-25d3-4d15-b942-81a1bb3b11af">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db.sqlite3</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
