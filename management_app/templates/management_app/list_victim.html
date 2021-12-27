@@ -1,6 +1,6 @@
 {#This Page is for penghulu to view victim list, and also their bantuan.#}
 {#With this page, penghulu can also update victim's bantuan, and delete victim's bantuan too#}
-{% extends "base.html" %}
+{% extends "adminbase.html" %}
 {% block title %}
 Victim List
 {% endblock %}
@@ -12,6 +12,80 @@ Victim List
 {% endblock  %}
 {% block content %}
 
+    <div class="container">
+        <div class="row mt-4">
+            <h1 class="text-center mb-3">Victim List</h1>
+            <div class="col">
+                <table id="example" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Victim Name</th>
+                            <th>Ic Number</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Daerah</th>
+                            <th>Parlimen</th>
+                            <th>DUN</th>
+                            <th>Assistance Type</th>
+                            <th>Victim Number</th>
+                            <th>Progress Percentage(%)</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Tan Yi Qing</td>
+                            <td>991227075445</td>
+                            <td>0124568887</td>
+                            <td>Rumah</td>
+                            <td>Seberang Perai</td>
+                            <td>Bukit Mertajam</td>
+                            <td>Tokun</td>
+                            <td>Food Supplement</td>
+                            <td>20</td>
+                            <td>80</td>
+                            <td>Good</td>
+                            <td><a href=""><button class="btn" type="button" style="background-color: darkgrey"><i class="bi bi-pencil"></i></button></a></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>No</th>
+                            <th>Victim Name</th>
+                            <th>Ic Number</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Daerah</th>
+                            <th>Parlimen</th>
+                            <th>DUN</th>
+                            <th>Assistance Type</th>
+                            <th>Victim Number</th>
+                            <th>Progress Percentage(%)</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" class="init">
+    $(document).ready( function (){
+
+        var events = $('#events');
+        var table = $('#example').DataTable( {
+            select: true,
+            "pagingType": "full",
+        })
+    });
+    </script>
 {% endblock %}
 {% block custom_js %}
 

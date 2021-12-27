@@ -8,7 +8,7 @@
     <div class="row mt-2">
         <div class="col">
             <div class="row my-3 text-center"><h1>List of Victims</h1></div>
-            <table class="table table-bordered table-striped table-hover  ">
+            <table id="example" class="table table-bordered table-striped table-hover  ">
                 <thead class="bg-dark text-light">
                 <tr style="text-align: center;">
                     <th scope="col">IC Number</th>
@@ -43,6 +43,21 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" class="init">
+    $(document).ready( function (){
+
+        var events = $('#events');
+        var table = $('#example').DataTable( {
+            select: true,
+            "pagingType": "full",
+        })
+    });
+    </script>
+
     {% if status %}
         <script>
             alert("{{status}}");
