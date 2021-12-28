@@ -19,14 +19,14 @@ class Assistance(models.Model):
     progress_percentage = models.DecimalField(max_digits=3, decimal_places=2, verbose_name='Progress Percentage', null=True, blank=True, default='0.0')
     victim_number = models.IntegerField(verbose_name='Victim Number')
     is_approved = models.BooleanField(verbose_name='Is Approved', default=False)
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True, related_name='assistance')
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True, related_name='assistance_list')
     assistance_type = models.ForeignKey(AssistanceType, on_delete=models.CASCADE, related_name='assistance_type')
     assistance_given_date = models.DateField(verbose_name='Assistance Given Date', null=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created at')
     updated_at = models.DateTimeField(auto_now_add=True, verbose_name='Updated at')
 
-    def __str__(self):
-        return self.user.username + "-" + self.assistance_type.name
+    # def __str__(self):
+    #     return self.user.username + "-" + self.assistance_type.name
 
 
 
