@@ -78,17 +78,23 @@ WSGI_APPLICATION = 'PKOB.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'db8pni0eo87s4m',
+#         'USER': 'otzsyrqryrirma',
+#         'PASSWORD': '5a660d00bac77b2e05cb8cf5e13fc78ba513c4052ba5357a6e179147e0a9e6b0',
+#         'HOST': 'ec2-3-230-219-251.compute-1.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db8pni0eo87s4m',
-        'USER': 'otzsyrqryrirma',
-        'PASSWORD': '5a660d00bac77b2e05cb8cf5e13fc78ba513c4052ba5357a6e179147e0a9e6b0',
-        'HOST': 'ec2-3-230-219-251.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -143,3 +149,4 @@ AUTH_USER_MODEL = 'auth_app.CustomUser'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/login'

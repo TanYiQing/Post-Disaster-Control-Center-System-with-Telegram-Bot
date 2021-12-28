@@ -16,19 +16,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            {% if user.is_authenticated%}
-            <li class="nav-item">
+            {% if user.is_authenticated and user.is_staff%}
+            {% comment %} <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url "" %}">
                     <div style="border-style:solid; border-width: 1px; padding: 0px 4px;border-radius: 4px">
                     <span class="bi bi-layers-half"> Add Victim Details</span>
                     </div>
                 </a
                 >
-            </li>
+            </li> {% endcomment %}
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url "" %}"><span class="bi bi-card-list"> List Victim Details</span></a
+                <a class="nav-link active" aria-current="page" href="{% url "list_victim" %}"><span class="bi bi-card-list"> List Victim Details</span></a
                 >
-            </li>
+            </li> 
             {% else %}
 
             <li class="nav-item">
@@ -45,7 +45,7 @@
 
           </ul>
           <ul class="navbar-nav ms-auto">
-            {% if user.is_authenticated%}
+            {% if user.is_authenticated and user.is_staff%}
 
             <li class='nav-item my-auto mx-4'>
                 <p class='text-white nav-link p-0 m-0'> Hi, {{ user.first_name }} </p>
