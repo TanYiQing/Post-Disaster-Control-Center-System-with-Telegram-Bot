@@ -37,6 +37,7 @@ class CustomUserManager(BaseUserManager):
 
 # Create your models here.
 class CustomUser(AbstractUser):
+    
     username = None
     ic = CharField(max_length=12, unique=True, verbose_name='IC Number', blank=False,
                    help_text='Enter 12 digits ic number')
@@ -48,3 +49,6 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.first_name + self.last_name
+    
+    class Meta:
+        db_table = 'auth_user'
