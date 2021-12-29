@@ -71,8 +71,11 @@ def register(req):
 
 
 def login(request):
+    if request.user.is_authenticated and request.user.is_staff:
+        return redirect('/management/listvictim/')
     if request.user.is_authenticated:
         return redirect('/')
+    
     if request.method == 'POST':
         ic = request.POST['ic']
         password = request.POST['password']
@@ -83,7 +86,7 @@ def login(request):
             try:
                 has_profile = user.profile is not None
                 if has_profile:
-                    return redirect('/')
+                    return redirect('/login')
 
             except:
                 print('user has no profile')

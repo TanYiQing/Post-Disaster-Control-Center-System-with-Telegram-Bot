@@ -24,10 +24,10 @@ Victim List
                             <th>Ic Number</th>
                             <th>Phone</th>
                             <th>Address</th>
-                            <th>Daerah</th>
+                            <th>Bandar</th>
+                            <th>Mukim</th>
                             <th>Parlimen</th>
-                            <th>DUN</th>
-                            <th>Phone</th>
+                            <th>Negeri</th>
                             <th>Total assistance request</th>
                             <th>action</th>
                             {% comment %} <th>Progress Percentage(%)</th>
@@ -42,13 +42,13 @@ Victim List
                             <td>{{victim.first_name}} {{victim.last_name}}</td>
                             <td>{{victim.ic}}</td>
                             <td>{{victim.profile.phone}}</td>
-                            <td>{{victim.profile.phone}}</td>
-                            <td>{{victim.profile.address1}}</td>
-                            <td>{{victim.profile.address2}}</td>
+                            <td>{{victim.profile.address1}}, {{victim.profile.address2}}</td>
                             <td>{{victim.profile.city}}</td>
-                            <td>{{victim.profile.city}}</td>
+                            <td>{{victim.profile.mukim}}</td>
+                            <td>{{victim.profile.parlimen}}</td>
+                            <td>{{victim.profile.state}}</td>
                             <td>{{victim.assistance_list.count}}</td>
-                            <td><a href="{% url 'view_victim_assistance' victim.id %}">view assitance</a></td>
+                            <td><a href="{% url 'view_victim_assistance' victim.id %}"><i class="bi bi-search"></i></a></td>
                         </tr>
                         {% endfor %}
                         {% comment %} <tr>

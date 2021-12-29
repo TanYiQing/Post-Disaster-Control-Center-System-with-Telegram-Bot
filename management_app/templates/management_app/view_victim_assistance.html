@@ -45,17 +45,17 @@
                             <td>{{assistance.remark}}</td>
                             <td>{% if assistance.is_approved %}approved {% else %} not approved{% endif %}</td>
                             <td>
-                                <form action="" method="post">
+                                <form action="" method="post" class='m-2'>
                                     {% csrf_token %}
                                     <input type="hidden" name="assistance_id" value='{{ assistance.id }}'>
-                                    <button>{% if assistance.is_approved %}disapprove {% else %} approve{% endif %}</button>
+                                    <button class="btn btn-primary">{% if assistance.is_approved %}disapprove {% else %} approve{% endif %}</button>
                                 </form>
-                                <form action="{% url 'delete_victim_assistance' victim.id %}" method="post">
+                                <form action="{% url 'delete_victim_assistance' victim.id %}" method="post" class='m-2'>
                                     {% csrf_token %}
                                     <input type="hidden" name="assistance_id" value='{{ assistance.id }}'>
-                                    <button>delete</button>
+                                    <button class="btn btn-danger">delete</button>
                                 </form>
-                                <a href="{% url 'edit_victim_assistance' victim.id assistance.id %}">edit</a>
+                                <a class='m-2 btn btn-info text-white' href="{% url 'edit_victim_assistance' victim.id assistance.id %}">edit</a>
                             </td>
                           
                         </tr>
