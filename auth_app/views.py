@@ -82,6 +82,8 @@ def login(request):
         user = authenticate(request, ic=ic, password=password)
         if user is not None:
             login_process(request, user)
+            if user.is_staff:
+                return redirect('/management/listvictim/')
 
             try:
                 has_profile = user.profile is not None
