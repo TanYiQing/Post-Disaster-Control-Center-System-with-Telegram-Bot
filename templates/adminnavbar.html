@@ -26,9 +26,13 @@
                 >
             </li> {% endcomment %}
             <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url "dashboard" %}"><span class="bi bi-house"> Home</span></a
+                >
+            </li>
+            <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url "list_victim" %}"><span class="bi bi-card-list"> List Victim Details</span></a
                 >
-            </li> 
+            </li>
             {% else %}
 
             <li class="nav-item">
