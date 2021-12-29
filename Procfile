@@ -1,2 +1,2 @@
-release: python manage.py migrate auth_app
+release: python manage.py migrate
 web: gunicorn PKOB.wsgi

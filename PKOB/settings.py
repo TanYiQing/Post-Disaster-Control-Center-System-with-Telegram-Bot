@@ -30,16 +30,17 @@ ALLOWED_HOSTS = ['127.0.0.1','ninja-aid.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'assistance_app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'victim_app',
+    'assistance_app',
     'auth_app',
+    'victim_app',
     'management_app'
+  
 ]
 
 MIDDLEWARE = [
