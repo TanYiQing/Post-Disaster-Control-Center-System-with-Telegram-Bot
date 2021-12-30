@@ -20,14 +20,15 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                        Testing1
+                                        Total Victim
                                     </div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
                                     <div class="col">
                                     </div>
                                 </div>
                                 <div class="col-auto">
-                                    <a href=""><i class="bi bi-search"></i></a></div>
+                                    <a href=""><i class="bi bi-people-fill"
+                                                  style="color: black; font-size:32px"></i></a></div>
                             </div>
                         </div>
                     </div>
@@ -38,14 +39,15 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                        Testing2
+                                        Total Assistance Request
                                     </div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
                                     <div class="col">
                                     </div>
                                 </div>
                                 <div class="col-auto">
-                                    <a href=""><i class="bi bi-search "></i></a></div>
+                                    <a href=""><i class="bi bi-file-earmark-person"
+                                                  style="color: black; font-size:32px;"></i></a></div>
                             </div>
                         </div>
                     </div>
@@ -56,14 +58,15 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                        Testing3
+                                        Total Pending Request
                                     </div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
                                     <div class="col">
                                     </div>
                                 </div>
                                 <div class="col-auto">
-                                    <a href=""><i class="bi bi-search "></i></a></div>
+                                    <a href=""><i class="bi bi-arrow-clockwise"
+                                                  style="color: black; font-size:32px"></i></a></div>
                             </div>
                         </div>
                     </div>
@@ -74,29 +77,46 @@
                             <div class="row no-gutters align-items-center ">
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                        Testing4
+                                        Total Approval Request
                                     </div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
                                     <div class="col">
                                     </div>
                                 </div>
                                 <div class="col-auto">
-                                    <a href=""><i class="bi bi-search "></i></a></div>
+                                    <a href=""><i class="bi bi-check2-square"
+                                                  style="color: black;font-size:32px"></i></a></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="card shadow mb-4">
-                    <div class="card-header bg-transparent py-3 d-flex flex-row ">
-                        <h6 class="m-0 font-weight-bold text-gray-800">
-                            Chart
-                        </h6>
+                <div class="col-xl-6 col-lg-7">
+                    <div class="card shadow mb-4">
+                        <div class="card-header bg-transparent py-3 d-flex flex-row ">
+                            <h6 class="m-0 font-weight-bold text-gray-800">
+                                Percentage by Assistance Type (Pie)
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="col-md-5">
+                                <canvas id="chart-line"></canvas>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <div class="col-md-5">
-                            <canvas id="chart-line"></canvas>
+                </div>
+                <div class="col-xl-6 col-lg-7">
+                    <div class="card shadow mb-4">
+                        <div class="card-header bg-transparent py-3 d-flex flex-row ">
+                            <h6 class="m-0 font-weight-bold text-gray-800">
+                                Number of People by District (Bar)
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="col-md-5">
+                                <canvas id="chart-line"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
