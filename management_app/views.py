@@ -20,7 +20,8 @@ def dashboard(request):
             total_pending += 1
 
     return render(request, 'management_app/dashboard.html',
-                  {'victims': victims, 'assistance': assistance, 'assistance_types': assistance_types, 'total_approval': str(total_approval), 'total_pending': str(total_pending)})
+                  {'victims': victims, 'assistance': assistance, 'assistance_types': assistance_types,
+                   'total_approval': total_approval, 'total_pending': total_pending})
 
 
 @login_required

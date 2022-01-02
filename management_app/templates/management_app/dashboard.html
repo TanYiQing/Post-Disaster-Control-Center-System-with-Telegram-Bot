@@ -72,7 +72,7 @@
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                          {{ total_pending }}
+                                                        {{ total_pending }}
                                                     </div>
                                                 </div>
 
@@ -174,7 +174,24 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         let myChart = document.getElementById('myChart1').getContext('2d');
-
+        total_food = 0
+        total_house_repair = 0
+        total_house_rebuild = 0
+        total_zakat = 0
+        {% for i in assistance %}
+            {% if i.assistance_type.name == 'Food Suplement' %}
+                total_food += 1
+            {% endif %}
+            {% if i.assistance_type.name == 'House Repair' %}
+                total_house_repair += 1
+            {% endif %}
+            {% if i.assistance_type.name == 'House Rebuild' %}
+                total_house_rebuild += 1
+            {% endif %}
+            {% if i.assistance_type.name == 'Zakat' %}
+                total_zakat += 1
+            {% endif %}
+        {% endfor %}
         let massPopChart = new Chart(myChart, {
 
             type: 'bar',
@@ -182,7 +199,7 @@
                 labels: ['Food Suplement', 'House Repair', 'House Rebuild', 'Zakat'],
                 datasets: [
                     {
-                        data: [12, 19, 3, 5, 2],
+                        data: [total_food, total_house_repair, total_house_rebuild, total_zakat],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
