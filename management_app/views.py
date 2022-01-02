@@ -8,7 +8,8 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 
 def dashboard(request):
-    return render(request, 'management_app/dashboard.html')
+    victims = Victim.objects.all()
+    return render(request, 'management_app/dashboard.html', {'victims': victims})
 
 
 @login_required
