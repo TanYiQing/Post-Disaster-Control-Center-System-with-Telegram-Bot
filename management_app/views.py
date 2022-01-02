@@ -9,7 +9,18 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 def dashboard(request):
     victims = Victim.objects.all()
-    return render(request, 'management_app/dashboard.html', {'victims': victims})
+    assistance = Assistance.objects.all()
+    assistance_types = AssistanceType.objects.all()
+    total_pending = 0
+    total_approval = 0
+    for i in assistance:
+        if i.is_approved:
+            total_approval += 1
+        else:
+            total_pending += 1
+
+    return render(request, 'management_app/dashboard.html',
+                  {'victims': victims, 'assistance': assistance, 'assistance_types': assistance_types, 'total_approval': str(total_approval), 'total_pending': str(total_pending)})
 
 
 @login_required
@@ -29,7 +40,9 @@ def view_victim_assistance(request, id):
         updated_assistance.is_approved = not updated_assistance.is_approved
         updated_assistance.save()
 
-    return render(request, 'management_app/view_victim_assistance.html', {'victim': victim, 'victim_assistance_list': victim_assistance_list})
+    return render(request, 'management_app/view_victim_assistance.html',
+                  {'victim': victim, 'victim_assistance_list': victim_assistance_list})
+
 
 @login_required
 def delete_victim_assistance(request, id):
@@ -69,8 +82,8 @@ def edit_victim_assistance(request, victim_id, assistance_id):
         victim_assistance.remark = request.POST['remark']
         victim_assistance.save()
 
-    return render(request, 'management_app/edit_victim_assistance.html', {'victim': victim, 'victim_assistance': victim_assistance, 'assistance_types': assistance_types})
-
+    return render(request, 'management_app/edit_victim_assistance.html',
+                  {'victim': victim, 'victim_assistance': victim_assistance, 'assistance_types': assistance_types})
 
 # @user_passes_test(lambda user: user.is_staff)
 # def add_victim(request):

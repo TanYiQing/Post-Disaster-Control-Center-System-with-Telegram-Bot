@@ -47,7 +47,12 @@
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Total Assistance Request
                                             </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                {% if assistance %}
+                                                    {{ assistance|length }}
+                                                {% else %} 0
+                                                {% endif %}
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="bi bi-file-earmark-person h3" style="color: #dee2e6"></i>
@@ -66,15 +71,11 @@
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">1</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                             style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                             aria-valuemax="100"></div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                          {{ total_pending }}
                                                     </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -92,7 +93,9 @@
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 Total Approval Request
                                             </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                {{ total_approval }}
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="bi bi-check2-square h3" style="color: #dee2e6"></i>
@@ -159,9 +162,6 @@
                             <div class="chart-bar">
                                 <canvas id="myChart1"></canvas>
                             </div>
-                            <hr>
-                            Styling for the bar chart can be found in the
-                            <code>/js/demo/chart-bar-demo.js</code> file.
                         </div>
                     </div>
                 </div>
