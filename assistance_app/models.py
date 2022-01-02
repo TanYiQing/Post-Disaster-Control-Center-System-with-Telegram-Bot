@@ -1,5 +1,5 @@
 from django.db import models
-from auth_app.models import CustomUser
+from victim_app.models import Victim
 
 
 class AssistanceType(models.Model):
@@ -19,7 +19,7 @@ class Assistance(models.Model):
     progress_percentage = models.DecimalField(max_digits=3, decimal_places=2, verbose_name='Progress Percentage', null=True, blank=True, default='0.0')
     victim_number = models.IntegerField(verbose_name='Victim Number')
     is_approved = models.BooleanField(verbose_name='Is Approved', default=False)
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True, related_name='assistance_list')
+    victim = models.ForeignKey(Victim, on_delete=models.CASCADE, null=True, related_name='assistance_list')
     assistance_type = models.ForeignKey(AssistanceType, on_delete=models.CASCADE, related_name='assistance_type')
     assistance_given_date = models.DateField(verbose_name='Assistance Given Date', null=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created at')

@@ -1,12 +1,10 @@
 from django.db import models
-from django.db.models.fields.related import OneToOneField
-from auth_app.models import CustomUser
 
 
-class Profile(models.Model):
-    # ic = models.CharField(primary_key=True, max_length=255, verbose_name='Ic')
-    # name = models.CharField(max_length=255, verbose_name='Name')
-    user = OneToOneField(CustomUser,on_delete=models.CASCADE, null=True,related_name='profile')
+class Victim(models.Model):
+    ic = models.CharField(max_length=12, unique=True, verbose_name='IC Number', blank=False,
+                   help_text='Enter 12 digits ic number')
+    name = models.CharField(max_length=255, verbose_name='Name')
     phone = models.CharField(max_length=255, verbose_name='Phone Number')
     is_kir = models.BooleanField(default=True, verbose_name='Ketua Isi Rumah')
     salary = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='Salary')
