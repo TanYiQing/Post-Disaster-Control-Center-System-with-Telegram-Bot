@@ -25,7 +25,11 @@
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Total Victim
                                             </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                {% if victims %}
+                                                    {{ victims|length }}
+                                                {% endif %}
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="bi bi-people-fill h3" style="color: #dee2e6"></i>
