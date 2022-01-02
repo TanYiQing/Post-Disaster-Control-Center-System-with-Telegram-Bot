@@ -59,6 +59,9 @@ def register(req):
         if password != confirm_password:
             messages.error(req, 'Passwords did not match')
             return redirect('register')
+        if CustomUser.objects.filter(ic=ic).exists():
+            messages.error(req, 'IC number is already exist.')
+            return redirect('register')
 
         try:
             user = CustomUser.objects.create_user(
