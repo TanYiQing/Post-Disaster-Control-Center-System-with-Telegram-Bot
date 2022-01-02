@@ -123,28 +123,36 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <th>Malaysian</th>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>3</td>
-                            <td>5</td>
-                            <td>10</td>
+                            <th>Below RM2500</th>
+                            <td id="total_food_and_below_2500"></td>
+                            <td id="total_house_repair_and_below_2500"></td>
+                            <td id="total_house_rebuild_and_below_2500"></td>
+                            <td id="total_zakat_and_below_2500"></td>
+                            <td id="total_below_2500"></td>
                         </tr>
                         <tr>
-                            <th>Non Malaysian</th>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>5</td>
-                            <td>3</td>
-                            <td>11</td>
+                            <th>RM2501 - RM5000</th>
+                            <td id="total_food_and_between_2500"></td>
+                            <td id="total_house_repair_and_between_2500"></td>
+                            <td id="total_house_rebuild_and_between_2500"></td>
+                            <td id="total_zakat_and_between_2500"></td>
+                            <td id="total_between_2500"></td>
+                        </tr>
+                        <tr>
+                            <th>Above RM5000</th>
+                            <td id="total_food_and_above_5000"></td>
+                            <td id="total_house_repair_and_above_5000"></td>
+                            <td id="total_house_rebuild_and_above_5000"></td>
+                            <td id="total_zakat_and_above_5000"></td>
+                            <td id="total_above_5000"></td>
                         </tr>
                         <tr>
                             <th>Total</th>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>8</td>
-                            <td>8</td>
-                            <td>21</td>
+                            <td id="total_food_table"></td>
+                            <td id="total_house_repair_table"></td>
+                            <td id="total_house_rebuild_table"></td>
+                            <td id="total_zakat_table"></td>
+                            <td id="total"></td>
                         </tr>
                         </tbody>
                     </table>
@@ -230,10 +238,106 @@
                 }
             }
         });
+    </script>
+    <script>
+        function tableCalculation() {
+            let total_food_and_below_2500 = 0;
+            let total_food_and_between_2500 = 0;
+            let total_food_and_above_5000 = 0;
+            let total_house_repair_and_below_2500 = 0;
+            let total_house_repair_and_between_2500 = 0;
+            let total_house_repair_and_above_5000 = 0;
+            let total_house_rebuild_and_below_2500 = 0;
+            let total_house_rebuild_and_between_2500 = 0;
+            let total_house_rebuild_and_above_5000 = 0;
+            let total_zakat_and_below_2500 = 0;
+            let total_zakat_and_between_2500 = 0;
+            let total_zakat_and_above_5000 = 0;
 
+            {% if victims %}
+                length = {{ victims|length }}
+            {% else %}
+            {% endif %}
+            {% for x in assistance%}
+                {% for i in victims%}
+                    {% if x.assistance_type.name == 'Food Suplement' and i.salary <= 2500 %}
+                        total_food_and_below_2500 += 1
+                    {% endif %}
+                    {% if x.assistance_type.name == 'Food Suplement' and i.salary > 2500 and i.salary <= 5000 %}
+                        total_food_and_between_2500 += 1
+                    {% endif %}
+                    {% if x.assistance_type.name == 'Food Suplement' and i.salary > 5000 %}
+                        total_food_and_above_5000 += 1
+                    {% endif %}
+                    {% if x.assistance_type.name == 'House Repair'  and i.salary <= 2500 %}
+                        total_house_repair_and_below_2500 += 1
+                    {% endif %}
+                    {% if x.assistance_type.name == 'House Repair' and i.salary > 2500 and i.salary <= 5000 %}
+                        total_house_repair_and_between_2500 += 1
+                    {% endif %}
+                    {% if x.assistance_type.name == 'House Repair' and i.salary > 5000 %}
+                        total_house_repair_and_above_5000 += 1
+                    {% endif %}
+                    {% if x.assistance_type.name == 'House Rebuild' and i.salary <= 2500 %}
+                        total_house_rebuild_and_below_2500 += 1
+                    {% endif %}
+                    {% if x.assistance_type.name == 'House Rebuild'  and i.salary > 2500 and i.salary <= 5000 %}
+                        total_house_rebuild_and_between_2500 += 1
+                    {% endif %}
+                    {% if x.assistance_type.name == 'House Rebuild'  and i.salary > 5000 %}
+                        total_house_rebuild_and_above_5000 += 1
+                    {% endif %}
+                    {% if x.assistance_type.name == 'Zakat' and i.salary <= 2500 %}
+                        total_zakat_and_below_2500 += 1
+                    {% endif %}
+                    {% if x.assistance_type.name == 'Zakat' and i.salary > 2500 and i.salary <= 5000 %}
+                        total_zakat_and_between_2500 += 1
+                    {% endif %}
+                    {% if x.assistance_type.name == 'Zakat' and i.salary > 5000 %}
+                        total_zakat_and_above_5000 += 1
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+
+
+            let total_food_table = (total_food_and_below_2500 / length) + (total_food_and_between_2500  / length) + (total_food_and_above_5000  / length)
+            let total_house_repair_table = (total_house_repair_and_below_2500 / length) + (total_house_repair_and_between_2500 / length) + (total_house_repair_and_above_5000 / length)
+            let total_house_rebuild_table = (total_house_rebuild_and_below_2500 / length) + (total_house_rebuild_and_between_2500 / length) + (total_house_rebuild_and_above_5000 / length)
+            let total_zakat_table = (total_zakat_and_below_2500  / length) + (total_zakat_and_between_2500 / length) + (total_zakat_and_above_5000 / length)
+
+            let total_below_2500 = (total_food_and_below_2500 / length) + (total_house_repair_and_below_2500 / length) + (total_house_rebuild_and_below_2500 / length) + (total_zakat_and_below_2500 / length)
+            let total_between_2500 = (total_food_and_between_2500 / length) + (total_house_repair_and_between_2500 / length) + (total_house_rebuild_and_between_2500 / length) + (total_zakat_and_between_2500 / length)
+            let total_above_5000 = (total_food_and_above_5000 / length) + (total_house_repair_and_above_5000 / length) + (total_house_rebuild_and_above_5000 / length) + (total_zakat_and_above_5000 / length)
+            let total = total_food_table + total_house_repair_table + total_house_rebuild_table + total_zakat_table
+
+            document.getElementById("total_food_table").innerHTML = total_food_table .toString();
+            document.getElementById("total_food_and_below_2500").innerHTML = (total_food_and_below_2500 / length).toString();
+            document.getElementById("total_food_and_between_2500").innerHTML = (total_food_and_between_2500 / length).toString();
+            document.getElementById("total_food_and_above_5000").innerHTML = (total_food_and_above_5000 / length).toString();
+            document.getElementById("total_house_repair_table").innerHTML = total_house_repair_table.toString();
+            document.getElementById("total_house_repair_and_below_2500").innerHTML = (total_house_repair_and_below_2500 / length).toString();
+            document.getElementById("total_house_repair_and_between_2500").innerHTML = (total_house_repair_and_between_2500 / length).toString();
+            document.getElementById("total_house_repair_and_above_5000").innerHTML = (total_house_repair_and_above_5000 / length).toString();
+            document.getElementById("total_house_rebuild_table").innerHTML = total_house_rebuild_table.toString();
+            document.getElementById("total_house_rebuild_and_below_2500").innerHTML = (total_house_rebuild_and_below_2500 / length).toString();
+            document.getElementById("total_house_rebuild_and_between_2500").innerHTML = (total_house_rebuild_and_between_2500 / length).toString();
+            document.getElementById("total_house_rebuild_and_above_5000").innerHTML = (total_house_rebuild_and_above_5000 / length).toString();
+            document.getElementById("total_zakat_table").innerHTML = total_zakat_table.toString();
+            document.getElementById("total_zakat_and_below_2500").innerHTML = (total_zakat_and_below_2500 / length).toString();
+            document.getElementById("total_zakat_and_between_2500").innerHTML = (total_zakat_and_between_2500 / length).toString();
+            document.getElementById("total_zakat_and_above_5000").innerHTML = (total_zakat_and_above_5000 / length).toString();
+            document.getElementById("total_below_2500").innerHTML = total_below_2500.toString();
+            document.getElementById("total_between_2500").innerHTML = total_between_2500.toString();
+            document.getElementById("total_above_5000").innerHTML = total_above_5000.toString();
+            document.getElementById("total").innerHTML = total.toString();
+        }
+    </script>
+    <script type="text/javascript">
+        tableCalculation();
     </script>
 
 {% endblock %}
 {% block custom_js %}
 
 {% endblock %}
+
