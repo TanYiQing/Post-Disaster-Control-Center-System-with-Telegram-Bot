@@ -1,7 +1,7 @@
 {% extends "base1.html" %}
 
 {% block title %}
-    {{ victim_profile.ic }}
+    {{ victim.ic }}
 {% endblock %}
 
 {% block content %}
@@ -87,7 +87,7 @@
                             <div class="mb-4 row">
                                 <label for="staticEmail" class="col-md-2 col-sm-4 col-form-label">Victim Name</label>
                                 <div class="col-md-10 col-sm-8">
-                                    <input type="text" class="form-control" id='name' name='name' value='{{user.first_name}} {{user.last_name}}' readonly>
+                                    <input type="text" class="form-control" id='name' name='name' value='{{victim.name}}'>
                                 </div>
                             </div>
                         </div>
@@ -97,13 +97,13 @@
                             <div class="mb-4 row">
                                 <label for="staticEmail" class="col-sm-4 col-form-label">IC Number</label>
                                 <div class="col-sm-8">
-                                    <input type="number" class="form-control" id="icNum" name="icNum" readonly value='{{user.ic}}'>
+                                    <input type="number" class="form-control" id="icNum" name="icNum"  value='{{victim.ic}}'>
                                 </div>
                             </div>
                             <div class="mb-4 row">
                                 <label for="staticEmail" class="col-sm-4 col-form-label">Phone</label>
                                 <div class="col-sm-8">
-                                    <input type="number" class="form-control" value="{{ victim_profile.phone }}" id="phone" name="phone" required>
+                                    <input type="number" class="form-control" value="{{ victim.phone }}" id="phone" name="phone" required>
                                 </div>
                             </div>
                         </div>
@@ -111,12 +111,12 @@
                             <div class="mb-4 row">
                                 <label for="staticEmail" class="col-sm-4 col-form-label">Salary</label>
                                 <div class="col-sm-8">
-                                    <input type="number" class="form-control" value="{{ victim_profile.salary }}" id="salary" name="salary" required>
+                                    <input type="number" class="form-control" value="{{ victim.salary }}" id="salary" name="salary" required>
                                 </div>
                             </div>
                             <div class="mb-4 row">
                                 <label for="staticEmail" class="col-sm-4 col-5 col-form-label">House Hold</label>
-                                {% ifequal victim_profile.is_kir 1 %}
+                                {% ifequal victim.is_kir 1 %}
                                     <div class="col-sm-1 col-1 mt-2">
                                         <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault1" value="True" checked>
                                     </div>
@@ -130,7 +130,7 @@
                                         <label for="staticEmail" class="col-sm-3 form-check-label">No</label>
                                     </div>
                                 {% endifequal %}
-                                {% ifequal victim_profile.is_kir 0 %}
+                                {% ifequal victim.is_kir 0 %}
                                     <div class="col-sm-1 col-1 mt-2">
                                         <input class="form-check-input" type="radio" name="is_kir" id="flexRadioDefault1" value="True">
                                     </div>
@@ -152,13 +152,13 @@
                             <div class="mb-4 row">
                                 <label for="staticEmail" class="col-sm-4 col-md-2 col-form-label">Address 1</label>
                                 <div class="col-sm-8 col-md-10">
-                                    <input type="text" class="form-control" value="{{ victim_profile.address1 }}" id="address1" name="address1" required>
+                                    <input type="text" class="form-control" value="{{ victim.address1 }}" id="address1" name="address1" required>
                                 </div>
                             </div>
                             <div class="mb-4 row">
                                 <label for="staticEmail" class="col-sm-4 col-md-2 col-form-label">Address 2</label>
                                 <div class="col-sm-8 col-md-10">
-                                    <input type="text" class="form-control" value="{{ victim_profile.address2 }}" id="address2" name="address2" required>
+                                    <input type="text" class="form-control" value="{{ victim.address2 }}" id="address2" name="address2" required>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +168,7 @@
                             <div class="mb-4 row">
                                 <label for="staticEmail" class="col-sm-4 col-form-label">Postcode</label>
                                 <div class="col-sm-8">
-                                    <input type="number" class="form-control" value="{{ victim_profile.poskod }}" id="poskod" name="poskod" required>
+                                    <input type="number" class="form-control" value="{{ victim.poskod }}" id="poskod" name="poskod" required>
                                 </div>
                             </div>
                         </div>
@@ -179,13 +179,13 @@
                             <div class="mb-4 row">
                                 <label for="staticEmail" class="col-sm-4 col-form-label">City</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value="{{ victim_profile.city }}" id="city" name="city" required>
+                                    <input type="text" class="form-control" value="{{ victim.city }}" id="city" name="city" required>
                                 </div>
                             </div>
                             <div class="mb-4 row">
                                 <label for="staticEmail" class="col-sm-4 col-form-label">State</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value="{{ victim_profile.state }}" id="state" name="state" required>
+                                    <input type="text" class="form-control" value="{{ victim.state }}" id="state" name="state" required>
                                 </div>
                             </div>
                         </div>
@@ -193,13 +193,13 @@
                             <div class="mb-4 row">
                                 <label for="staticEmail" class="col-sm-4 col-form-label">Parlimen</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value="{{ victim_profile.parlimen }}" id="parlimen" name="parlimen" required>
+                                    <input type="text" class="form-control" value="{{ victim.parlimen }}" id="parlimen" name="parlimen" required>
                                 </div>
                             </div>
                             <div class="mb-4 row">
                                 <label for="staticEmail" class="col-sm-4 col-form-label">Mukim</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value="{{ victim_profile.mukim }}" id="mukim" name="mukim" required>
+                                    <input type="text" class="form-control" value="{{ victim.mukim }}" id="mukim" name="mukim" required>
                                 </div>
                             </div>
                         </div>
