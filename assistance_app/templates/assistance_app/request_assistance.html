@@ -12,7 +12,7 @@ Request Assistance
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Name</label>
-                            <input type="text" class="form-control" maxlength="12" name="name" placeholder="e.g Joseph Dyson ( Without '-' )" value='{{user.first_name}} {{user.last_name}}' required>
+                            <input type="text" class="form-control" maxlength="12" name="name" placeholder="e.g Joseph Dyson ( Without '-' )" value='{{victim.name}}' readonly required>
                         </div>
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Victim Number</label>
@@ -22,7 +22,7 @@ Request Assistance
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">IC Number</label>
-                            <input type="text" class="form-control" maxlength="12" name="ic_no" placeholder="e.g 123456789101 ( Without '-' )" value='{{user.ic}}' required>
+                            <input type="text" class="form-control" maxlength="12" name="ic_no" placeholder="e.g 123456789101 ( Without '-' )" value='{{victim.ic}}' readonly required>
                         </div>
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Assistance Type</label>

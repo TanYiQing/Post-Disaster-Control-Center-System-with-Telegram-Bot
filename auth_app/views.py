@@ -15,7 +15,7 @@ from django.http import HttpResponse
 
 def register(req):
     if req.user.is_authenticated:
-        return redirect('/')
+        return redirect('/management/listvictim/')
     if req.method == 'POST':
         print(req.POST['ic'])
 
@@ -74,10 +74,8 @@ def register(req):
 
 
 def login(request):
-    if request.user.is_authenticated and request.user.is_staff:
-        return redirect('/management/listvictim/')
     if request.user.is_authenticated:
-        return redirect('/')
+        return redirect('/management/listvictim/')
     
     if request.method == 'POST':
         ic = request.POST['ic']
@@ -85,17 +83,7 @@ def login(request):
         user = authenticate(request, ic=ic, password=password)
         if user is not None:
             login_process(request, user)
-            if user.is_staff:
-                return redirect('/management/dashboard/')
-
-            try:
-                has_profile = user.profile is not None
-                if has_profile:
-                    return redirect('/login')
-
-            except:
-                print('user has no profile')
-                return redirect('add_profile')
+            return redirect('/management/dashboard/')
 
             ...
         else:

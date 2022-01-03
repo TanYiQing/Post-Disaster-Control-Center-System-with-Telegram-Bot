@@ -14,26 +14,26 @@ def list_assistance_type(request, id):
     return render(request, 'assistance_app/list.html', {'assistances': assistances})
 
 
-@login_required(login_url='/login')
-def edit_assistance_type(request, victim_id ,id):
-    try:
-        my_assistance = Victim.objects.get(id=victim_id).assistance_list.get(id=id)
-    except:
-        return redirect('list_assistance_type')
+# @login_required(login_url='/login')
+# def edit_assistance_type(request, victim_id ,id):
+#     try:
+#         my_assistance = Victim.objects.get(id=victim_id).assistance_list.get(id=id)
+#     except:
+#         return redirect('list_assistance_type')
 
-    if request.method == 'POST':
-        victim_num = request.POST["victim_num"]
-        assistance_type_id = int(request.POST["assistance_type"])
-        remark = request.POST["remark"]
-        assistance_type = AssistanceType.objects.get(id=assistance_type_id)
-        my_assistance.assistance_type = assistance_type
-        my_assistance.remark = remark
-        my_assistance.victim_number = victim_num
-        my_assistance.save()
-        return redirect('list_assistance_type')
-    assistance_types = AssistanceType.objects.all()
-    return render(request, 'assistance_app/edit_assistance.html',
-                  {'my_assistance': my_assistance, 'assistance_types': assistance_types})
+#     if request.method == 'POST':
+#         victim_num = request.POST["victim_num"]
+#         assistance_type_id = int(request.POST["assistance_type"])
+#         remark = request.POST["remark"]
+#         assistance_type = AssistanceType.objects.get(id=assistance_type_id)
+#         my_assistance.assistance_type = assistance_type
+#         my_assistance.remark = remark
+#         my_assistance.victim_number = victim_num
+#         my_assistance.save()
+#         return redirect('list_assistance_type')
+#     assistance_types = AssistanceType.objects.all()
+#     return render(request, 'assistance_app/edit_assistance.html',
+#                   {'my_assistance': my_assistance, 'assistance_types': assistance_types})
 
 
 @login_required(login_url='/login')
@@ -50,4 +50,4 @@ def request_assistance(request, id):
         assistance.victim = victim
         assistance.save()
     assistance_type = AssistanceType.objects.all()
-    return render(request, 'assistance_app/request_assistance.html', {'assistance_type': assistance_type})
+    return render(request, 'assistance_app/request_assistance.html', {'victim':victim,'assistance_type': assistance_type})

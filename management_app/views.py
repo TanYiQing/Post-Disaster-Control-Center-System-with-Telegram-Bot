@@ -60,21 +60,8 @@ def edit_victim_assistance(request, victim_id, assistance_id):
     victim = get_object_or_404(Victim, id=victim_id)
     victim_assistance = victim.assistance_list.get(id=assistance_id)
     assistance_types = AssistanceType.objects.all()
+    print(victim_assistance.id)
     if request.method == 'POST':
-        print(request.POST)
-        # update victim
-        victim.phone = request.POST['phone']
-        victim.salary = request.POST['salary']
-        victim.is_kir = request.POST['household'] == 'Yes'
-        victim.address1 = request.POST['address1']
-        victim.address2 = request.POST['address2']
-        victim.poskod = request.POST['postcode']
-        victim.city = request.POST['city']
-        victim.state = request.POST['state']
-        victim.parlimen = request.POST['parlimen']
-        victim.mukim = request.POST['mukim']
-        victim.save()
-
         # update assistance
         assistance_type = AssistanceType.objects.get(
             id=int(request.POST['assistance_type']))
@@ -85,10 +72,9 @@ def edit_victim_assistance(request, victim_id, assistance_id):
 
     return render(request, 'management_app/edit_victim_assistance.html',
                   {'victim': victim, 'victim_assistance': victim_assistance, 'assistance_types': assistance_types})
-
-# @user_passes_test(lambda user: user.is_staff)
-# def add_victim(request):
-#     return render(request, 'management_app/add_victim.html')
+@login_required
+def add_victim(request):
+    return redirect('add_profile')
 
 
 # # @user_passes_test(lambda user: user.is_staff)
