@@ -8,6 +8,6 @@ urlpatterns = [
     path("listvictim/<int:victim_id>/assistance/<int:assistance_id>/edit", views.edit_victim_assistance, name="edit_victim_assistance"),
     
     path('dashboard/', views.dashboard, name="dashboard"),
-    # path('addvictim/', views.add_victim, name="add_victim"),
+    path('addvictim/', views.add_victim, name="add_victim"),
     # path('editvictim/', views.edit_victim, name="edit_victim"),
 ]
