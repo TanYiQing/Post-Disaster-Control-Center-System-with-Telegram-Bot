@@ -39,16 +39,19 @@ Victim List
                         {% for victim in victims %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
-                            <td>{{victim.first_name}} {{victim.last_name}}</td>
+                            <td>{{victim.name}}</td>
                             <td>{{victim.ic}}</td>
-                            <td>{{victim.profile.phone}}</td>
-                            <td>{{victim.profile.address1}}, {{victim.profile.address2}}</td>
-                            <td>{{victim.profile.city}}</td>
-                            <td>{{victim.profile.mukim}}</td>
-                            <td>{{victim.profile.parlimen}}</td>
-                            <td>{{victim.profile.state}}</td>
+                            <td>{{victim.phone}}</td>
+                            <td>{{victim.address1}}, {{victim.address2}}</td>
+                            <td>{{victim.city}}</td>
+                            <td>{{victim.mukim}}</td>
+                            <td>{{victim.parlimen}}</td>
+                            <td>{{victim.state}}</td>
                             <td>{{victim.assistance_list.count}}</td>
-                            <td><a href="{% url 'view_victim_assistance' victim.id %}"><i class="bi bi-search"></i></a></td>
+                            <td><a href="{% url 'view_victim_assistance' victim.id %}">view request assistances</a></td>
+                            <td><a href="{% url 'edit_profile' victim.id %}">edit victim</a></td>
+                            <td><a href="{% url 'delete_profile' victim.id %}">delete victim</a></td>
+                            <td><a href="{% url 'request_assistance' victim.id %}">add request assistance</a></td>
                         </tr>
                         {% endfor %}
                         {% comment %} <tr>

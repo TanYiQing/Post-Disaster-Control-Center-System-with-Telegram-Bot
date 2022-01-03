@@ -83,113 +83,7 @@ Victim List
             <div class="col-10">
                 <form method="POST" class="form-group" enctype="multipart/form-data" name="trackstatus" onsubmit="return formValidation();">
                 {% csrf_token %}
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="mb-4 text-center">Victim Assistance Details</h3>
-                            <div class="mb-4 row">
-                                <label for="staticEmail" class="col-md-2 col-sm-4 col-form-label">Victim Name</label>
-                                <div class="col-md-10 col-sm-8">
-                                    <input type="text" class="form-control" id='name' name='name' value='{{ victim.first_name }} {{ victim.last_name }}' readonly required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-4 row">
-                                <label for="staticEmail" class="col-sm-4 col-form-label">IC Number</label>
-                                <div class="col-sm-8">
-                                    <input type="text" placeholder="e.g. 123456789101 ( Without '-' )"  class="form-control" name='icno' name='icno' value='{{victim.ic}}' readonly>
-                                </div>
-                            </div>
-                            <div class="mb-4 row">
-                                <label for="staticEmail" class="col-sm-4 col-form-label">Phone</label>
-                                <div class="col-sm-8">
-                                    <input type="tel" class="form-control" id='phone' name='phone' value='{{ victim.profile.phone }}' required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-4 row">
-                                <label for="staticEmail" class="col-sm-4 col-form-label">Salary</label>
-                                <div class="col-sm-8">
-                                    <input type="number" class="form-control" id='salary' name='salary' value='{{ victim.profile.salary }}' required>
-                                </div>
-                            </div>
-                            <div class="mb-4 row">
-                                <label for="staticEmail" class="col-sm-4 col-5 col-form-label">House Hold</label>
-                                <div class="col-sm-1 col-1 mt-2">
-                                    <input type="radio" class="form-check-input" id='household' name='household' value='Yes' {% if victim.profile.is_kir %}checked{% endif %} required>
-                                </div>
-                                <div class="col-sm-3 col-2 mt-2">
-                                    <label for="staticEmail" class="col-sm-3 form-check-label">Yes</label>
-                                </div>
-                                <div class="col-sm-1 col-1 mt-2">
-                                    <input type="radio" class="form-check-input" id='household' name='household' value='No' {% if not victim.profile.is_kir %}checked{% endif %} required>
-                                </div>
-                                <div class="col-sm-3 col-2 mt-2">
-                                    <label for="staticEmail" class="col-sm-3 form-check-label">No</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-4 row">
-                                <label for="staticEmail" class="col-sm-4 col-md-2 col-form-label">Address 1</label>
-                                <div class="col-sm-8 col-md-10">
-                                    <input type="text" class="form-control" id='address1' name='address1' value='{{ victim.profile.address1 }}' required>
-                                </div>
-                            </div>
-                            <div class="mb-4 row">
-                                <label for="staticEmail" class="col-sm-4 col-md-2 col-form-label">Address 2</label>
-                                <div class="col-sm-8 col-md-10">
-                                    <input type="text" class="form-control" id='address1' name='address2' value='{{ victim.profile.address2 }}' required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-4 row">
-                                <label for="staticEmail" class="col-sm-4 col-form-label">Postcode</label>
-                                <div class="col-sm-8">
-                                    <input type="number" class="form-control" id='postcode' name='postcode' value='{{ victim.profile.poskod }}' required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 d-none d-sm-block d-md-none"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-4 row">
-                                <label for="staticEmail" class="col-sm-4 col-form-label">City</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id='city' name='city' value='{{ victim.profile.city }}'required>
-                                </div>
-                            </div>
-                            <div class="mb-4 row">
-                                <label for="staticEmail" class="col-sm-4 col-form-label">State</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id='state' name='state' value='{{ victim.profile.state }}' required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-4 row">
-                                <label for="staticEmail" class="col-sm-4 col-form-label">Parlimen</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id='parlimen' name='parlimen' value='{{ victim.profile.parlimen }}' required>
-                                </div>
-                            </div>
-                            <div class="mb-4 row">
-                                <label for="staticEmail" class="col-sm-4 col-form-label">Mukim</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id='mukim' name='mukim' value='{{ victim.profile.mukim }}' required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <h3 class="mb-4 text-center">Assistance Request</h3>
 
                     <div class="row">
@@ -206,7 +100,7 @@ Victim List
                                         <option value="3">Monthly Assistance</option>
                                         <option value="4">New House Assistance</option> {% endcomment %}
                                         {% for assistance_type in assistance_types %}
-                                            <option value="{{ assistance_type.id }}" {% if my_assistance.id == assistance_type.id  %}selected{% endif %} >{{ assistance_type }}</option>
+                                            <option value="{{ assistance_type.id }}" {% if victim_assistance.assistance_type.id ==  assistance_type.id %}selected{% endif %} >{{assistance_type}}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
