@@ -5,19 +5,20 @@ import psycopg2
 
 
 def get_data(message):
-    ic_number = message.split("@")[0]
-    phone_number = message.split("@")[1]
+    # ic_number = message.split("@")[0]
+    # phone_number = message.split("@")[1]
     try:
         conn = psycopg2.connect("postgres://mrfknbsicvtqjo:40cb1909b8ae034538bb96ca0c1ec827d86753ba50548ada7c97fda44f162738@ec2-3-213-76-170.compute-1.amazonaws.com:5432/dhecvtd68dsm3/dfvpahtam3chdu", sslmode='require')
         cursor = conn.cursor()
-        # cursor.execute("SELECT ic_no,hp_no,name FROM \"App_Victim_victim\" WHERE ic_no = '{}' AND hp_no = '{}'".format(ic_number, phone_number))# some sql statement
+        # cursor.execute("SELECT ic,name,phone FROM \"victim_app_victim\" WHERE ic = '{}'".format(message))# some sql statement
+        cursor.execute("SELECT ic,name,phone FROM \"victim_app_victim\"")
         conn.commit()
         result = cursor.fetchall()
         ic = [i[0] for i in result]
-        hp = [i[1] for i in result]
-        name = [i[2] for i in result]
+        name = [i[1] for i in result]
+        phone = [i[2] for i in result]
         age = str(calculate_age(ic[0]))
-        bot_response = "Maklumat Anda:\nKad Pengenalan: " + str(ic[0]) + "\nNombor Telefon: " + str(hp[0]) + "\nNama: " + str(name[0]) + "\nUmur: " + age
+        bot_response = "Maklumat Anda:\nIC Number: " + str(ic[0]) + "\nName: " + str(name[0]) + "\nPhone Number: " + str(phone[0])
         cursor.close()
     except (Exception, psycopg2.DatabaseError) as error:
         bot_response = "Maaf, saya tidak menemui data anda... Sila semak semula dengan maklumat yang sah"
