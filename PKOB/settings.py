@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -25,7 +24,7 @@ SECRET_KEY = 'django-insecure-ehne66naxmbu)axdoas6p6uivyf=6yi%tt484-lf5rj7090iqf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','ninja-aid.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'ninja-aid.herokuapp.com']
 
 # Application definition
 
@@ -40,7 +39,7 @@ INSTALLED_APPS = [
     'auth_app',
     'victim_app',
     'management_app'
-  
+
 ]
 
 MIDDLEWARE = [
@@ -74,7 +73,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'PKOB.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -97,9 +95,10 @@ DATABASES = {
 }
 
 # UNCOMMENT THIS CODE WHENEVER YOU WANT TO DEPLOY IT ON HEROKU
-# import dj_database_url
-# db_from_env  = dj_database_url.config(conn_max_age=600)
-# DATABASES['default'].update(db_from_env)
+import dj_database_url
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -119,7 +118,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -133,7 +131,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -142,7 +139,6 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/webimage/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'images'),
