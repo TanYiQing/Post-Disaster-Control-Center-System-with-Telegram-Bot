@@ -3,7 +3,7 @@
 [Read the instruction](https://github.com/STIW3054-A211/e-sulam/blob/main/GroupProject.md)
 
 ## Heroku Link:
-https://pkob-javafive.herokuapp.com/
+https://ninja-aid.herokuapp.com/
 
 ## Group Info:
 
