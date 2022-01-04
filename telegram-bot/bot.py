@@ -70,12 +70,12 @@ def handle_message(update, context):
 
 def handle_data(update, context):
     text = str(update.message.text).lower()
-    if "@" in text:
-        logging.info(f'User ({update.message.chat.id}) says: {text}')
-        update.message.reply_text("Saya sedang cuba mencari maklumat, sila tunggu sebentar...")
-        response = responses.get_data(text)
-    else:
-        response = responses.get_response(text)
+    # if "@" in text:
+    logging.info(f'User ({update.message.chat.id}) says: {text}')
+    update.message.reply_text("Saya sedang cuba mencari maklumat, sila tunggu sebentar...")
+    response = responses.get_data(text)
+    # else:
+    #     response = responses.get_response(text)
     # Bot response
     update.message.reply_text(response)
 
@@ -151,11 +151,8 @@ if __name__ == '__main__':
     dp.add_handler(CallbackQueryHandler(about_me_menu, pattern='us'))
     dp.add_handler(CallbackQueryHandler(web_menu, pattern='web'))
     dp.add_handler(CallbackQueryHandler(get_data_menu, pattern='getdata'))
-    # dp.add_handler(CommandHandler('getdata', get_data_command))
 
     # Messages
-
-    # dp.add_handler(MessageHandler(Filters.text, handle_message))
     dp.add_handler(MessageHandler(Filters.text, handle_data))
 
     # Log all errors
