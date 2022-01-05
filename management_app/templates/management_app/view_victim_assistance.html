@@ -6,6 +6,11 @@
 {% endblock %}
 {% block custom_css %}
 
+    <style>
+        body{
+            background-color: #f8f9fc;
+        }
+    </style>
 {% endblock %}
 {% block content_title %}
 <h1 class="mt-5"> {{ victim.first_name }} {{ victim.last_name }}</h1>
@@ -13,70 +18,72 @@
 {% block content %}
 
     <div class="container">
-        <div class="row mt-4">
+        <div class="row mt-4 px-3 px-sm-0">
             <h1 class="text-center mb-3">{{ victim.first_name }}</h1>
-            <div class="col">
-                <table id="example" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>assistance id</th>
-                            <th>Ic Number</th>
-                            <th>Phone</th>
-                            <th>Total Victim</th>
-                            <th>assistance type</th>
-                            <th>remark</th>
-                            {% comment %} <th>progress percentage</th> {% endcomment %}
-                            <th>status</th>
-                            {% comment %} <th>approved</th> {% endcomment %}
-                            <th>action</th>
-                            {% comment %} <th>Progress Percentage(%)</th>
-                            <th>Status</th>
-                            <th>Action</th> {% endcomment %}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for assistance in victim_assistance_list %}
-                        <tr>
-                            <td>{{ assistance.id }}</td>
-                            <td>{{victim.ic}}</td>
-                            <td>{{victim.phone}}</td>
-                            <td>{{assistance.victim_number}}</td>
-                            <td>{{assistance.assistance_type.name}}</td>
-                            <td>{{assistance.remark}}</td>
-                            <td>{% if assistance.is_approved %}approved {% else %} not approved{% endif %}</td>
-                            <td>
-                                <form action="" method="post" class='m-2'>
-                                    {% csrf_token %}
-                                    <input type="hidden" name="assistance_id" value='{{ assistance.id }}'>
-                                    <button class="btn btn-primary">{% if assistance.is_approved %}disapprove {% else %} approve{% endif %}</button>
-                                </form>
-                                <form action="{% url 'delete_victim_assistance' victim.id %}" method="post" class='m-2'>
-                                    {% csrf_token %}
-                                    <input type="hidden" name="assistance_id" value='{{ assistance.id }}'>
-                                    <button class="btn btn-danger">delete</button>
-                                </form>
-                                <a class='m-2 btn btn-info text-white' href="{% url 'edit_victim_assistance' victim.id assistance.id %}">edit</a>
-                            </td>
-                          
-                        </tr>
-                        {% endfor %}
-                        {% comment %} <tr>
-                            <td>1</td>
-                            <td>Tan Yi Qing</td>
-                            <td>991227075445</td>
-                            <td>0124568887</td>
-                            <td>Rumah</td>
-                            <td>Seberang Perai</td>
-                            <td>Bukit Mertajam</td>
-                            <td>Tokun</td>
-                            <td>Food Supplement</td>
-                            <td>20</td>
-                            <td>80</td>
-                            <td>Good</td>
-                            <td><a href=""><button class="btn" type="button" style="background-color: darkgrey"><i class="bi bi-pencil"></i></button></a></td>
-                        </tr> {% endcomment %}
-                    </tbody>
-                </table>
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="example" class="table table-bordered py-3">
+                            <thead>
+                                <tr>
+                                    <th>assistance id</th>
+                                    <th>Ic Number</th>
+                                    <th>Phone</th>
+                                    <th>Total Victim</th>
+                                    <th>assistance type</th>
+                                    <th>remark</th>
+                                    {% comment %} <th>progress percentage</th> {% endcomment %}
+                                    <th>status</th>
+                                    {% comment %} <th>approved</th> {% endcomment %}
+                                    <th>action</th>
+                                    {% comment %} <th>Progress Percentage(%)</th>
+                                    <th>Status</th>
+                                    <th>Action</th> {% endcomment %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for assistance in victim_assistance_list %}
+                                <tr>
+                                    <td>{{ assistance.id }}</td>
+                                    <td>{{victim.ic}}</td>
+                                    <td>{{victim.phone}}</td>
+                                    <td>{{assistance.victim_number}}</td>
+                                    <td>{{assistance.assistance_type.name}}</td>
+                                    <td>{{assistance.remark}}</td>
+                                    <td>{% if assistance.is_approved %}approved {% else %} not approved{% endif %}</td>
+                                    <td>
+                                        <form action="" method="post" class='m-2'>
+                                            {% csrf_token %}
+                                            <input type="hidden" name="assistance_id" value='{{ assistance.id }}'>
+                                            <button class="btn btn-primary">{% if assistance.is_approved %}disapprove {% else %} approve{% endif %}</button>
+                                        </form>
+                                        <form action="{% url 'delete_victim_assistance' victim.id %}" method="post" class='m-2'>
+                                            {% csrf_token %}
+                                            <input type="hidden" name="assistance_id" value='{{ assistance.id }}'>
+                                            <button class="btn btn-danger">delete</button>
+                                        </form>
+                                        <a class='m-2 btn btn-info text-white' href="{% url 'edit_victim_assistance' victim.id assistance.id %}">edit</a>
+                                    </td>
+
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="main-footer position ">
+        <div class="footer-middle mt-0 bg-light">
+            <div class="container">
+                <div class="footer-bottom mt-2">
+                    <p class="text-xs-center footer-title-text mb-0">
+                        &copy; <script>document.write(new Date().getFullYear())</script> Ninja Aid - PKOB System from Malaysia
+                    </p>
+                </div>
             </div>
         </div>
     </div>
