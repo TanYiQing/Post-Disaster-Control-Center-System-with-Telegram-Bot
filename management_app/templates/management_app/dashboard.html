@@ -5,101 +5,104 @@
 {% endblock %}
 {% block custom_css %}
 
+    <style>
+        body{
+            background-color: #f8f9fc;
+        }
+    </style>
 {% endblock %}
 {% block content_title %}
     <h1 class="mt-5"> Dashboard </h1>
 {% endblock %}
 {% block content %}
 
-    <div style="background-color: #F8F9FC">
-        <div class="container">
-            <div class="row">
-                <h3 class="mt-5"> Dashboard </h3>
-                <div class="col">
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card shadow h-100 py-2" style="border-left: 0.25rem solid #4181FD">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Victim
-                                            </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                {% if victims %}
-                                                    {{ victims|length }}
-                                                {% else %} 0
-                                                {% endif %}
-                                            </div>
+    <div class="container">
+        <div class="row">
+            <h3 class="mt-4 mt-sm-5"> Dashboard </h3>
+            <div class="col">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card shadow h-100 py-2" style="border-left: 0.25rem solid #4181FD">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Total Victim
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="bi bi-people-fill h3" style="color: #dee2e6"></i>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            {% if victims %}
+                                                {{ victims|length }}
+                                            {% else %} 0
+                                            {% endif %}
                                         </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="bi bi-people-fill h3" style="color: #dee2e6"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card shadow h-100 py-2" style="border-left: 0.25rem solid #08846D;">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Total Assistance Request
-                                            </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                {% if assistance %}
-                                                    {{ assistance|length }}
-                                                {% else %} 0
-                                                {% endif %}
-                                            </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card shadow h-100 py-2" style="border-left: 0.25rem solid #08846D;">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Total Assistance Request
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="bi bi-file-earmark-person h3" style="color: #dee2e6"></i>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            {% if assistance %}
+                                                {{ assistance|length }}
+                                            {% else %} 0
+                                            {% endif %}
                                         </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="bi bi-file-earmark-person h3" style="color: #dee2e6"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card shadow h-100 py-2" style="border-left: 0.25rem solid #72E6FA;">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total
-                                                Pending Request
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        {{ total_pending }}
-                                                    </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card shadow h-100 py-2" style="border-left: 0.25rem solid #72E6FA;">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total
+                                            Pending Request
+                                        </div>
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-auto">
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                    {{ total_pending }}
                                                 </div>
-
                                             </div>
+
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="bi bi-arrow-clockwise h3" style="color: #dee2e6"></i>
-                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="bi bi-arrow-clockwise h3" style="color: #dee2e6"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card shadow h-100 py-2 " style="border-left: 0.25rem solid #FFC81C;">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Total Approval Request
-                                            </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                {{ total_approval }}
-                                            </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card shadow h-100 py-2 " style="border-left: 0.25rem solid #FFC81C;">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Total Approval Request
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="bi bi-check2-square h3" style="color: #dee2e6"></i>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            {{ total_approval }}
                                         </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="bi bi-check2-square h3" style="color: #dee2e6"></i>
                                     </div>
                                 </div>
                             </div>
@@ -107,74 +110,91 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <h3 class="mt-5"> Summary of Victim </h3>
-                <div class="col">
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Food Suplement</th>
-                            <th scope="col">House Repair</th>
-                            <th scope="col">House Rebuild</th>
-                            <th scope="col">Zakat</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th>Below RM2500</th>
-                            <td id="total_food_and_below_2500"></td>
-                            <td id="total_house_repair_and_below_2500"></td>
-                            <td id="total_house_rebuild_and_below_2500"></td>
-                            <td id="total_zakat_and_below_2500"></td>
-                            <td id="total_below_2500"></td>
-                        </tr>
-                        <tr>
-                            <th>RM2501 - RM5000</th>
-                            <td id="total_food_and_between_2500"></td>
-                            <td id="total_house_repair_and_between_2500"></td>
-                            <td id="total_house_rebuild_and_between_2500"></td>
-                            <td id="total_zakat_and_between_2500"></td>
-                            <td id="total_between_2500"></td>
-                        </tr>
-                        <tr>
-                            <th>Above RM5000</th>
-                            <td id="total_food_and_above_5000"></td>
-                            <td id="total_house_repair_and_above_5000"></td>
-                            <td id="total_house_rebuild_and_above_5000"></td>
-                            <td id="total_zakat_and_above_5000"></td>
-                            <td id="total_above_5000"></td>
-                        </tr>
-                        <tr>
-                            <th>Total</th>
-                            <td id="total_food_table"></td>
-                            <td id="total_house_repair_table"></td>
-                            <td id="total_house_rebuild_table"></td>
-                            <td id="total_zakat_table"></td>
-                            <td id="total"></td>
-                        </tr>
-                        </tbody>
-                    </table>
+        </div>
+        <div class="row px-3 px-sm-0">
+            <h3 class="mt-3 mt-sm-5"> Summary of Victim </h3>
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Food Suplement</th>
+                                <th scope="col">House Repair</th>
+                                <th scope="col">House Rebuild</th>
+                                <th scope="col">Zakat</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>Below RM2500</th>
+                                <td id="total_food_and_below_2500"></td>
+                                <td id="total_house_repair_and_below_2500"></td>
+                                <td id="total_house_rebuild_and_below_2500"></td>
+                                <td id="total_zakat_and_below_2500"></td>
+                                <td id="total_below_2500"></td>
+                            </tr>
+                            <tr>
+                                <th>RM2501 - RM5000</th>
+                                <td id="total_food_and_between_2500"></td>
+                                <td id="total_house_repair_and_between_2500"></td>
+                                <td id="total_house_rebuild_and_between_2500"></td>
+                                <td id="total_zakat_and_between_2500"></td>
+                                <td id="total_between_2500"></td>
+                            </tr>
+                            <tr>
+                                <th>Above RM5000</th>
+                                <td id="total_food_and_above_5000"></td>
+                                <td id="total_house_repair_and_above_5000"></td>
+                                <td id="total_house_rebuild_and_above_5000"></td>
+                                <td id="total_zakat_and_above_5000"></td>
+                                <td id="total_above_5000"></td>
+                            </tr>
+                            <tr>
+                                <th>Total</th>
+                                <td id="total_food_table"></td>
+                                <td id="total_house_repair_table"></td>
+                                <td id="total_house_rebuild_table"></td>
+                                <td id="total_zakat_table"></td>
+                                <td id="total"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8">
-                    <!-- Bar Chart -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header bg-transparent py-3">
-                            <h6 class="m-0 font-weight-bold text-gray-800">Assistance Type</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart-bar">
-                                <canvas id="myChart1"></canvas>
-                            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-0 col-md-1 col-lg-2"></div>
+            <div class="col-0 col-md-10 col-lg-8">
+                <!-- Bar Chart -->
+                <div class="card shadow mb-4">
+                    <div class="card-header bg-transparent py-3">
+                        <h6 class="m-0 font-weight-bold text-gray-800">Assistance Type</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-bar">
+                            <canvas id="myChart1"></canvas>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-2"></div>
+            <div class="col-0 col-md-1 col-lg-2"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="main-footer position ">
+        <div class="footer-middle mt-0 bg-light">
+            <div class="container">
+                <div class="footer-bottom mt-2">
+                    <p class="text-xs-center footer-title-text mb-0">
+                        &copy; <script>document.write(new Date().getFullYear())</script> Ninja Aid - PKOB System from Malaysia
+                    </p>
+                </div>
             </div>
         </div>
     </div>

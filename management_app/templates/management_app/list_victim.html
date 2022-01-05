@@ -6,6 +6,11 @@ Victim List
 {% endblock %}
 {% block custom_css %}
 
+    <style>
+        body{
+            background-color: #f8f9fc;
+        }
+    </style>
 {% endblock %}
 {% block content_title %}
 <h1 class="mt-5"> Victim List </h1>
@@ -13,66 +18,68 @@ Victim List
 {% block content %}
 
     <div class="container">
-        <div class="row mt-4">
+        <div class="row mt-4 px-3 px-sm-0">
             <h1 class="text-center mb-3">Victim List</h1>
-            <div class="col">
-                <table id="example" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Victim Name</th>
-                            <th>Ic Number</th>
-                            <th>Phone</th>
-                            <th>Address</th>
-                            <th>Bandar</th>
-                            <th>Mukim</th>
-                            <th>Parlimen</th>
-                            <th>Negeri</th>
-                            <th>Total assistance request</th>
-                            <th>action</th>
-                            {% comment %} <th>Progress Percentage(%)</th>
-                            <th>Status</th>
-                            <th>Action</th> {% endcomment %}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for victim in victims %}
-                        <tr>
-                            <td>{{ forloop.counter }}</td>
-                            <td>{{victim.name}}</td>
-                            <td>{{victim.ic}}</td>
-                            <td>{{victim.phone}}</td>
-                            <td>{{victim.address1}}, {{victim.address2}}</td>
-                            <td>{{victim.city}}</td>
-                            <td>{{victim.mukim}}</td>
-                            <td>{{victim.parlimen}}</td>
-                            <td>{{victim.state}}</td>
-                            <td>{{victim.assistance_list.count}}</td>
-                            <td>
-                                <a href="{% url 'view_victim_assistance' victim.id %}">view request assistances</a><br>
-                                <a href="{% url 'edit_profile' victim.id %}">edit victim</a><br>
-                                <a href="{% url 'delete_profile' victim.id %}">delete victim</a><br>
-                                <a href="{% url 'request_assistance' victim.id %}">add request assistance</a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                        {% comment %} <tr>
-                            <td>1</td>
-                            <td>Tan Yi Qing</td>
-                            <td>991227075445</td>
-                            <td>0124568887</td>
-                            <td>Rumah</td>
-                            <td>Seberang Perai</td>
-                            <td>Bukit Mertajam</td>
-                            <td>Tokun</td>
-                            <td>Food Supplement</td>
-                            <td>20</td>
-                            <td>80</td>
-                            <td>Good</td>
-                            <td><a href=""><button class="btn" type="button" style="background-color: darkgrey"><i class="bi bi-pencil"></i></button></a></td>
-                        </tr> {% endcomment %}
-                    </tbody>
-                </table>
+            <div class="card shadow mb-4">
+                <div class="card-body ">
+                    <div class="table-responsive">
+                        <table id="example" class="table table-bordered py-3">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Victim Name</th>
+                                    <th>Ic Number</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <th>Bandar</th>
+                                    <th>Mukim</th>
+                                    <th>Parlimen</th>
+                                    <th>Negeri</th>
+                                    <th>Total assistance request</th>
+                                    <th>Action</th>
+                                    {% comment %} <th>Progress Percentage(%)</th>
+                                    <th>Status</th>
+                                    <th>Action</th> {% endcomment %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for victim in victims %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{victim.name}}</td>
+                                    <td>{{victim.ic}}</td>
+                                    <td>{{victim.phone}}</td>
+                                    <td>{{victim.address1}}, {{victim.address2}}</td>
+                                    <td>{{victim.city}}</td>
+                                    <td>{{victim.mukim}}</td>
+                                    <td>{{victim.parlimen}}</td>
+                                    <td>{{victim.state}}</td>
+                                    <td>{{victim.assistance_list.count}}</td>
+                                    <td>
+                                        <a href="{% url 'view_victim_assistance' victim.id %}">View Request Assistances</a><br>
+                                        <a href="{% url 'edit_profile' victim.id %}">Edit Victim</a><br>
+                                        <a href="{% url 'delete_profile' victim.id %}">Delete Victim</a><br>
+                                        <a href="{% url 'request_assistance' victim.id %}">Add Request Assistance</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="main-footer position ">
+        <div class="footer-middle mt-0 bg-light">
+            <div class="container">
+                <div class="footer-bottom mt-2">
+                    <p class="text-xs-center footer-title-text mb-0">
+                        &copy; <script>document.write(new Date().getFullYear())</script> Ninja Aid - PKOB System from Malaysia
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -88,7 +95,7 @@ Victim List
             select: true,
             "pagingType": "full",
             "columnDefs": [
-                { "width": "15%", "targets": 10 }
+                { "width": "17%", "targets": 10 }
             ]
         })
     });
