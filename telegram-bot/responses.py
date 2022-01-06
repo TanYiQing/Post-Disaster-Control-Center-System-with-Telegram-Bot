@@ -42,8 +42,8 @@ def get_data(message):
         assistance_list = ""
         for key in json_dictionary:
             assistance = "Jenis Bantuan: " + key['Assistance Type'] + "\nJumlah Tanggungan: " + key[
-                'Victim Number'] + "\nProgres bantuan: " + key['Progress Percentage'] + "%" + "\nStatus Kelulusan: " + interpret_word(key[
-                             "Approval Status"]) + "\nTarikh Bantuan Diberi: " + interpret_word(key["Assistance Given Date"]) + "\n\n"
+                'Victim Number'] + "\nStatus Kelulusan: " + interpret_word(key[
+                             "Approval Status"]) + "\n\n"
             print(assistance)
             assistance_list += assistance
         bot_response = personal + "\n--------------------------------------------------------------\n" + assistance_list
