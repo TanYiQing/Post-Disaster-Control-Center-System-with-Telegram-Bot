@@ -7,23 +7,25 @@ import psycopg2
 
 
 def get_data(message):
+    ic_number = message.split("@")[0]
+    phone_number = message.split("@")[1]
     try:
         conn = psycopg2.connect(
             "postgres://mrfknbsicvtqjo:40cb1909b8ae034538bb96ca0c1ec827d86753ba50548ada7c97fda44f162738@ec2-3-213-76-170.compute-1.amazonaws.com:5432/dhecvtd68dsm3",
             sslmode='require')
         cursor = conn.cursor()
-        cursor.execute("SELECT ic,name,phone FROM victim_app_victim WHERE ic='{}'".format(message))
+        cursor.execute("SELECT ic,name,phone FROM victim_app_victim WHERE ic='{}' AND phone='{}'".format(ic_number, phone_number))
         conn.commit()
         output = cursor.fetchall()
         ic = [i[0] for i in output]
         name = [i[1] for i in output]
         hp = [i[2] for i in output]
         age = str(calculate_age(ic[0]))
-        personal = "Personal Details:\nIC Number: " + str(ic[0]) + "\nName: " + str(name[0]) + "\nPhone Number: " + str(
-            hp[0]) + "\nAge: " + age
+        personal = "Maklumat Mangsa:\nNombor Pengenalan: " + str(ic[0]) + "\nNama: " + str(name[0]) + "\nNombor Telefon: " + str(
+            hp[0]) + "\nUmur: " + age
         cursor.execute(
             "SELECT (SELECT a1.name FROM assistance_app_assistancetype a1 WHERE a1.id=a.assistance_type_id),a.victim_number,a.progress_percentage,a.is_approved,assistance_given_date FROM victim_app_victim v,assistance_app_assistance a WHERE a.victim_id = v.id AND v.ic='{}'".format(
-                message))
+                ic_number))
         conn.commit()
         result = cursor.fetchall()
         result_list = []
@@ -39,15 +41,15 @@ def get_data(message):
         json_dictionary = json.loads(j)
         assistance_list = ""
         for key in json_dictionary:
-            assistance = "Assistance Type: " + key['Assistance Type'] + "\nVictim Number: " + key[
-                'Victim Number'] + "\nProgress Percentage: " + key['Progress Percentage'] + "\nApproval Status: " + key[
-                             "Approval Status"] + "\nAssistance Given Date: " + key["Assistance Given Date"] + "\n\n"
+            assistance = "Jenis Bantuan: " + key['Assistance Type'] + "\nJumlah Tanggungan: " + key[
+                'Victim Number'] + "\nProgres bantuan: " + key['Progress Percentage'] + "%" + "\nStatus Kelulusan: " + interpret_word(key[
+                             "Approval Status"]) + "\nTarikh Bantuan Diberi: " + interpret_word(key["Assistance Given Date"]) + "\n\n"
             print(assistance)
             assistance_list += assistance
         bot_response = personal + "\n--------------------------------------------------------------\n" + assistance_list
         cursor.close()
     except (Exception, psycopg2.DatabaseError) as error:
-        bot_response = "Sorry, I can't find your data... Please check again with valid information"
+        bot_response = "Maaf, saya tidak dapat mencari data anda... Sila semak semula dengan maklumat yang sah"
 
     return bot_response
 
@@ -60,6 +62,17 @@ def calculate_age(ic):
         return int(cur_year) - (int(now + "00") + int(ic_year))
     else:
         return int(cur_year) - (int(now + "00") - 100 + int(ic_year))
+
+
+def interpret_word(word):
+    if word == "False":
+        return "Belum Lulus"
+    elif word == "True":
+        return "Telah Dilulus"
+    elif word == "None":
+        return "Belum Diberi"
+    else:
+        word == ""
 
 
 def process_message(message, response_array, response):
@@ -93,7 +106,7 @@ def get_response(message):
 
     # Return the matching response
     if winning_response == 0:
-        bot_response = 'Sorry, I don\'t understand what you mean.'
+        bot_response = 'Maaf, saya tidak faham apa yang anda maksudkan.'
     else:
         bot_response = matching_response[1]
 

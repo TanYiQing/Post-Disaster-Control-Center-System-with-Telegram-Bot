@@ -18,44 +18,44 @@ logging.info('Starting Bot...')
 
 def start_command(update, context):
     user = update.message.from_user.first_name
-    update.message.reply_text('Hello {}! I\'m ninja-aid_bot. How can I help you today?'.format(user), reply_markup=start_menu_keyboard())
+    update.message.reply_text('Hello {}! Saya ialah Ninja-aid_bot. Bagaimana saya boleh membantu anda hari ini?'.format(user), reply_markup=start_menu_keyboard())
 
 
 def main_menu(update, context):
-    update.callback_query.message.edit_text("Please select a function to continue.",
+    update.callback_query.message.edit_text("Sila pilih fungsi untuk meneruskan.",
                                             reply_markup=main_menu_keyboard())
 
 
 def help_menu(update, context):
-    update.callback_query.message.edit_text("What can I help you? Please contact us.",
+    update.callback_query.message.edit_text("Apa yang boleh saya bantu? Sila hubungi kami.",
                                             reply_markup=help_menu_keyboard())
 
 
 def contact_menu(update, context):
-    update.callback_query.message.edit_text("Customer Service Email: ninjaaidpkob@gmail.com",
+    update.callback_query.message.edit_text("E-mel Perkhidmatan Pelanggan: ninjaaidpkob@gmail.com",
                                             reply_markup=contact_menu_keyboard())
 
 
 def about_menu(update, context):
-    update.callback_query.message.edit_text("Find out more about us!",
+    update.callback_query.message.edit_text("Ketahui lebih lanjut tentang kami!",
                                             reply_markup=about_menu_keyboard())
 
 
 def about_me_menu(update, context):
-    update.callback_query.message.edit_text("Ninja-aid is a centralized system with the aim of helping the victims "
-                                            "facing a disaster to request for help. I'm ninja-aid_bot "
-                                            "and I can help you 24 hours to resolve your curiosity. "
-                                            "To find out about us, you can visit our website.",
+    update.callback_query.message.edit_text("Ninja-aid ialah sistem berpusat dengan tujuan membantu mangsa "
+                                            "menghadapi bencana untuk meminta pertolongan. Saya ialah Ninja-aid_bot "
+                                            "dan saya boleh membantu anda 24 jam untuk menyelesaikan rasa ingin tahu anda. "
+                                            "Untuk mengetahui tentang kami, anda boleh melayari laman web kami.",
                                             reply_markup=aboutme_menu_keyboard())
 
 
 def web_menu(update, context):
-    update.callback_query.message.edit_text("Our Website:\nhttps://ninja-aid.herokuapp.com/",
+    update.callback_query.message.edit_text("Laman Web kami:\nhttps://ninja-aid.herokuapp.com/",
                                             reply_markup=website_menu_keyboard())
 
 
 def get_data_menu(update, context):
-    update.callback_query.message.edit_text("Please tell me your Identity Card Number.\nExample: 123456789456",
+    update.callback_query.message.edit_text("Sila beritahu saya Nombor Kad Pengenalan dan Nombor Telefon anda.\nContoh: 123456789456@0123456789",
                                             reply_markup=getinfo_keyboard())
 
 
@@ -70,9 +70,9 @@ def handle_message(update, context):
 
 def handle_data(update, context):
     text = str(update.message.text).lower()
-    if text.isnumeric():
+    if "@" in text:
         logging.info(f'User ({update.message.chat.id}) says: {text}')
-        update.message.reply_text("I'm trying to find information, please wait a moment ...")
+        update.message.reply_text("Saya sedang cuba mencari maklumat, sila tunggu sebentar...")
         response = responses.get_data(text)
     else:
         response = responses.get_response(text)
@@ -86,55 +86,55 @@ def error(update, context):
 
 
 def start_menu_keyboard():
-    keyboard = [[InlineKeyboardButton('Start Now!', callback_data='main')]]
+    keyboard = [[InlineKeyboardButton('Mula sekarang!', callback_data='main')]]
     return InlineKeyboardMarkup(keyboard)
 
 
 def main_menu_keyboard():
     keyboard = [
-        [InlineKeyboardButton('Get information', callback_data='getdata')],
-        [InlineKeyboardButton('Help Center', callback_data='help'),
-         InlineKeyboardButton('About This Bot', callback_data='about')]
+        [InlineKeyboardButton('Semakan status', callback_data='getdata')],
+        [InlineKeyboardButton('Pusat Bantuan', callback_data='help'),
+         InlineKeyboardButton('Mengenai Bot Ini', callback_data='about')]
     ]
     return InlineKeyboardMarkup(keyboard)
 
 
 def getinfo_keyboard():
     keyboard = [
-        [InlineKeyboardButton('Get information', callback_data='getdata')],
-        [InlineKeyboardButton('Help Center', callback_data='help'),
-         InlineKeyboardButton('About This Bot', callback_data='about')]
+        [InlineKeyboardButton('Semakan status', callback_data='getdata')],
+        [InlineKeyboardButton('Pusat Bantuan', callback_data='help'),
+         InlineKeyboardButton('Mengenai Bot Ini', callback_data='about')]
     ]
     return InlineKeyboardMarkup(keyboard)
 
 
 def help_menu_keyboard():
-    keyboard = [[InlineKeyboardButton('Contact us', callback_data='contactus')],
-                [InlineKeyboardButton('Return to the main menu', callback_data='main')]]
+    keyboard = [[InlineKeyboardButton('Hubungi Kami', callback_data='contactus')],
+                [InlineKeyboardButton('Kembali ke Menu Utama', callback_data='main')]]
     return InlineKeyboardMarkup(keyboard)
 
 
 def contact_menu_keyboard():
-    keyboard = [[InlineKeyboardButton('Return', callback_data='help')],
-                [InlineKeyboardButton('Return to the main menu', callback_data='main')]]
+    keyboard = [[InlineKeyboardButton('Kembali', callback_data='help')],
+                [InlineKeyboardButton('Kembali ke Menu Utama', callback_data='main')]]
     return InlineKeyboardMarkup(keyboard)
 
 
 def about_menu_keyboard():
-    keyboard = [[InlineKeyboardButton('About us', callback_data='us'), InlineKeyboardButton('Website', callback_data='web')],
-                [InlineKeyboardButton('Return to the main menu', callback_data='main')]]
+    keyboard = [[InlineKeyboardButton('Tentang Kami', callback_data='us'), InlineKeyboardButton('Website', callback_data='web')],
+                [InlineKeyboardButton('Kembali ke Menu Utama', callback_data='main')]]
     return InlineKeyboardMarkup(keyboard)
 
 
 def aboutme_menu_keyboard():
-    keyboard = [[InlineKeyboardButton('Return', callback_data='about')],
-                [InlineKeyboardButton('Return to the main menu', callback_data='main')]]
+    keyboard = [[InlineKeyboardButton('Kembali', callback_data='about')],
+                [InlineKeyboardButton('Kembali ke Menu Utama', callback_data='main')]]
     return InlineKeyboardMarkup(keyboard)
 
 
 def website_menu_keyboard():
-    keyboard = [[InlineKeyboardButton('Return', callback_data='about')],
-                [InlineKeyboardButton('Return to the main menu', callback_data='main')]]
+    keyboard = [[InlineKeyboardButton('Kembali', callback_data='about')],
+                [InlineKeyboardButton('Kembali ke Menu Utama', callback_data='main')]]
     return InlineKeyboardMarkup(keyboard)
 
 
