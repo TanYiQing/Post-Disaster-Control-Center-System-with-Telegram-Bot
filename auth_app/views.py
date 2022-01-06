@@ -24,6 +24,14 @@ def register(req):
         last_name = req.POST['last_name']
         password = req.POST['password']
         confirm_password = req.POST['confirm_password']
+        kod_rujukan = req.POST['kod_rujukan']
+
+        if len(ic) < 12:
+            messages.error(req, 'IC Number are less than 12 digits')
+            return redirect('register')
+        if len(ic) > 12:
+            messages.error(req, 'IC Number are greater than 12 digits')
+            return redirect('register')
 
         ic_year = ic[0] + ic[1]
         ic_month = ic[2] + ic[3]
@@ -50,14 +58,12 @@ def register(req):
         if not ic.isnumeric():
             messages.error(req, 'IC Number has to be a number')
             return redirect('register')
-        if len(ic) < 12:
-            messages.error(req, 'IC Number are less than 12 digits')
-            return redirect('register')
-        if len(ic) > 12:
-            messages.error(req, 'IC Number are greater than 12 digits')
-            return redirect('register')
+
         if password != confirm_password:
             messages.error(req, 'Passwords did not match')
+            return redirect('register')
+        if kod_rujukan != 'NINJAAIDKDH123':
+            messages.error(req, 'Sila masukkan kod rujukan yang betul.')
             return redirect('register')
         if CustomUser.objects.filter(ic=ic).exists():
             messages.error(req, 'IC number is already exist.')
