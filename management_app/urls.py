@@ -9,5 +9,6 @@ urlpatterns = [
     
     path('dashboard/', views.dashboard, name="dashboard"),
     path('addvictim/', views.add_victim, name="add_victim"),
-    # path('editvictim/', views.edit_victim, name="edit_victim"),
+    path('editvictim/<int:id>', views.edit_victim, name="edit_victim"),
+    path('deletevictim/<int:id>', views.delete_victim, name="delete_victim"),
 ]
