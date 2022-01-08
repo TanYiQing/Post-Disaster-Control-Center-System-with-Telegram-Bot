@@ -1,50 +1,50 @@
 {% extends 'base1.html' %}
 {% load static %}
 
-{% block title %}Home Page{% endblock  %}
+{% block title %}Home Page{% endblock %}
 {% block custom_css %}
     <style>
-        .introduction_row{
-            position:relative;
+        .introduction_row {
+            position: relative;
         }
 
         .title {
-            position:absolute;
-            top:30%;
-            transform: translate(0,-50%);
+            position: absolute;
+            top: 30%;
+            transform: translate(0, -50%);
             color: #ffffff;
             background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
             background-position: 0;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: title 20s ;
+            animation: title 20s;
             animation-fill-mode: forwards;
             -webkit-text-size-adjust: none;
             text-decoration: none;
             white-space: nowrap;
         }
 
-        .subtitle{
-            position:absolute;
-            top:50%;
+        .subtitle {
+            position: absolute;
+            top: 50%;
         }
 
-        .apply_button{
+        .apply_button {
             width: 15%;
             border-radius: 15px;
         }
 
-        .msocial{
+        .msocial {
             font-size: 1.5rem;
         }
 
-        .msocial_link{
+        .msocial_link {
             font-size: 1rem;
         }
 
-        @keyframes title{
-            0%{
-               background-position: 0px
+        @keyframes title {
+            0% {
+                background-position: 0px
             }
             50% {
                 background-position: 950px
@@ -55,103 +55,195 @@
                 -webkit-text-fill-color: white;
             }
         }
-        .title:after{
+
+        .title:after {
             content: "";
             animation: spin 23s 1 forwards;
         }
 
-        @keyframes spin{
-            0% { content:"PUSAT KAWALAN OPERASI BENCANA";}
-            100% { content:"PUSAT KAWALAN OPERASI BENCANA (PKOB)";}
+        @keyframes spin {
+            0% {
+                content: "PUSAT KAWALAN OPERASI BENCANA";
+            }
+            100% {
+                content: "PUSAT KAWALAN OPERASI BENCANA (PKOB)";
+            }
         }
 
-        @media all and (min-width: 1281px){
-            .title{font-size:50px;}
-            .subtitle{font-size:32px;
+        @media all and (min-width: 1281px) {
+            .title {
+                font-size: 50px;
+            }
+
+            .subtitle {
+                font-size: 32px;
                 width: 50%;
-                left:25%;}
-            .apply_button{width: 18%;font-size:16px;}
+                left: 25%;
+            }
+
+            .apply_button {
+                width: 18%;
+                font-size: 16px;
+            }
         }
 
         @media all and (min-width: 1025px) and (max-width: 1280px) {
-            .title{font-size:40px;}
-            .subtitle{font-size:26px;
+            .title {
+                font-size: 40px;
+            }
+
+            .subtitle {
+                font-size: 26px;
                 width: 50%;
-                left:25%;}
-            .apply_button{width: 20%;font-size:14px;}
+                left: 25%;
+            }
+
+            .apply_button {
+                width: 20%;
+                font-size: 14px;
+            }
         }
 
         @media all and (min-width: 769px) and (max-width: 1024px) {
-            .title{font-size:30px;}
-            .subtitle{
-                font-size:20px;
+            .title {
+                font-size: 30px;
+            }
+
+            .subtitle {
+                font-size: 20px;
                 width: 52%;
-                left:25%;}
-            .apply_button{width: 23%;font-size:12px;}
-            .msocial{font-size: 1rem}
-            .msocial_link{font-size: .5rem}
+                left: 25%;
+            }
+
+            .apply_button {
+                width: 23%;
+                font-size: 12px;
+            }
+
+            .msocial {
+                font-size: 1rem
+            }
+
+            .msocial_link {
+                font-size: .5rem
+            }
         }
 
         @media all and (min-width: 601px) and (max-width: 768px) {
-            .title{font-size:30px;}
-            .subtitle{
-                font-size:16px;
+            .title {
+                font-size: 30px;
+            }
+
+            .subtitle {
+                font-size: 16px;
                 width: 56%;
-                left:22%;}
-            .apply_button{width: 24%;font-size:10px;}
-            .msocial{font-size: 1rem}
-            .msocial_link{font-size: .5rem}
+                left: 22%;
+            }
+
+            .apply_button {
+                width: 24%;
+                font-size: 10px;
+            }
+
+            .msocial {
+                font-size: 1rem
+            }
+
+            .msocial_link {
+                font-size: .5rem
+            }
         }
 
         @media all and (min-width: 500px) and (max-width: 600px) {
-            .title{
-                font-size:20px;
+            .title {
+                font-size: 20px;
             }
-            .subtitle{
-                font-size:12px;
+
+            .subtitle {
+                font-size: 12px;
                 width: 57%;
-                left: 20%;}
-            .apply_button{width: 25%;font-size:8px;}
-            .msocial{font-size: .1rem}
-            .msocial_link{font-size: .5rem}
+                left: 20%;
+            }
+
+            .apply_button {
+                width: 25%;
+                font-size: 8px;
+            }
+
+            .msocial {
+                font-size: .1rem
+            }
+
+            .msocial_link {
+                font-size: .5rem
+            }
         }
 
         @media all and (min-width: 321px) and (max-width: 499px) {
-            .title{font-size:12px;}
-            .subtitle{
-                font-size:8px;
+            .title {
+                font-size: 12px;
+            }
+
+            .subtitle {
+                font-size: 8px;
                 width: 50%;
-                left: 25%;}
-            .apply_button{width: 35%;font-size:6px;}
-            .msocial{font-size: .7rem}
-            .msocial_link{font-size: .35rem}
+                left: 25%;
+            }
+
+            .apply_button {
+                width: 35%;
+                font-size: 6px;
+            }
+
+            .msocial {
+                font-size: .7rem
+            }
+
+            .msocial_link {
+                font-size: .35rem
+            }
         }
 
         @media all and (max-width: 320px) {
-            .title{font-size:12px;}
-            .subtitle{
-                font-size:8px;
+            .title {
+                font-size: 12px;
+            }
+
+            .subtitle {
+                font-size: 8px;
                 width: 50%;
-                left: 25%;}
-            .apply_button{width: 38%;font-size:6px;}
-            .msocial{font-size: .7rem}
-            .msocial_link{font-size: .35rem}
+                left: 25%;
+            }
+
+            .apply_button {
+                width: 38%;
+                font-size: 6px;
+            }
+
+            .msocial {
+                font-size: .7rem
+            }
+
+            .msocial_link {
+                font-size: .35rem
+            }
         }
     </style>
-{% endblock  %}
+{% endblock %}
 {% block content_title %}
-<h1 class="mt-5"> PUSAT KAWALAN OPERASI BENCANA</h1>
-{% endblock  %}
+    <h1 class="mt-5"> PUSAT KAWALAN OPERASI BENCANA</h1>
+{% endblock %}
 {% block content %}
 
     <!-- body -->
     <section class="introduction">
-            <div class="row introduction_row">
-                <img class="img-fluid" style="filter: brightness(40%)" src="{% static 'webimage/kedahview.png' %}">
-                <h2 class="title text-center"></h2>
-                <div class="container subtitle">
-                    <p class="text-light text-left mb-2" style="font-weight: lighter">We provide Food Supplement, House Repair, New House Construction and Monthly Assistance for victims in Kedah.</p>
-                </div>
+        <div class="row introduction_row">
+            <img class="img-fluid" style="filter: brightness(40%)" src="{% static 'webimage/kedahview.png' %}">
+            <h2 class="title text-center"></h2>
+            <div class="container subtitle">
+                <p class="text-light text-left mb-2" style="font-weight: lighter">Aplikasi ini membantu mengesan mangsa
+                    yang mendapat bantuan di Kedah dengan mudah.</p>
+            </div>
         </div>
     </section>
 
@@ -159,24 +251,30 @@
         <div class="container">
             <div class="row mt-4">
                 <div class="col-lg-3 col-md-6 col-xs-12">
-                    <h3 class="text-center" style="font-weight: lighter">Food Supplement</h3>
+                    <h3 class="text-center" style="font-weight: lighter">Bakul Makanan</h3>
                     <img src="{% static 'webimage/food.png' %}" class="img-fluid mx-auto d-block" style="width: 60%">
-                    <p class="text-justify">Food Supplement provide food for victims to solve hunger problem.</p>
+                    <p style="text-align: justify">Bakul Makanan menyediakan makanan kepada mangsa untuk menyelesaikan masalah
+                        kelaparan.</p>
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12">
-                    <h3 class="text-center" style="font-weight: lighter">House Repair</h3>
+                    <h3 class="text-center" style="font-weight: lighter">Baik Pulih Rumah</h3>
                     <img src="{% static 'webimage/repair.png' %}" class="img-fluid mx-auto d-block" style="width: 60%">
-                    <p class="text-justify">House Repair will provide post-disaster team to help victims to repair their house. </p>
+                    <p style="text-align: justify">Baik Pulih Rumah menyediakan pasukan pasca bencana untuk membaiki rumah
+                        mangsa.</p>
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12">
-                    <h3 class="text-center" style="font-weight: lighter">New House Construction</h3>
-                    <img src="{% static 'webimage/construction.png' %}" class="img-fluid mx-auto d-block" style="width: 60%">
-                    <p class="text-justify">New house construction is to provide construction services to those who have lost their homes so that they can regain their homes..</p>
+                    <h3 class="text-center" style="font-weight: lighter">Bantuan Rumah Baru</h3>
+                    <img src="{% static 'webimage/construction.png' %}" class="img-fluid mx-auto d-block"
+                         style="width: 60%">
+                    <p style="text-align: justify">Bantuan Rumah Baru menyediakan perkhidmatan pembinaan kepada mereka yang
+                        kehilangan tempat tinggal supaya mereka boleh mendapatkan semula kediaman mereka.</p>
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12">
-                    <h3 class="text-center" style="font-weight: lighter">Monthly Assistance</h3>
-                    <img src="{% static 'webimage/donation.png' %}" class="img-fluid mx-auto d-block" style="width: 60%">
-                    <p class="text-justify">Monthly assistance is when people apply for financial assistance so that they can get basic needs every month.</p>
+                    <h3 class="text-center" style="font-weight: lighter">Bantuan Bulanan</h3>
+                    <img src="{% static 'webimage/donation.png' %}" class="img-fluid mx-auto d-block"
+                         style="width: 60%">
+                    <p style="text-align: justify">Bantuan bulanan menyediakan bantuan kewangan kepada mangsa supaya mereka
+                        mendapat keperluan asas setiap bulan.</p>
                 </div>
             </div>
         </div>
@@ -186,25 +284,30 @@
         <div class="footer-middle mt-0 bg-light">
             <div class="container">
                 <div class="row footer">
-                    <h2 class="title1 fontsize1 footer-title-text mt-2">About Us</h2>
+                    <h2 class="title1 fontsize1 footer-title-text mt-5">Tentang Kami</h2>
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-9 footer">
                         <div class="row">
-                            <p style="text-align: justify">At the end of each year in Malaysia, monsoons cause frequent occurrences of natural disasters and cause floods. In addition, property loss of residents is inevitable. In response, penghulu in the district formed a post-disaster rescue team to solve the difficulties of the residents. However, with the current methods in black and white, rescue operations cannot be effective and carried out quickly.</p>
+                            <p style="text-align: justify">Pada setiap penghujung tahun di Malaysia, musim tengkujuh
+                                menyebabkan berlakunya bencana alam yang kerap dan menyebabkan banjir. Di samping itu,
+                                kehilangan harta benda penduduk tidak dapat dielakkan. Sebagai tindak balas, penghulu di
+                                daerah itu membentuk pasukan penyelamat pasca bencana bagi menyelesaikan kesulitan
+                                penduduk. Namun, dengan kaedah permohonan tradisional, operasi menyelamat tidak dapat
+                                berkesan dan dijalankan dengan cepat.</p>
                         </div>
                         <br>
                         <div class="row">
                             <div class="container">
                                 <div class="row justify-content-md-left">
                                     <div class="col col-lg-auto">
-                                        <h4 style="font-weight: lighter">EASY</h4>
+                                        <h4 style="font-weight: lighter">MUDAH</h4>
                                     </div>
                                     <div class="col col-lg-auto">
-                                        <h2 style="font-weight: lighter">FAST</h2>
+                                        <h2 style="font-weight: lighter">CEPAT</h2>
                                     </div>
                                     <div class="col col-lg-auto">
-                                        <h1 style="font-weight: lighter">EFFICIENT</h1>
+                                        <h1 style="font-weight: lighter">CEKAP</h1>
                                     </div>
                                     <div class="col col-lg-1">
                                         <img src="{% static 'webimage/ninja.png' %}" class="img-fluid float-right">
@@ -214,7 +317,14 @@
                         </div>
                         <br>
                         <div class="row">
-                            <p style="text-align: justify">In this era of advanced technology, a system can be developed to help Penghulu and the residents to solve all their difficulties. Ninja Aid is a centralized system that can help the penghulu of a district quickly engage in post-disaster relief operations. This system not only can assist the victims quickly but also avoid the phenomenon of wasting resources. The centralized victims’ data and assistance records can help penghulu to respond faster and trace back the records. Besides that, victims can also apply for assistance through the online method, this saves effort and time compared to the traditional black and white method.</p>
+                            <p style="text-align: justify">Dalam era teknologi canggih ini, satu sistem boleh
+                                dibangunkan untuk membantu penghulu menyelesaikan kesukarannya. Ninja Aid ialah sistem
+                                berpusat yang membantu penghulu melihat senarai mangsa dengan cepat. Sistem ini bukan
+                                sahaja cepat membantu penghulu melihat sama ada mangsa dibantu, tetapi juga mengelakkan
+                                pembaziran sumber. Maklumat mangsa terpusat dan rekod bantuan boleh membantu penghulu
+                                bertindak balas dengan lebih pantas dan mengesan rekod tersebut. Selain itu, mangsa juga
+                                boleh memohon bantuan secara dalam talian, menjimatkan tenaga dan masa berbanding kaedah
+                                permohonan tradisional.</p>
                         </div>
                     </div>
                     <div class="col-md-3 footer">
@@ -237,7 +347,8 @@
                         <div class="row justify-content-center">
                             <div class="col-4">
                                 <div class="card">
-                                    <img src="{% static 'webimage/facebook-logo.png' %}" class="img-fluid mx-auto my-2 d-block w-50" >
+                                    <img src="{% static 'webimage/facebook-logo.png' %}"
+                                         class="img-fluid mx-auto my-2 d-block w-50">
                                     <div class="card-body">
                                         <h5 class="msocial text-center">FACEBOOK</h5>
                                         <a href="https://www.facebook.com/ninjaaidpkob/">
@@ -248,7 +359,8 @@
                             </div>
                             <div class="col-4">
                                 <div class="card">
-                                    <img src="{% static 'webimage/gmail-logo.png' %}" class="img-fluid mx-auto my-2 d-block w-50" >
+                                    <img src="{% static 'webimage/gmail-logo.png' %}"
+                                         class="img-fluid mx-auto my-2 d-block w-50">
                                     <div class="card-body">
                                         <h5 class="msocial text-center">EMAIL</h5>
                                         <p class="msocial_link text-center">ninjaaidpkob@gmail.com</p>
@@ -262,10 +374,12 @@
                 <br>
                 <div class="footer-bottom mt-2">
                     <p class="text-xs-center footer-title-text mb-0">
-                        &copy; <script>document.write(new Date().getFullYear())</script> Ninja Aid - PKOB System from Malaysia
+                        &copy;
+                        <script>document.write(new Date().getFullYear())</script>
+                        Ninja Aid - PKOB System from Malaysia
                     </p>
                 </div>
             </div>
         </div>
     </div>
-{% endblock  %}
+{% endblock %}
