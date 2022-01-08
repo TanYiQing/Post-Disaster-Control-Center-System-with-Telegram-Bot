@@ -282,40 +282,40 @@
             {% endif %}
         {% for x in assistance%}
             {% for i in victims%}
-                {% if x.assistance_type.name == 'Food Supplement' and i.salary <= 2500 %}
+                {% if x.assistance_type.name == 'Bakul Makanan' and i.salary <= 2500 %}
                     total_food_and_below_2500 += 1
                 {% endif %}
-                {% if x.assistance_type.name == 'Food Supplement' and i.salary > 2500 and i.salary <= 5000 %}
+                {% if x.assistance_type.name == 'Bakul Makanan' and i.salary > 2500 and i.salary <= 5000 %}
                     total_food_and_between_2500 += 1
                 {% endif %}
-                {% if x.assistance_type.name == 'Food Supplement' and i.salary > 5000 %}
+                {% if x.assistance_type.name == 'Bakul Makanan' and i.salary > 5000 %}
                     total_food_and_above_5000 += 1
                 {% endif %}
-                {% if x.assistance_type.name == 'House Repair'  and i.salary <= 2500 %}
+                {% if x.assistance_type.name == 'Baik Pulih Rumah'  and i.salary <= 2500 %}
                     total_house_repair_and_below_2500 += 1
                 {% endif %}
-                {% if x.assistance_type.name == 'House Repair' and i.salary > 2500 and i.salary <= 5000 %}
+                {% if x.assistance_type.name == 'Baik Pulih Rumah' and i.salary > 2500 and i.salary <= 5000 %}
                     total_house_repair_and_between_2500 += 1
                 {% endif %}
-                {% if x.assistance_type.name == 'House Repair' and i.salary > 5000 %}
+                {% if x.assistance_type.name == 'Baik Pulih Rumah' and i.salary > 5000 %}
                     total_house_repair_and_above_5000 += 1
                 {% endif %}
-                {% if x.assistance_type.name == 'New House Construction' and i.salary <= 2500 %}
+                {% if x.assistance_type.name == 'Bantuan Rumah Baru' and i.salary <= 2500 %}
                     total_house_construction_and_below_2500 += 1
                 {% endif %}
-                {% if x.assistance_type.name == 'New House Construction'  and i.salary > 2500 and i.salary <= 5000 %}
+                {% if x.assistance_type.name == 'Bantuan Rumah Baru'  and i.salary > 2500 and i.salary <= 5000 %}
                     total_house_construction_and_between_2500 += 1
                 {% endif %}
-                {% if x.assistance_type.name == 'New House Construction'  and i.salary > 5000 %}
+                {% if x.assistance_type.name == 'Bantuan Rumah Baru'  and i.salary > 5000 %}
                     total_house_construction_and_above_5000 += 1
                 {% endif %}
-                {% if x.assistance_type.name == 'Monthly Assistance' and i.salary <= 2500 %}
+                {% if x.assistance_type.name == 'Bantuan Bulanan' and i.salary <= 2500 %}
                     total_monthly_assistance_and_below_2500 += 1
                 {% endif %}
-                {% if x.assistance_type.name == 'Monthly Assistance' and i.salary > 2500 and i.salary <= 5000 %}
+                {% if x.assistance_type.name == 'Bantuan Bulanan' and i.salary > 2500 and i.salary <= 5000 %}
                     total_monthly_assistance_and_between_2500 += 1
                 {% endif %}
-                {% if x.assistance_type.name == 'Monthly Assistance' and i.salary > 5000 %}
+                {% if x.assistance_type.name == 'Bantuan Bulanan' and i.salary > 5000 %}
                     total_monthly_assistance_and_above_5000 += 1
                 {% endif %}
             {% endfor %}
