@@ -50,7 +50,7 @@ def about_me_menu(update, context):
 
 
 def web_menu(update, context):
-    update.callback_query.message.edit_text("Laman Web kami:\nhttps://ninja-aid.herokuapp.com/",
+    update.callback_query.message.edit_text("Mohon bantuan di sini atau kunjungi laman web kami:\nhttps://ninja-aid.herokuapp.com/",
                                             reply_markup=website_menu_keyboard())
 
 
@@ -122,7 +122,7 @@ def contact_menu_keyboard():
 
 
 def about_menu_keyboard():
-    keyboard = [[InlineKeyboardButton('Tentang Kami', callback_data='us'), InlineKeyboardButton('Website', callback_data='web')],
+    keyboard = [[InlineKeyboardButton('Tentang Kami', callback_data='us'), InlineKeyboardButton('Laman Web', callback_data='web')],
                 [InlineKeyboardButton('Kembali ke Menu Utama', callback_data='main')]]
     return InlineKeyboardMarkup(keyboard)
 
