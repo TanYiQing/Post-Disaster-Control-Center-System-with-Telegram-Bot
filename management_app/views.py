@@ -72,11 +72,57 @@ def edit_victim_assistance(request, victim_id, assistance_id):
 
     return render(request, 'management_app/edit_victim_assistance.html',
                   {'victim': victim, 'victim_assistance': victim_assistance, 'assistance_types': assistance_types})
+
+
 @login_required
 def add_victim(request):
-    return redirect('add_profile')
+    return render(request, 'management_app/add_victim.html')
 
 
-# # @user_passes_test(lambda user: user.is_staff)
-# def edit_victim(request):
-#     return render(request, 'management_app/edit_victim.html')
+@login_required(login_url='/login')
+def edit_victim(request, id):
+    victim = get_object_or_404(Victim, id=id)
+    if request.method == "POST":
+        name = request.POST['name']
+        ic = request.POST['icNum']
+        phone = request.POST["phone"]
+        is_kir = str(request.POST["is_kir"])
+        salary = request.POST["salary"]
+        address1 = request.POST["address1"]
+        address2 = request.POST["address2"]
+        city = request.POST["city"]
+        mukim = request.POST["mukim"]
+        parlimen = request.POST["parlimen"]
+        state = request.POST["state"]
+        poskod = request.POST["poskod"]
+
+        victim.name = name
+        victim.ic = ic
+        victim.phone = phone
+        victim.is_kir = is_kir
+        victim.salary = salary
+        victim.address1 = address1
+        victim.address2 = address2
+        victim.city = city
+        victim.mukim = mukim
+        victim.parlimen = parlimen
+        victim.state = state
+        victim.poskod = poskod
+
+        victim.save()
+        respond = "Edit Successful"
+        return redirect('list_victim')
+
+    return render(request, 'management_app/edit_victim.html', context={'victim': victim})
+
+
+def delete_victim(request,id):
+    context = {}
+    icd = get_object_or_404(Victim, id=id)
+    context["victim"] = icd
+
+    if "action" in request.GET:
+        icd.delete()
+        context["status"] = str(icd.name) + " Removed Successfully"
+        return redirect('list_victim')
+    return render(request, 'management_app/delete_victim.html', context)
