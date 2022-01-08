@@ -26,25 +26,25 @@ Request Assistance
                 <div class="col-10">
                     <form action="" method="post">
                         {% csrf_token %}
-                            <h3 class="mt-3 text-center"> Request Assistance </h3>
+                            <h3 class="mt-3 text-center"> Permintaan Bantuan </h3>
                             <div class="row pt-4">
                                 <div class="col-12 col-md-6">
                                     <div class="mb-3">
-                                        <label for="formGroupExampleInput" class="form-label">Name</label>
+                                        <label for="formGroupExampleInput" class="form-label">Nama</label>
                                         <input type="text" class="form-control" maxlength="12" name="name" placeholder="e.g Joseph Dyson ( Without '-' )" value='{{victim.name}}' readonly required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="formGroupExampleInput" class="form-label">Victim Number</label>
+                                        <label for="formGroupExampleInput" class="form-label">Jumlah Tanggungan</label>
                                         <input type="number" class="form-control" min="1" name="victim_num" required>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="mb-3">
-                                        <label for="formGroupExampleInput" class="form-label">IC Number</label>
+                                        <label for="formGroupExampleInput" class="form-label">No. Kad Pengenalan</label>
                                         <input type="text" class="form-control" maxlength="12" name="ic_no" placeholder="e.g 123456789101 ( Without '-' )" value='{{victim.ic}}' readonly required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="formGroupExampleInput" class="form-label">Assistance Type</label>
+                                        <label for="formGroupExampleInput" class="form-label">Jenis Bantuan</label>
                                         <select class="form-select form-select-md mb-3" aria-label=".form-select-md example" name="assistance_type">
                                             {% for assistance in assistance_type %}
                                             <option value="{{ assistance.id }}">{{ assistance }}</option>
@@ -55,7 +55,7 @@ Request Assistance
                             </div>
                             <div class="row">
                                 <div class="col-12 mb-3">
-                                    <label for="formGroupExampleInput" class="form-label">Remark</label>
+                                    <label for="formGroupExampleInput" class="form-label">Catatan</label>
                                     <textarea type="text" class="form-control" name="remark"></textarea>
                                 </div>
                             </div>
@@ -64,11 +64,11 @@ Request Assistance
                                 <div class="col-lg-5 col-xl-4">
                                     <div class="row mb-4">
                                         <div class="col-5 col-md-4 col-lg-5">
-                                            <button type="reset" class="form-control btn text-light" style="background-color: red">Reset</button>
+                                            <button type="reset" class="form-control btn text-light" style="background-color: red">Batal</button>
                                         </div>
                                         <div class="col-2 col-md-4 col-lg-2"></div>
                                         <div class="col-5 col-md-4 col-lg-5">
-                                            <button type="submit" class="form-control btn btn-dark text-light">Submit</button>
+                                            <button type="submit" class="form-control btn btn-dark text-light">Hantar</button>
                                         </div>
                                     </div>
                                 </div>

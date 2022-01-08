@@ -27,7 +27,7 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            Total Victim
+                                            Jumlah Mangsa
                                         </div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">
                                             {% if victims %}
@@ -49,7 +49,7 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                            Total Assistance Request
+                                            Jumlah Bantuan Diminta
                                         </div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">
                                             {% if assistance %}
@@ -70,8 +70,8 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total
-                                            Pending Request
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            Jumlah Permintaan Belum Dilulus
                                         </div>
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-auto">
@@ -95,7 +95,7 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                            Total Approval Request
+                                            Jumlah Permintaan Dilulus
                                         </div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">
                                             {{ total_approval }}
@@ -112,7 +112,7 @@
             </div>
         </div>
         <div class="row px-3 px-sm-0">
-            <h3 class="mt-3 mt-sm-5"> Summary of Victim </h3>
+            <h3 class="mt-3 mt-sm-5"> Ringkasan Mangsa </h3>
             <div class="card shadow">
                 <div class="card-body">
                     <div class="table-responsive">
@@ -120,16 +120,16 @@
                             <thead>
                             <tr>
                                 <th scope="col"></th>
-                                <th scope="col">Food Supplement</th>
-                                <th scope="col">House Repair</th>
-                                <th scope="col">New House Construction</th>
-                                <th scope="col">Monthly Assistance</th>
-                                <th scope="col">Total</th>
+                                <th scope="col">Bakul Makanan</th>
+                                <th scope="col">Baik Pulih Rumah</th>
+                                <th scope="col">Bantuan Rumah Baru</th>
+                                <th scope="col">Bantuan Bulanan</th>
+                                <th scope="col">Jumlah</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <th>Below RM2500</th>
+                                <th>Kurang dari RM2500</th>
                                 <td id="total_food_and_below_2500"></td>
                                 <td id="total_house_repair_and_below_2500"></td>
                                 <td id="total_house_construction_and_below_2500"></td>
@@ -145,7 +145,7 @@
                                 <td id="total_between_2500"></td>
                             </tr>
                             <tr>
-                                <th>Above RM5000</th>
+                                <th>Lebih dari RM5000</th>
                                 <td id="total_food_and_above_5000"></td>
                                 <td id="total_house_repair_and_above_5000"></td>
                                 <td id="total_house_construction_and_above_5000"></td>
@@ -153,7 +153,7 @@
                                 <td id="total_above_5000"></td>
                             </tr>
                             <tr>
-                                <th>Total</th>
+                                <th>Jumlah</th>
                                 <td id="total_food_table"></td>
                                 <td id="total_house_repair_table"></td>
                                 <td id="total_house_construction_table"></td>
@@ -172,7 +172,7 @@
                 <!-- Bar Chart -->
                 <div class="card shadow mb-4">
                     <div class="card-header bg-transparent py-3">
-                        <h6 class="m-0 font-weight-bold text-gray-800">Assistance Type</h6>
+                        <h6 class="m-0 font-weight-bold text-gray-800">Jenis Bantuan</h6>
                     </div>
                     <div class="card-body">
                         <div class="chart-bar">
@@ -226,7 +226,7 @@
 
             type: 'bar',
             data: {
-                labels: ['Food Supplement', 'House Repair', 'New House Construction', 'Monthly Assistance'],
+                labels: ['Bakul Makanan', 'Baik Pulih Rumah', 'Bantuan Rumah Baru', 'Bantuan Bulanan'],
                 datasets: [
                     {
                         data: [total_food, total_house_repair, total_house_construction, total_monthly_assistance],
