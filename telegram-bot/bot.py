@@ -92,7 +92,8 @@ def start_menu_keyboard():
 
 def main_menu_keyboard():
     keyboard = [
-        [InlineKeyboardButton('Semakan status', callback_data='getdata')],
+        [InlineKeyboardButton('Semakan Status', callback_data='getdata')],
+        [InlineKeyboardButton('Permohonan Bantuan', callback_data='web')],
         [InlineKeyboardButton('Pusat Bantuan', callback_data='help'),
          InlineKeyboardButton('Mengenai Bot Ini', callback_data='about')]
     ]
