@@ -1,45 +1,59 @@
-{% extends "base.html" %}
+{% extends "victimbase.html" %}
 
 {% block title %}
     Victim Report
 {% endblock %}
 
 {% block content %}
-    <div class="row mt-2">
-        <div class="col">
-            <div class="row my-3 text-center"><h1>List of Victims</h1></div>
-            <table id="example" class="table table-bordered table-striped table-hover  ">
-                <thead class="bg-dark text-light">
-                <tr style="text-align: center;">
-                    <th scope="col">IC Number</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Details</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for victim in victim_list %}
-                    <tr style="cursor: pointer; text-align: center; ">
-                        <td>{{ victim.ic }}</td>
-                        <td>{{ victim.name }}</td>
-                        <td>{{ victim.phone }}</td>
-                        <td>
-                            <div class="p-2">
-                                <div class="row text-center">
-                                    <div class="col">
-                                        <a href="{% url "edit_profile" victim.ic %}"><i
-                                                class="bi bi-search"></i></a></div>
-                                    <div class="col">
-                                        <a href="{% url "delete_profile" %}?ic={{ victim.ic }}"><i
-                                                class="bi bi-trash"></i></a></div>
-                                </div>
-                            </div>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-            <div class="col text-center my-3">
-                <a href="{% url "home_page" %}">Back to Main Page</a>
+    <div class="container">
+        <div class="row mt-4 px-3 px-sm-0">
+            <h1 class="text-center mb-3">Victim List</h1>
+            <div class="card shadow mb-4">
+                <div class="card-body ">
+                    <div class="table-responsive">
+                        <table id="example" class="table table-bordered py-3">
+                            <thead>
+                                <tr>
+                                    <th>Bil.</th>
+                                    <th>Nama Mangsa</th>
+                                    <th>No. Kad Pengenalan</th>
+                                    <th>No. Telefon</th>
+                                    <th>Alamat</th>
+                                    <th>Bandar</th>
+                                    <th>Mukim</th>
+                                    <th>Parlimen</th>
+                                    <th>Negeri</th>
+                                    <th>Jumlah Bantuan Diminta</th>
+                                    <th>Tindakan</th>
+                                    {% comment %} <th>Progress Percentage(%)</th>
+                                    <th>Status</th>
+                                    <th>Action</th> {% endcomment %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for victim in victims %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{victim.name}}</td>
+                                    <td>{{victim.ic}}</td>
+                                    <td>{{victim.phone}}</td>
+                                    <td>{{victim.address1}}, {{victim.address2}}</td>
+                                    <td>{{victim.city}}</td>
+                                    <td>{{victim.mukim}}</td>
+                                    <td>{{victim.parlimen}}</td>
+                                    <td>{{victim.state}}</td>
+                                    <td>{{victim.assistance_list.count}}</td>
+                                    <td>
+                                        <a href="{% url 'victim_view_assistance' victim.id %}">Lihat Bantuan Diminta</a><br>
+                                        <a href="{% url 'edit_profile' victim.id %}">Edit Butiran Mangsa</a><br>
+                                        <a href="{% url 'victim_request_assistance' victim.id %}">Tambah Permintaan Bantuan</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

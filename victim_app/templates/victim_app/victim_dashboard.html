@@ -1,4 +1,4 @@
-{% extends 'base1.html' %}
+{% extends 'victimbase.html' %}
 {% load static %}
 
 {% block title %}Home Page{% endblock %}
@@ -27,11 +27,6 @@
         .subtitle {
             position: absolute;
             top: 50%;
-        }
-
-        .apply_button {
-            width: 15%;
-            border-radius: 15px;
         }
 
         .msocial {
@@ -81,8 +76,8 @@
                 left: 25%;
             }
 
-            .apply_button {
-                width: 18%;
+            .search_button {
+                width: 15%;
                 font-size: 16px;
             }
         }
@@ -98,8 +93,8 @@
                 left: 25%;
             }
 
-            .apply_button {
-                width: 20%;
+            .search_button {
+                width: 15%;
                 font-size: 14px;
             }
         }
@@ -115,9 +110,13 @@
                 left: 25%;
             }
 
-            .apply_button {
-                width: 23%;
-                font-size: 12px;
+            .search_field{
+                width: 80%;
+            }
+
+            .search_button {
+                width: 18%;
+                font-size: 14px;
             }
 
             .msocial {
@@ -140,9 +139,16 @@
                 left: 22%;
             }
 
-            .apply_button {
-                width: 24%;
-                font-size: 10px;
+            .search_field{
+                width: 100%;
+                height: 40%;
+                font-size: 14px;
+            }
+
+            .search_button {
+                width: 20%;
+                height: 20%;
+                font-size: 12px;
             }
 
             .msocial {
@@ -165,9 +171,15 @@
                 left: 20%;
             }
 
-            .apply_button {
-                width: 25%;
-                font-size: 8px;
+            .search_field{
+                height: 50%;
+                font-size: 12px;
+            }
+
+            .search_button {
+                width: 20%;
+                height: 20%;
+                font-size: 10px;
             }
 
             .msocial {
@@ -190,9 +202,17 @@
                 left: 25%;
             }
 
-            .apply_button {
-                width: 35%;
-                font-size: 6px;
+            .search_field{
+                padding: 5px 10px;
+                height: 50%;
+                font-size: 8px;
+            }
+
+            .search_button {
+                padding: 5px 8px;
+                width: 26%;
+                height: 18%;
+                font-size: 7px;
             }
 
             .msocial {
@@ -215,9 +235,17 @@
                 left: 25%;
             }
 
-            .apply_button {
-                width: 38%;
+            .search_field{
+                padding: 5px 10px;
+                height: 50%;
                 font-size: 6px;
+            }
+
+            .search_button {
+                padding: 5px;
+                width: 25%;
+                height: 18%;
+                font-size: 5px;
             }
 
             .msocial {
@@ -241,8 +269,12 @@
             <img class="img-fluid" style="filter: brightness(40%)" src="{% static 'webimage/kedahview.png' %}">
             <h2 class="title text-center"></h2>
             <div class="container subtitle">
-                <p class="text-light text-left mb-2" style="font-weight: lighter">Aplikasi ini membantu mengesan mangsa
+                <p class="text-light text-left mb-xs-2 mb-1" style="font-weight: lighter">Aplikasi ini membantu mengesan mangsa
                     yang mendapat bantuan di Kedah dengan mudah.</p>
+                <form class="d-flex">
+                    <input class="form-control me-2 search_field" type="search" placeholder="eg: 123456123456@0124561234" aria-label="Search">
+                    <button class="btn btn-light search_button text-center" type="submit">Search</button>
+                </form>
             </div>
         </div>
     </section>
