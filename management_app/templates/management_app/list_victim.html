@@ -26,17 +26,17 @@ Victim List
                         <table id="example" class="table table-bordered py-3">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Victim Name</th>
-                                    <th>Ic Number</th>
-                                    <th>Phone</th>
-                                    <th>Address</th>
+                                    <th>Bil.</th>
+                                    <th>Nama Mangsa</th>
+                                    <th>No. Kad Pengenalan</th>
+                                    <th>No. Telefon</th>
+                                    <th>Alamat</th>
                                     <th>Bandar</th>
                                     <th>Mukim</th>
                                     <th>Parlimen</th>
                                     <th>Negeri</th>
-                                    <th>Total assistance request</th>
-                                    <th>Action</th>
+                                    <th>Jumlah Bantuan Diminta</th>
+                                    <th>Tindakan</th>
                                     {% comment %} <th>Progress Percentage(%)</th>
                                     <th>Status</th>
                                     <th>Action</th> {% endcomment %}
@@ -56,10 +56,10 @@ Victim List
                                     <td>{{victim.state}}</td>
                                     <td>{{victim.assistance_list.count}}</td>
                                     <td>
-                                        <a href="{% url 'view_victim_assistance' victim.id %}">View Request Assistances</a><br>
-                                        <a href="{% url 'edit_profile' victim.id %}">Edit Victim</a><br>
-                                        <a href="{% url 'delete_profile' victim.id %}">Delete Victim</a><br>
-                                        <a href="{% url 'request_assistance' victim.id %}">Add Request Assistance</a>
+                                        <a href="{% url 'view_victim_assistance' victim.id %}">Lihat Bantuan Diminta</a><br>
+                                        <a href="{% url 'edit_profile' victim.id %}">Edit Butiran Mangsa</a><br>
+                                        <a href="{% url 'delete_profile' victim.id %}">Delete Mangsa</a><br>
+                                        <a href="{% url 'request_assistance' victim.id %}">Tambah Permintaan Bantuan</a>
                                     </td>
                                 </tr>
                                 {% endfor %}

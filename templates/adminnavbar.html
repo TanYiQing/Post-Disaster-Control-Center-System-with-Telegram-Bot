@@ -18,19 +18,19 @@
           <ul class="navbar-nav">
             {% if user.is_authenticated%}
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url "dashboard" %}"><span class="bi bi-house"> Home</span></a
+                <a class="nav-link active" aria-current="page" href="{% url "dashboard" %}"><span class="bi bi-house"> Menu Utama</span></a
                 >
             </li>
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url "add_profile" %}">
                     <div style="border-style:solid; border-width: 1px; padding: 0px 4px;border-radius: 4px">
-                    <span class="bi bi-layers-half"> Add Victim Details</span>
+                    <span class="bi bi-layers-half"> Tambah Butiran Mangsa</span>
                     </div>
                 </a
                 >
             </li> 
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url "list_victim" %}"><span class="bi bi-card-list"> List Victim Details</span></a
+                <a class="nav-link active" aria-current="page" href="{% url "list_victim" %}"><span class="bi bi-card-list"> Senarai Butiran Mangsa</span></a
                 >
             </li>
             {% else %}
@@ -54,16 +54,11 @@
             <li class='nav-item my-auto mx-4'>
                 <p class='text-white nav-link p-0 m-0'> Hi, Admin {{ user.first_name }} </p>
             </li>
-            {% comment %} <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url "add_profile" %}">
-                    <span class="bi bi-person-fill"> My Profile</span>
-                </a>
-            </li> {% endcomment %}
             <li class="nav-item">
 
                 <a class="nav-link active" aria-current="page" href="{% url "logout" %}">
                     <div style="background-color: red; padding: 0px 4px;border-radius: 4px">
-                    <span class="bi bi-door-open"> Logout</span>
+                    <span class="bi bi-door-open"> Log Keluar</span>
                     </div>
                 </a>
             </li>
