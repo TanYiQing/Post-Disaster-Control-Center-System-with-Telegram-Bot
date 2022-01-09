@@ -18,7 +18,10 @@
 {% block content %}
 
     <div class="container">
+
         <div class="row mt-4 px-3 px-sm-0">
+        <a class='m-2 btn btn-success text-white' href="{% url 'victim_request_assistance'  %}" role='button'>Tambah permintaan bantuan</a>
+
             <h1 class="text-center mb-3">{{ victim.first_name }}</h1>
             <div class="card shadow mb-4">
                 <div class="card-body">
@@ -52,17 +55,9 @@
                                     <td>{{assistance.remark}}</td>
                                     <td>{% if assistance.is_approved %}approved {% else %} not approved{% endif %}</td>
                                     <td>
-                                        <form action="" method="post" class='m-2'>
-                                            {% csrf_token %}
-                                            <input type="hidden" name="assistance_id" value='{{ assistance.id }}'>
-                                            <button class="btn btn-primary">{% if assistance.is_approved %}Tidak Lulus {% else %} Lulus{% endif %}</button>
-                                        </form>
-                                        <form action="{% url 'delete_victim_assistance' victim.id %}" method="post" class='m-2'>
-                                            {% csrf_token %}
-                                            <input type="hidden" name="assistance_id" value='{{ assistance.id }}'>
-                                            <button class="btn btn-danger">Delete</button>
-                                        </form>
-                                        <a class='m-2 btn btn-info text-white' href="{% url 'edit_victim_assistance' victim.id assistance.id %}">Edit</a>
+                                 
+                                    
+                                        <a class='m-2 btn btn-info text-white' href="{% url 'victim_edit_assistance' assistance.id %}">Edit</a>
                                     </td>
 
                                 </tr>

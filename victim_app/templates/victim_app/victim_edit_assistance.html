@@ -109,7 +109,7 @@ Victim List
                                             <option value="2">House Repair</option>
                                             <option value="3">Monthly Assistance</option>
                                             <option value="4">New House Assistance</option> {% endcomment %}
-                                            {% for assistance_type in assistance_types %}
+                                            {% for assistance_type in assistance_type_list %}
                                                 <option value="{{ assistance_type.id }}" {% if victim_assistance.assistance_type.id ==  assistance_type.id %}selected{% endif %} >{{assistance_type}}</option>
                                             {% endfor %}
                                         </select>
