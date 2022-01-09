@@ -50,7 +50,7 @@
                                     <td>{{assistance.victim_number}}</td>
                                     <td>{{assistance.assistance_type.name}}</td>
                                     <td>{{assistance.remark}}</td>
-                                    <td>{% if assistance.is_approved %}approved {% else %} not approved{% endif %}</td>
+                                    <td>{% if assistance.is_approved %}Lulus {% else %} Tidak Lulus{% endif %}</td>
                                     <td>
                                         <form action="" method="post" class='m-2'>
                                             {% csrf_token %}

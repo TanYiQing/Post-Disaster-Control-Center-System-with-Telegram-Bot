@@ -20,7 +20,7 @@
     <div class="container">
 
         <div class="row mt-4 px-3 px-sm-0">
-        <a class='m-2 btn btn-success text-white' href="{% url 'victim_request_assistance'  %}" role='button'>Tambah permintaan bantuan</a>
+        <a class='m-2 btn btn-success text-white' href="{% url 'victim_request_assistance'  %}" role='button'>Tambah Permintaan Bantuan</a>
 
             <h1 class="text-center mb-3">{{ victim.first_name }}</h1>
             <div class="card shadow mb-4">
@@ -53,7 +53,7 @@
                                     <td>{{assistance.victim_number}}</td>
                                     <td>{{assistance.assistance_type.name}}</td>
                                     <td>{{assistance.remark}}</td>
-                                    <td>{% if assistance.is_approved %}approved {% else %} not approved{% endif %}</td>
+                                    <td>{% if assistance.is_approved %}Lulus {% else %} Tidak Lulus{% endif %}</td>
                                     <td>
                                  
                                     
