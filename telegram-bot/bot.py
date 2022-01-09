@@ -42,8 +42,9 @@ def about_menu(update, context):
 
 
 def about_me_menu(update, context):
-    update.callback_query.message.edit_text("Ninja-aid ialah sistem berpusat dengan tujuan membantu mangsa "
-                                            "menghadapi bencana untuk meminta pertolongan. Saya ialah Ninja-aid_bot "
+    update.callback_query.message.edit_text("Ninja-aid ialah sistem berpusat yang dapat membantu penghulu sesuatu "
+                                            "daerah dengan cepat melibatkan diri dalam operasi bantuan pasca bencana. "
+                                            "Saya ialah Ninja-aid_bot "
                                             "dan saya boleh membantu anda 24 jam untuk menyelesaikan rasa ingin tahu anda. "
                                             "Untuk mengetahui tentang kami, anda boleh melayari laman web kami.",
                                             reply_markup=aboutme_menu_keyboard())

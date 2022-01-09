@@ -62,28 +62,28 @@ https://t.me/STIW3054_A211_JavaFive_bot
 
 1. Define the requirements
 
-   The rapid application development cycle begins with stakeholders defining a loose set of project requirements.
+   <p align="justify">The rapid application development cycle begins with stakeholders defining a loose set of project requirements.
    Requirements include goals, expectations, timelines, and budget. The client provides a vision and explains the
-   problem in the existing method for PKOB. This stage seeks for a broad requirement for the system.
+   problem in the existing method for PKOB. This stage seeks for a broad requirement for the system.</p>
 
 2. Prototype
 
-   After having a broad requirement and the project of PKOB has been scoped, our team will begin developing prototypes
+   <p align="justify">After having a broad requirement and the project of PKOB has been scoped, our team will begin developing prototypes
    with certain main features as fast as possible which later will be shown to the client. This is to ensure the
-   client’s needs are being met.
+   client’s needs are being met.</p>
 
 3. Construction
 
-   Rapid construction is where application coding, system testing, and unit integration occurs, converting prototype and
+   <p align="justify">Rapid construction is where application coding, system testing, and unit integration occurs, converting prototype and
    beta systems into a working model. Team works with the client to collect feedback on interface and functionality and
    improve all aspects of the PKOB system. At this stage we refine the prototype and make it ready to deliver. All kinds
-   of required modifications and enhancements are made in phase. 4. Cutover
+   of required modifications and enhancements are made in phase.</p>
 
 4. Cutover
 
-   The final phase is where development teams move components to a live production environment, where any necessary
+   <p align="justify">The final phase is where development teams move components to a live production environment, where any necessary
    full-scale testing or training can take place. In this case, the system of PKOB will be accessible for the public to
-   be used.
+   be used.</p>
 
 ## Cost Estimation
 
@@ -128,10 +128,10 @@ estimate)**                    |                       |                        
 
 ## Conclusion
 
-Ninja Aid is a centralized system that helps penghulu to quickly view the list of victims. The system not only quickly
+<p align="justify">Ninja Aid is a centralized system that helps penghulu to quickly view the list of victims. The system not only quickly
 helps penghulu know if the victim is being helped, but also avoids wasting resources. Victim information and assistance
 records can help penghulu track those records faster. In addition, victims can also apply for help online, saving effort
-and time compared to traditional application methods.
+and time compared to traditional application methods.</p>
 
 ## Youtube Presentation
 
