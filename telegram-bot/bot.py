@@ -50,7 +50,7 @@ def about_me_menu(update, context):
 
 
 def web_menu(update, context):
-    update.callback_query.message.edit_text("Mohon bantuan di sini atau kunjungi laman web kami:\nhttps://ninja-aid.herokuapp.com/",
+    update.callback_query.message.edit_text("Mohon bantuan di sini atau kunjungi laman web kami:\nhttps://ninja-aid.herokuapp.com/victim/victimdashboard/",
                                             reply_markup=website_menu_keyboard())
 
 

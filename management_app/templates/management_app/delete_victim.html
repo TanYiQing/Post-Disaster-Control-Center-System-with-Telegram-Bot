@@ -15,7 +15,7 @@
                         <p class="fs-5 fst-italic">{{ victim.name }}</p>
                     </div>
                     <div class="mt-4">
-                        <a href="{% url 'delete_profile' victim.id %}?action=confirm" class="btn btn-danger" style="width: 90px;">OK</a>
+                        <a href="{% url 'delete_victim' victim.id %}?action=confirm" class="btn btn-danger" style="width: 90px;">OK</a>
                         <a href="{% url 'list_victim' %}" class="btn btn-warning" style="width: 90px;">Cancel</a>
                     </div>
                 </div>
