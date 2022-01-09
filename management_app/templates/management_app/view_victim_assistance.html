@@ -60,7 +60,7 @@
                                         <form action="{% url 'delete_victim_assistance' victim.id %}" method="post" class='m-2'>
                                             {% csrf_token %}
                                             <input type="hidden" name="assistance_id" value='{{ assistance.id }}'>
-                                            <button class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-danger">Padam</button>
                                         </form>
                                         <a class='m-2 btn btn-info text-white' href="{% url 'edit_victim_assistance' victim.id assistance.id %}">Edit</a>
                                     </td>
