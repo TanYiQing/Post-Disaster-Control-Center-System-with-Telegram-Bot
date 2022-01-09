@@ -142,30 +142,21 @@ and time compared to traditional application methods.</p>
 ## List of Python packages (including the version) used for this system
 
 | Package                   |   Version           |
-| :-----------------------: | :-----------------: | 
-| APScheduler               |    3.6.3            |
+| :-----------------------: | :-----------------: |
 | asgiref                   |    3.4.1            |
-| beautifulsoup4            |    4.10.0           |
-| cachetools                |    4.2.2            |
-| certifi                   |    2021.10.8        |
-| charset-normalizer        |    2.0.7            |
-| Django                    |    3.2.8            |
+| Django                    |    4.0              |
 | gunicorn                  |    20.1.0           |
-| idna                      |    3.3              |
+| numpy                     |    1.22.0           |
+| pandas                    |    1.3.5            |
+| pip                       |    21.2.3           |
 | psycopg2                  |    2.9.2            |
-| python-telegram-bot       |    13.9             |
+| python-dateutil           |    2.8.2            |
 | pytz                      |    2021.3           |
-| pytz-deprecation-shim     |    0.1.0.post0      |
-| requests                  |    2.26.0           |
+| setuptools                |    57.4.0           |
 | six                       |    1.16.0           |
-| soupsieve                 |    2.2.1            |
 | sqlparse                  |    0.4.2            |
-| telebot                   |    0.0.4            |
-| telegram                  |    0.0.1            |
-| tornado                   |    6.1              |
 | tzdata                    |    2021.5           |
-| tzlocal                   |    4.1              |
-| urllib3                   |    1.26.7           |
+
 
 ## References (Not less than 30)
 
