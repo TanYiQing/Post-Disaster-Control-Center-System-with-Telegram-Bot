@@ -169,4 +169,74 @@ and time compared to traditional application methods.
 
 ## References (Not less than 30)
 
-https://docs.djangoproject.com/en/3.2/topics/auth/default/
+1. <i>Writing your first Django app, part 1.<i> (2021). Retrieved from django: https://docs.djangoproject.com/en/3.2/intro/tutorial01/
+
+2. <i>Writing your first Django app, part 2.<i> (2021). Retrieved from django: https://docs.djangoproject.com/en/3.2/intro/tutorial02/
+
+3. <i>Writing your first Django app, part 3.<i> (2021). Retrieved from django: https://docs.djangoproject.com/en/3.2/intro/tutorial03/
+
+4. <i>Writing your first Django app, part 4.<i> (2021). Retrieved from django: https://docs.djangoproject.com/en/3.2/intro/tutorial04/
+
+5. <i>Writing your first Django app, part 5.<i> (2021). Retrieved from django: https://docs.djangoproject.com/en/3.2/intro/tutorial05/
+
+6. <i>Writing your first Django app, part 6.<i> (2021). Retrieved from django: https://docs.djangoproject.com/en/3.2/intro/tutorial06/
+
+7. <i>Writing your first Django app, part 7.<i> (2021). Retrieved from django: https://docs.djangoproject.com/en/3.2/intro/tutorial07/
+
+8. RaddyTheBrand. (2020, Jun 25). <i>Learn Bootstrap in less than 20 minutes - Responsive Website Tutorial.</i> Retrieved from YouTube: https://www.youtube.com/watch?v=eow125xV5-c
+
+9. <i>Navbar.</i>  (2021). Retrieved from Bootstrap: https://getbootstrap.com/docs/5.0/components/navbar/
+
+10. <i>Tables.</i> (2021). Retrieved from Bootstrap: https://getbootstrap.com/docs/5.0/content/tables/
+
+11. <i>Spacing.</i> (2021). Retrieved from Bootstrap: https://getbootstrap.com/docs/5.0/utilities/spacing/
+
+12. <i>Images.</i> (2021). Retrieved from Bootstrap: https://getbootstrap.com/docs/5.0/content/images/
+
+13. <i>Bootstrap 5 Buttons.</i>  (2021). Retrieved from w3schools: https://www.w3schools.com/bootstrap5/bootstrap_buttons.php
+
+14. <i>Configuring Django Apps for Heroku.</i> (2020, Jun 03). Retrieved from Heroku Dev Center: https://devcenter.heroku.com/articles/django-app-configuration
+
+15. <i>Bots: An introduction for developers.</i> (2021). Retrieved from Telegram: https://core.telegram.org/bots
+
+16. Batra, K. (2020, Sep 3). <i>Part 1: How to create a Telegram Bot in Python in under 10 minutes.</i> Retrieved from codementor: https://www.codementor.io/@karandeepbatra/part-1-how-to-create-a-telegram-bot-in-python-in-under-10-minutes-19yfdv4wrq
+
+17. Dojo, C. (2021, May 5). <i>How To Create A Telegram Bot With Python.</i> Retrieved from YouTube: https://www.youtube.com/watch?v=NwBWW8cNCP4&t=682s
+
+18. <i>How to Create and Connect a Telegram Chatbot.</i> (2020, Nov 27). Retrieved from SendPulse: https://sendpulse.com/knowledge-base/chatbot/create-telegram-chatbot
+
+19. Palace, C. (2021, August 17). <i>How to create a Telegram Bot for FREE in Python - Bot Father.</i> Retrieved from YouTube: https://www.youtube.com/watch?v=URPIZZNr_2M&list=PL4KX3oEgJcfeyz484TYEQULx99yFWudTN&index=2
+
+20. Palace, C. (2021, August 17). <i>How to create a Telegram Bot for FREE in Python - Project Setup.</i> Retrieved from YouTube: https://www.youtube.com/watch?v=8nm1LJIijc0&list=PL4KX3oEgJcfeyz484TYEQULx99yFWudTN&index=3
+
+21. Palace, C. (2021, August 17). <i>How to create a Telegram Bot for FREE in Python - Commands & Messaging.</i> Retrieved from YouTube: https://www.youtube.com/watch?v=50npIbrXmnI&list=PL4KX3oEgJcfeyz484TYEQULx99yFWudTN&index=4
+
+22. Palace, C. (2021, August 17). <i>How to create a Telegram Bot for FREE in Python - Custom Responses.</i> Retrieved from YouTube: https://www.youtube.com/watch?v=-W25XN3F0IY&list=PL4KX3oEgJcfeyz484TYEQULx99yFWudTN&index=5
+
+23. teacher, S. (2021, August 22). <i>Basics of creating a Telegram bot (with code/Python).</i> Retrieved from YouTube: https://www.youtube.com/watch?v=RD3SyYHDQpo
+
+24. <i>Welcome to Pyrogram.</i> (2021). Retrieved from Pyrogram: https://docs.pyrogram.org/
+
+25. <i>Configuring Django Apps for Heroku.</i> (2020, Jun 03). Retrieved from Heroku Dev Center: https://devcenter.heroku.com/articles/django-app-configuration
+
+26. <i>Get local timezone in django.</i> (2013, February 2). Stack Overflow. https://stackoverflow.com/questions/14657173/get-local-timezone-in-django
+
+27. <i>Asia/Kuala_Lumpur: Time Zone in Malaysia, Current local time.</i> (n.d.). Time Difference. https://www.zeitverschiebung.net/en/timezone/asia--kuala_lumpur
+
+28. <i>HTML input readonly Attribute.</i> (n.d.). W3schools. https://www.w3schools.com/tags/att_input_readonly.asp
+
+29. <i> How to get the first 2 letters of a string in Python?</i>  (2014, January 8). Stack Overflow. https://stackoverflow.com/questions/20988835/how-to-get-the-first-2-letters-of-a-string-in-python
+
+30. <i>How to: Print the last two digits of the year.</i> (n.d.). Kite. https://www.kite.com/python/examples/1815/time-print-the-last-two-digits-of-the-year
+
+31. NeuralNine. (2021, August 12). <i>Create Your Own Telegram Bot With Python.</i> YouTube. https://www.youtube.com/watch?v=CNkiPN_WZfA
+
+32. Code Palace. (2021, January 25). <i> Creating a Telegram Bot in Python 3.9 Tutorial (Fast & Easy).</i>  YouTube. https://www.youtube.com/watch?v=PTAkiukJK7E
+
+33. <i> Bots: An introduction for developers. </i>  (n.d.). Telegram. https://core.telegram.org/bots
+
+34. <i>Welcome to Python Telegram Bot’s documentation! — python-telegram-bot 13.9 documentation. </i>(n.d.). Python-Telegram-Bot. https://python-telegram-bot.readthedocs.io/en/stable/
+
+35. <i>Intial Deploy to heroku.</i> (n.d.). Awesome Open Source. https://awesomeopensource.com/project/AnshumanFauzdar/telegram-bot-heroku-deploy?category. . .
+
+36. <i>Using the Django authentication system | Django documentation | Django.</i> (n.d.). Django Documentation. https://docs.djangoproject.com/en/3.2/topics/auth/default/
