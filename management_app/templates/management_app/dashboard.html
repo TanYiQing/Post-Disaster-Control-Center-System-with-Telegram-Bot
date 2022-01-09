@@ -209,16 +209,16 @@
         total_house_construction = 0
         total_monthly_assistance = 0
         {% for i in assistance %}
-            {% if i.assistance_type.name == 'Food Supplement' %}
+            {% if i.assistance_type.name == 'Bakul Makanan' %}
                 total_food += 1
             {% endif %}
-            {% if i.assistance_type.name == 'House Repair' %}
+            {% if i.assistance_type.name == 'Baik Pulih Rumah' %}
                 total_house_repair += 1
             {% endif %}
-            {% if i.assistance_type.name == 'New House Construction' %}
+            {% if i.assistance_type.name == 'Bantuan Rumah Baru' %}
                 total_house_construction += 1
             {% endif %}
-            {% if i.assistance_type.name == 'Monthly Assistance' %}
+            {% if i.assistance_type.name == 'Bantuan Bulanan' %}
                 total_monthly_assistance += 1
             {% endif %}
         {% endfor %}
