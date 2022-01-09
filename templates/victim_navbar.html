@@ -26,6 +26,13 @@
                     Tambah Butiran Mangsa
                 </a>
             </li>
+            {% if "apply_victim" in request.session %}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url "victim_view_assistance" %}">
+                        Senarai Bantuan Diminta
+                    </a>
+                </li>
+            {% endif %}
           </ul>
         </div>
     </div>

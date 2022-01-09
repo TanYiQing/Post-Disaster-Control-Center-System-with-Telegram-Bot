@@ -271,12 +271,26 @@
             <div class="container subtitle">
                 <p class="text-light text-left mb-xs-2 mb-1" style="font-weight: lighter">Aplikasi ini membantu mengesan mangsa
                     yang mendapat bantuan di Kedah dengan mudah.</p>
-                <form class="d-flex">
-                    <input class="form-control me-2 search_field" type="search" placeholder="eg: 123456123456@0124561234" aria-label="Search">
+                <form method='POST' class="d-flex">
+                    {% csrf_token %}
+                    <input class="form-control me-2 search_field" type="search" name='search' placeholder="eg: 123456123456@0124561234" aria-label="Search">
                     <button class="btn btn-light search_button text-center" type="submit">Search</button>
                 </form>
+                    {% for msg in messages %}
+                        <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+                            <p class="h5"><strong> 
+                                {{ msg }}.
+                                </strong> do you want to apply? <a class="btn btn-warning text-white" href="{% url 'add_profile' %}" role="button">Click here</a></p>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                   
+
+               
+                
             </div>
         </div>
+        
     </section>
 
     <section class="service">
