@@ -3,8 +3,8 @@
 [Read the instruction](https://github.com/STIW3054-A211/e-sulam/blob/main/GroupProject.md)
 
 ## Heroku Link:
-https://ninja-aid.herokuapp.com/
 
+https://ninja-aid.herokuapp.com/
 
 ## Telegram Bot:
 
@@ -47,9 +47,11 @@ https://t.me/STIW3054_A211_JavaFive_bot
 </ul>
 
 ## Project Scope
+
 <p align="justify">The development time of the PKOB system is from October 2021 to January 2022. This system is a web application as the main platform, Heroku as a web server, and TelegramBot as the auxiliary. This system will be managed by penghulu, and the target users are victims. The system will store all the information of the victims, the record of assistance, and so on. The function of this system is that penghulu can key in data, update the progress. Beside that, victims can apply for many assistance. The type of assistance that can apply is house repair, new house, monthly assistance and food supply. When the penghulu updates the progress, victims will be notified. The main purpose of developing this application is that penghulu can efficiently retrieve information and avoid data duplication. Second, the data can be read clearly and easily.</p>
 
 ## Project Significance (Impact to Community)
+
 <p align="justify">The significance of this project is that the PKOB system is more efficient and more efficient than the traditional black and white method. PKOB can replace the existing traditional black and white method because all data of victims and assistance records will be centralized which can help penghulu to respond faster and traceback easily. In addition, this system can effectively avoid data duplication. This can prevent those who use loopholes to obtain more benefits, resulting in other people not being able to enjoy the right to aid. Then, the PKOB system also provides an online request function, which allows victims to obtain the assistance they really need and save time. With these, a series of problems will also be solved such as wasting resources and reaching to help victims quickly.</p>
 
 ## Project Methodology
@@ -60,39 +62,54 @@ https://t.me/STIW3054_A211_JavaFive_bot
 
 1. Define the requirements
 
-   The rapid application development cycle begins with stakeholders defining a loose set of project requirements. Requirements include goals, expectations, timelines, and budget. The client provides a vision and explains the problem in the existing method for PKOB. This stage seeks for a broad requirement for the system.
+   The rapid application development cycle begins with stakeholders defining a loose set of project requirements.
+   Requirements include goals, expectations, timelines, and budget. The client provides a vision and explains the
+   problem in the existing method for PKOB. This stage seeks for a broad requirement for the system.
 
 2. Prototype
 
-   After having a broad requirement and the project of PKOB has been scoped, our team will begin developing prototypes with certain main features as fast as possible which later will be shown to the client. This is to ensure the client’s needs are being met.
+   After having a broad requirement and the project of PKOB has been scoped, our team will begin developing prototypes
+   with certain main features as fast as possible which later will be shown to the client. This is to ensure the
+   client’s needs are being met.
 
 3. Construction
 
-   Rapid construction is where application coding, system testing, and unit integration occurs, converting prototype and beta systems into a working model. Team works with the client to collect feedback on interface and functionality and improve all aspects of the PKOB system. At this stage we refine the prototype and make it ready to deliver. All kinds of required modifications and enhancements are made in phase. 4. Cutover
+   Rapid construction is where application coding, system testing, and unit integration occurs, converting prototype and
+   beta systems into a working model. Team works with the client to collect feedback on interface and functionality and
+   improve all aspects of the PKOB system. At this stage we refine the prototype and make it ready to deliver. All kinds
+   of required modifications and enhancements are made in phase. 4. Cutover
 
 4. Cutover
 
-   The final phase is where development teams move components to a live production environment, where any necessary full-scale testing or training can take place. In this case, the system of PKOB will be accessible for the public to be used.
+   The final phase is where development teams move components to a live production environment, where any necessary
+   full-scale testing or training can take place. In this case, the system of PKOB will be accessible for the public to
+   be used.
 
 ## Cost Estimation
 
 | <div style="width:60px"></div>                             | Units/Hrs//Year       | Cost/Unit/Hr/Year               | Subtotals | Totals  | % of Total |
 | :--------------------------------------------------------- | :-------------------: | :------------------------------:| :-------: | :-----: | :--------: |
-| **1. Project Management**                                  |                       |                                 |           | RM10030 | 41%        |
+| **1. Project
+Management**                                  |                       |                                 |           | RM10030 | 41%        |
 | Project manager<br/>Project team members                   | 180<br/>720           | RM15<br/>RM10|RM2700<br/>RM7200 |           |         |            |
 | Contractors (10% of software development and testing)      |                       |                                 | RM200     |         |            |
-| **2. Hardware**                                            |                       |                                 |           | RM90    | 1%         |
+| **2.
+Hardware**                                            |                       |                                 |           | RM90    | 1%         |
 | 2.1 Handheld devices                                       | -                     | -                               | -         |         |            |
 | 2.2 Servers (Cpanel)                                       | 1                     | RM90                            | RM90      |         |            |
-| **3. Software**                                            |                       |                                 |           | RM1050  | 4%         |
+| **3.
+Software**                                            |                       |                                 |           | RM1050  | 4%         |
 | 3.1 Licensed software                                      | 1                     | RM50                            | RM50      |         |            |
 | 3.2 Software development                                   |                       |                                 | RM1000    |         |            |
-| **4. Testing (10% of total hardware and software costs)**  |                       |                                 | RM1000    | RM1000  | 4%         |
-| **5. Training and Support**                                |                       |                                 |           | RM7700  | 32%        |
+| **4. Testing (10% of total hardware and software
+costs)**  |                       |                                 | RM1000    | RM1000  | 4%         |
+| **5. Training and
+Support**                                |                       |                                 |           | RM7700  | 32%        |
 | Trainee cost                                               | 100                   | RM5                             | RM500     |         |            |
 | Travel cost                                                | -                     | -                               | RM500     |         |            |
 | Project team members                                       | 720                   | RM10                            | RM7200    |         |            |
-| **6. Reserves (20% of total estimate)**                    |                       |                                 |           | RM3988  | 17%        |
+| **6. Reserves (20% of total
+estimate)**                    |                       |                                 |           | RM3988  | 17%        |
 | Total project cost estimate                                |                       |                                 |           | RM23928 | 100%       |
 
 ## Gantt Chart
@@ -104,11 +121,17 @@ https://t.me/STIW3054_A211_JavaFive_bot
 ## File Structure for Web Application
 
 ## Database Design
+
 ![database design](./images/project/database_design.png)
 
 ## Project Limitation
 
 ## Conclusion
+
+Ninja Aid is a centralized system that helps penghulu to quickly view the list of victims. The system not only quickly
+helps penghulu know if the victim is being helped, but also avoids wasting resources. Victim information and assistance
+records can help penghulu track those records faster. In addition, victims can also apply for help online, saving effort
+and time compared to traditional application methods.
 
 ## Youtube Presentation
 
@@ -117,6 +140,7 @@ https://t.me/STIW3054_A211_JavaFive_bot
 ## Number of Issues
 
 ## List of Python packages (including the version) used for this system
+
 | Package                   |   Version           |
 | :-----------------------: | :-----------------: | 
 | APScheduler               |    3.6.3            |
@@ -144,4 +168,5 @@ https://t.me/STIW3054_A211_JavaFive_bot
 | urllib3                   |    1.26.7           |
 
 ## References (Not less than 30)
+
 https://docs.djangoproject.com/en/3.2/topics/auth/default/
