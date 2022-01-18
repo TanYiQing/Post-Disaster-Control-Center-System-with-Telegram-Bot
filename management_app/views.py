@@ -94,8 +94,7 @@ def add_victim(request):
                         address1=address1, address2=address2, city=city, mukim=mukim, parlimen=parlimen,
                         state=state, poskod=poskod)
         victim.save()
-        request.session['apply_victim'] = [ic, phone]
-        return redirect('request_assistance')
+        return redirect('list_victim')
     return render(request, 'management_app/add_victim.html')
 
 
