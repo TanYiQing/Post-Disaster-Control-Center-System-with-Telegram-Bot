@@ -76,6 +76,26 @@ def edit_victim_assistance(request, victim_id, assistance_id):
 
 @login_required
 def add_victim(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        ic = request.POST['icNum']
+        phone = request.POST["phone"]
+        is_kir = str(request.POST["is_kir"])
+        salary = request.POST["salary"]
+        address1 = request.POST["address1"]
+        address2 = request.POST["address2"]
+        city = request.POST["city"]
+        mukim = request.POST["mukim"]
+        parlimen = request.POST["parlimen"]
+        state = request.POST["state"]
+        poskod = request.POST["poskod"]
+
+        victim = Victim(ic=ic, name=name, phone=phone, is_kir=is_kir, salary=salary,
+                        address1=address1, address2=address2, city=city, mukim=mukim, parlimen=parlimen,
+                        state=state, poskod=poskod)
+        victim.save()
+        request.session['apply_victim'] = [ic, phone]
+        return redirect('request_assistance')
     return render(request, 'management_app/add_victim.html')
 
 
